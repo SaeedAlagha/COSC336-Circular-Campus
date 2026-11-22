@@ -1,0 +1,91 @@
+{% extends "base.html" %}{% load campus_ui i18n %}
+{% block title %}{{ t.reference }}{% endblock %}
+{% block content %}
+<div class="page-head"><div><div class="crumbs"><a href="{% url 'workflow:transfers' %}">{% translate "Transfers" %}</a> / {{ t.reference }}</div>
+  <div class="row" style="gap:12px"><h1>{{ t.quantity }} × {{ t.source_asset.name }}</h1>{% badge t.status t.status_label %}</div>
+  <p><span class="ref">{{ t.reference }}</span> {% translate "for" %} <a href="{% url 'exchange:request' req.pk %}">{{ req.reference }}</a> · {{ t.source_asset.owner_department.name }} → {{ req.department.name }}</p></div></div>
+
+<section class="card card-pad mb"><ol class="stepper">{% for s in steps %}<li class="{% if s.error %}stop{% elif s.done %}done{% endif %}">{{ s.label }}<div class="cell-sub" style="font-weight:400">{{ s.who }}{% if s.when %}<br>{{ s.when|date:"d M H:i" }}{% endif %}</div></li>{% endfor %}</ol></section>
+
+{% if t.status == "EXCEPTION" %}<div class="alert alert-error mb">{% icon "triangle-alert" %}<div><strong class="alert-title">{% translate "Receipt exception —" %} {{ t.exception_kind|title }}</strong><div>{{ t.exception_reason }} {% translate "The last confirmed custody stays with" %} {{ t.source_asset.owner_department.name }} {% translate "until an authorised approver resolves this." %}</div></div></div>{% endif %}
+{% if restricted and t.status in "APPROVED SCHEDULED" %}<div class="alert alert-warning mb">{% icon "lock" %}<div><strong class="alert-title">{% translate "Release blocked" %}</strong><div>{% translate "The source stock is restricted for a safety review. It can be released only after a custodian verifies it is safe." %}</div></div></div>{% endif %}
+
+<div class="split">
+  <div class="stack">
+    {% if can_release %}
+    <section class="card"><div class="card-head"><h2>{% icon "upload" %} {% translate "Record the physical release" %}</h2><span class="chip">{% translate "Stage 5 · you are the releasing custodian" %}</span></div>
+      <form class="card-body form-grid" method="post" data-confirm="Record that {{ t.quantity }} unit(s) physically left your custody? Custody does not change until the receiver confirms." data-confirm-ok="{% translate "Record release" %}">{% csrf_token %}
+        <input type="hidden" name="action" value="release"><input type="hidden" name="version" value="{{ t.version }}"><input type="hidden" name="idem" value="{{ form_key }}">
+        <div class="field"><label for="rq">{% translate "Quantity released" %}</label><input id="rq" type="number" name="quantity" value="{{ t.quantity }}" min="1" max="{{ t.quantity }}"><div class="help">{% translate "Must equal the approved quantity (" %}{{ t.quantity }}).</div></div>
+        <div class="field"><label for="tc">{% translate "Actual transfer cost (AED)" %}</label><input id="tc" type="number" step="0.01" min="0" name="transfer_cost" placeholder="{% translate "Leave blank if unknown" %}"><div class="help">{% translate "Unknown stays unknown in savings reports." %}</div></div>
+        <div class="field full"><label for="ev">{% translate "Release evidence" %} <span class="req">*</span></label><textarea id="ev" name="evidence" rows="2" required placeholder="{% translate "Collected by…, slip number, vehicle…" %}"></textarea></div>
+        <div class="form-actions full"><button class="btn btn-primary" type="submit" data-loading="{% translate "Recording…" %}"><span class="spinner"></span><span class="btn-label">{% icon "truck" 16 %} {% translate "Record release" %}</span></button></div>
+      </form></section>
+    {% endif %}
+
+    {% if can_receive %}
+    <section class="card"><div class="card-head"><h2>{% icon "inbox" %} {% translate "Confirm receipt" %}</h2><span class="chip">{% translate "Stage 6 · designated receiver" %}</span></div>
+      <form class="card-body form-grid" method="post" data-confirm="{% translate "Confirm what you physically counted and inspected? A matching receipt moves custody, department and location now; a mismatch opens an Exception." %}" data-confirm-ok="{% translate "Confirm receipt" %}">{% csrf_token %}
+        <input type="hidden" name="action" value="receive"><input type="hidden" name="version" value="{{ t.version }}"><input type="hidden" name="idem" value="{{ form_key }}">
+        <div class="field"><label for="qq">{% translate "Quantity counted" %}</label><input id="qq" type="number" name="quantity" value="{{ t.quantity }}" min="0" max="{{ t.quantity }}"><div class="help">{% translate "Released:" %} {{ t.released_quantity }}.</div></div>
+        <div class="field"><label for="cc">{% translate "Condition observed" %}</label><select id="cc" name="condition">{% for c, l in conditions %}<option value="{{ c }}" {% if c == t.source_asset.condition %}selected{% endif %}>{% translate l %}</option>{% endfor %}</select><div class="help">{% translate "Released as" %} {{ t.source_asset.condition_label }}.</div></div>
+        <fieldset class="fieldset full"><legend>{% translate "Do you accept this delivery?" %}</legend><div class="row"><label class="check"><input type="radio" name="accepted" value="yes" checked> {% translate "Yes — matches what was approved" %}</label><label class="check"><input type="radio" name="accepted" value="no"> {% translate "No — report non-receipt or a problem" %}</label></div></fieldset>
+        <div class="field full"><label for="nn">{% translate "Note" %}</label><textarea id="nn" name="note" rows="2" placeholder="{% translate "Optional — required context if something is wrong" %}"></textarea></div>
+        <div class="form-actions full"><button class="btn btn-primary" type="submit" data-loading="{% translate "Committing…" %}"><span class="spinner"></span><span class="btn-label">{% icon "circle-check" 16 %} {% translate "Confirm receipt" %}</span></button></div>
+      </form></section>
+    {% endif %}
+
+    {% if can_resolve %}
+    <section class="card"><div class="card-head"><h2>{% icon "scale" %} {% translate "Resolve exception" %}</h2></div>
+      <form class="card-body grid" style="gap:12px" method="post" data-confirm="{% translate "Record this resolution? It is audited and cannot be undone." %}" data-confirm-ok="{% translate "Resolve" %}">{% csrf_token %}<input type="hidden" name="action" value="resolve"><input type="hidden" name="version" value="{{ t.version }}">
+        <div class="radio-cards"><label class="radio-card"><input type="radio" name="resolution" value="ACCEPT_RECEIVED" checked><div><b>{% translate "Accept the confirmed evidence" %}</b><div class="cell-sub">{% translate "Commit the" %} {{ t.received_quantity }} {% translate "unit(s) received in" %} {{ t.received_condition|title }} {% translate "condition. Any shortfall stays allocated on a follow-up transfer." %}</div></div></label>
+          <label class="radio-card"><input type="radio" name="resolution" value="RETURN_TO_SOURCE"><div><b>{% translate "Return stock to the source" %}</b><div class="cell-sub">{% translate "Cancel this transfer; the allocation is released back to" %} {{ t.source_asset.owner_department.name }}.</div></div></label></div>
+        <div class="field"><label for="rs">{% translate "Resolution evidence & reason" %} <span class="req">*</span></label><textarea id="rs" name="reason" rows="2" required></textarea></div>
+        <button class="btn btn-primary" type="submit">{% translate "Record resolution" %}</button></form></section>
+    {% endif %}
+
+    {% if can_schedule %}
+    <section class="card"><div class="card-head"><h2>{% icon "calendar" %} {% translate "Handover arrangements" %}</h2></div>
+      <form class="card-body form-grid" method="post">{% csrf_token %}<input type="hidden" name="action" value="schedule"><input type="hidden" name="version" value="{{ t.version }}">
+        {% include "partials/field.html" with field=schedule_form.method %}{% include "partials/field.html" with field=schedule_form.scheduled_for %}
+        {% include "partials/field.html" with field=schedule_form.arrangements full=True %}
+        <div class="form-actions full"><button class="btn" type="submit">{% translate "Save arrangements" %}</button></div></form></section>
+    {% endif %}
+
+    {% if can_review_purchase %}
+    <section class="card"><div class="card-head"><h2>{% icon "coins" %} {% translate "Avoided-purchase review" %}</h2><span class="chip">{% translate "Procurement / Finance" %}</span></div>
+      <form class="card-body form-grid" method="post">{% csrf_token %}<input type="hidden" name="action" value="avoided">
+        <fieldset class="fieldset full"><legend>{% translate "Did this reuse replace a purchase the department would otherwise make?" %}</legend><div class="row"><label class="check"><input type="radio" name="confirmed" value="yes" checked> {% translate "Yes — record the avoided purchase" %}</label><label class="check"><input type="radio" name="confirmed" value="no"> {% translate "No — no saving is claimed" %}</label></div></fieldset>
+        <div class="field full"><label for="si">{% translate "Substituted purchase" %}</label><input id="si" type="text" name="substituted_item" placeholder="{% translate "e.g. 24-inch monitor, framework item IT-MON-24" %}"></div>
+        <div class="field"><label for="aq">{% translate "Units substituted" %}</label><input id="aq" type="number" name="quantity" min="1" max="{{ t.received_quantity }}" value="{{ t.received_quantity }}"></div>
+        <div class="field"><label for="up">{% translate "Reference unit price (AED)" %}</label><input id="up" type="number" step="0.01" min="0" name="unit_price"></div>
+        <div class="field full"><label for="pr">{% translate "Price reference" %}</label><input id="pr" type="text" name="price_reference" placeholder="{% translate "Quote / catalogue / PO number" %}"></div>
+        <div class="field"><label for="rc">{% translate "Related repair cost (AED)" %}</label><input id="rc" type="number" step="0.01" min="0" name="repair_cost" placeholder="{% translate "Blank if none/unknown" %}"></div>
+        <div class="field"><label for="oc">{% translate "Other related cost (AED)" %}</label><input id="oc" type="number" step="0.01" min="0" name="other_cost"></div>
+        <div class="form-actions full"><button class="btn btn-primary" type="submit">{% translate "Record review" %}</button></div>
+        <p class="help full">{% translate "A transfer alone does not prove savings (SUS-03). One decision per transfer — no double attribution." %}</p></form></section>
+    {% endif %}
+
+    <section class="card"><div class="card-head"><h2>{% icon "history" %} {% translate "Transfer history" %}</h2></div><div class="card-body"><ol class="timeline">
+      {% for e in events %}<li><span class="tl-dot {% if e.event_type == 'TRANSFER_EXCEPTION' %}danger{% endif %}">{% icon "circle-dot" 12 %}</span><div class="tl-title">{{ e.label }} · {{ e.asset.asset_tag }}</div><div class="tl-meta">{{ e.occurred_at|date:"d M Y, H:i" }} · {{ e.actor.full_name|default:"System" }}</div>{% if e.reason %}<div class="tl-diff">{{ e.reason|truncatechars:200 }}</div>{% endif %}</li>{% empty %}<li class="muted">{% translate "No events yet." %}</li>{% endfor %}
+    </ol></div></section>
+  </div>
+
+  <aside class="stack">
+    <section class="card"><div class="card-head"><h2>{% icon "info" %} {% translate "Details" %}</h2></div><div class="card-body"><dl class="dl">
+      <dt>{% translate "Source" %}</dt><dd><a href="{% url 'catalog:asset' t.source_asset.pk %}">{{ t.source_asset.asset_tag }}</a> · {{ t.source_asset.location }}</dd>
+      <dt>{% translate "Destination" %}</dt><dd>{{ t.destination }}</dd>
+      <dt>{% translate "Releasing" %}</dt><dd>{{ t.releasing_user.full_name }}</dd><dt>{% translate "Receiving" %}</dt><dd>{{ t.receiving_user.full_name }}</dd>
+      <dt>{% translate "Authorised by" %}</dt><dd>{% if t.approval %}{{ t.approval.reviewer.full_name }} · v{{ t.approval.version.version_no }}{% else %}—{% endif %}</dd>
+      <dt>{% translate "Method" %}</dt><dd>{{ t.get_method_display|default:"Not arranged" }}{% if t.scheduled_for %} · {{ t.scheduled_for|date:"d M Y" }}{% endif %}</dd>
+      {% if t.arrangements %}<dt>{% translate "Arrangements" %}</dt><dd>{{ t.arrangements }}</dd>{% endif %}
+      <dt>{% translate "Transfer cost" %}</dt><dd>{% if t.transfer_cost_aed is not None %}{{ t.transfer_cost_aed|aed }}{% elif t.released_at %}<span class="unknown">{% translate "Unknown" %}</span>{% else %}—{% endif %}</dd>
+      {% if t.release_evidence %}<dt>{% translate "Release evidence" %}</dt><dd>{{ t.release_evidence }}</dd>{% endif %}
+      {% if t.received_at %}<dt>{% translate "Received" %}</dt><dd>{{ t.received_quantity }} · {{ t.received_condition|title }}{% if t.receipt_note %} · “{{ t.receipt_note }}”{% endif %}</dd>{% endif %}
+      {% if t.received_asset %}<dt>{% translate "Received batch" %}</dt><dd><a href="{% url 'catalog:asset' t.received_asset.pk %}">{{ t.received_asset.asset_tag }}</a></dd>{% endif %}
+      {% if t.resolution %}<dt>{% translate "Resolution" %}</dt><dd>{{ t.resolution }} — {{ t.resolved_by.full_name }}</dd>{% endif %}
+    </dl></div></section>
+    {% if review %}<section class="card card-pad"><h3>{% icon "coins" 16 %} {% translate "Avoided purchase" %}</h3>{% if review.confirmed %}<p class="mt-s"><b>{{ review.avoided_value|aed }}</b> — {{ review.quantity }} × {{ review.substituted_item }} {% translate "at" %} {{ review.reference_unit_price_aed|aed }}</p><p class="help">{% translate "Ref:" %} {{ review.price_reference }} {% translate "· confirmed by" %} {{ review.reviewer.full_name }}</p>{% else %}<p class="mt-s muted">{% translate "Recorded as not replacing a purchase — no saving claimed." %}</p>{% endif %}</section>{% endif %}
+  </aside>
+</div>
+{% endblock %}

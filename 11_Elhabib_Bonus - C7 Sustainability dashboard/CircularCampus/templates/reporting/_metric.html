@@ -1,0 +1,6 @@
+{% load campus_ui i18n %}<section class="card metric">
+  <div class="metric-head"><div><div class="kpi-label">{% translate i.label %}</div><div class="metric-value {% if i.status == 'unavailable' %}na{% endif %}">{% if i.status == "unavailable" %}{% translate "Unavailable" %}{% else %}{{ i.display }}{% endif %}</div></div><span class="kpi-icon">{% icon ico 17 %}</span></div>
+  <div class="row" style="gap:6px">{% badge i.status i.status|capfirst %}<span class="chip">{{ i.ref }}</span></div>
+  {% if i.note %}<p class="small muted" style="margin:0">{% translate i.note %}</p>{% endif %}
+  <details><summary>{% translate "Formula, inputs & source" %}</summary><div class="formula-box"><div><b>{% translate "Formula" %}</b><br><code>{{ i.formula }}</code></div>{% if i.inputs %}<div><b>{% translate "Inputs" %}</b>{% for k, v in i.inputs.items %}<div class="row between"><span>{% translate k|capfirst %}</span><span class="num">{{ v }}</span></div>{% endfor %}</div>{% endif %}{% if i.source %}<div><b>{% translate "Evidence" %}</b><br>{{ i.source }}</div>{% endif %}<div><b>{% translate "Unit" %}</b> {{ i.unit }}</div></div></details>
+</section>
