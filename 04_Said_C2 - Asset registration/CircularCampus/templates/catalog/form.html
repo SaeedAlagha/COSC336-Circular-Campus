@@ -1,0 +1,64 @@
+{% extends "base.html" %}{% load campus_ui i18n %}
+{% block title %}{% if asset %}{% translate "Edit" %} {{ asset.asset_tag }}{% else %}{% translate "Register asset" %}{% endif %}{% endblock %}
+{% block content %}
+<div class="page-head">
+  <div><div class="crumbs"><a href="{% url 'catalog:mine' as xlink %}{{ xlink }}">{% translate "My assets" %}</a> / {% if asset %}{{ asset.asset_tag }} {% translate "/ Edit" %}{% else %}{% translate "Register" %}{% endif %}</div>
+    <h1>{% if asset %}{% translate "Edit" %} {{ asset.name }}{% else %}{% translate "Register an asset" %}{% endif %}</h1>
+    <p>{% if asset %}{% translate "Custody, department and status can only change through transfer and life-cycle workflows. Corrections to condition, quantity or location are recorded with your reason." %}{% else %}{% translate "New records are saved as" %} <b>{% translate "Draft" %}</b> {% translate "and are not visible to other departments until you publish them." %}{% endif %}</p></div>
+</div>
+<form method="post" novalidate>{% csrf_token %}
+{% if asset %}<input type="hidden" name="version" value="{{ asset.version }}">{% endif %}
+{{ form.ai_result }}{{ form.ai_choice }}{{ form.ai_suggested }}
+<div class="split">
+  <div class="stack">
+    {% include "partials/form_errors.html" %}
+    <section class="card"><div class="card-head"><h2>{% icon "file-text" %} {% translate "Identification & description" %}</h2></div>
+      <div class="card-body form-grid">
+        {% if form.asset_tag %}{% include "partials/field.html" with field=form.asset_tag %}{% endif %}
+        {% include "partials/field.html" with field=form.name %}
+        {% include "partials/field.html" with field=form.description full=True %}
+        {% include "partials/field.html" with field=form.specifications full=True %}
+        {% include "partials/field.html" with field=form.category %}
+        {% include "partials/field.html" with field=form.condition %}
+        {% include "partials/field.html" with field=form.tags full=True %}
+      </div>
+    </section>
+    <section class="card"><div class="card-head"><h2>{% icon "map-pin" %} {% translate "Quantity, ownership & location" %}</h2></div>
+      <div class="card-body form-grid">
+        {% include "partials/field.html" with field=form.quantity %}
+        {% if form.owner_department %}{% include "partials/field.html" with field=form.owner_department %}{% include "partials/field.html" with field=form.custodian %}{% endif %}
+        {% include "partials/field.html" with field=form.campus %}
+        {% include "partials/field.html" with field=form.building %}
+        {% include "partials/field.html" with field=form.room %}
+        {% if form.reason %}{% include "partials/field.html" with field=form.reason full=True %}{% endif %}
+      </div>
+    </section>
+    <section class="card"><div class="card-head"><h2>{% icon "coins" %} {% translate "Dates, value & sustainability inputs" %}</h2><span class="muted small">{% translate "Leave unknown values empty" %}</span></div>
+      <div class="card-body form-grid">
+        {% include "partials/field.html" with field=form.purchase_date %}
+        {% include "partials/field.html" with field=form.available_from %}
+        {% include "partials/field.html" with field=form.unit_value_aed %}
+        {% include "partials/field.html" with field=form.replacement_value_aed %}
+        {% include "partials/field.html" with field=form.estimated_transfer_cost_aed %}
+        {% include "partials/field.html" with field=form.unit_weight_kg %}
+        {% include "partials/field.html" with field=form.expected_retirement_date %}
+      </div>
+    </section>
+    <section class="card"><div class="card-head"><h2>{% icon "layers" %} {% translate "Type-specific metadata" %}</h2><span class="muted small">{% translate "ITAsset / FurnitureAsset" %}</span></div>
+      <div class="card-body form-grid">
+        {% include "partials/field.html" with field=form.serial_number %}{% include "partials/field.html" with field=form.ports %}
+        {% include "partials/field.html" with field=form.material %}{% include "partials/field.html" with field=form.dimensions %}
+      </div>
+    </section>
+    <div class="form-actions"><a class="btn btn-ghost" href="{% if asset %}{% url 'catalog:asset' asset.pk %}{% else %}{% url 'catalog:mine' as xlink %}{{ xlink }}{% endif %}">{% translate "Cancel" %}</a><button class="btn btn-primary btn-lg" type="submit" name="action" value="save" data-loading="{% translate "Saving…" %}"><span class="spinner"></span><span class="btn-label">{% if asset %}{% translate "Save changes" %}{% else %}{% translate "Save as Draft" %}{% endif %}</span></button></div>
+  </div>
+
+  <aside class="stack" style="position:sticky;top:84px">
+    <section class="card card-pad small"><h3>{% translate "Data rules" %}</h3><ul class="reasons mt-s">
+      <li>{% icon "check" 14 %}<span>{% translate "Unique asset ID; whole-number quantity ≥ 1." %}</span></li>
+      <li>{% icon "check" 14 %}<span>{% translate "Costs cannot be negative. Unknown stays unknown — never zero." %}</span></li>
+      <li>{% icon "check" 14 %}<span>{% translate "Photos/documents are added on the asset page (JPEG, PNG, PDF ≤ 10 MB)." %}</span></li></ul></section>
+  </aside>
+</div>
+</form>
+{% endblock %}
