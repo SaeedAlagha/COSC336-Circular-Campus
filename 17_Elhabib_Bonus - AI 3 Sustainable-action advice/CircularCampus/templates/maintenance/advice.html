@@ -1,0 +1,39 @@
+{% extends "base.html" %}{% load campus_ui i18n %}
+{% block title %}{% translate "Action advice ·" %} {{ asset.asset_tag }}{% endblock %}
+{% block content %}
+<div class="page-head"><div><div class="crumbs"><a href="{% url 'catalog:asset' asset.pk %}">{{ asset.asset_tag }}</a> {% translate "/ Sustainable-action advice" %}</div><h1>{% translate "What should happen to" %} {{ asset.name }}?</h1><p>{% translate "Options are ranked from reuse to disposal. Numbers come from recorded evidence only. You decide; any action goes through its normal approval." %}</p></div>
+  <form method="post" class="head-actions">{% csrf_token %}<input type="hidden" name="action" value="run"><button class="btn btn-ai" type="submit" data-loading="{% translate "Assessing evidence…" %}"><span class="spinner"></span><span class="btn-label">{% icon "sparkles" 16 %} {% if result %}{% translate "Re-assess" %}{% else %}{% translate "Get advice" %}{% endif %}</span></button></form></div>
+<div class="split">
+  <div class="stack">
+  {% if out %}
+    <section class="ai-card"><div class="ai-head"><span class="ai-ico">{% icon "sparkles" 16 %}</span><div><h2>{% translate "Recommended options" %}</h2><div class="small muted">{{ result.source_label }}</div></div></div>
+      <div class="ai-body">
+        {% if manage %}<form method="post" class="grid" style="gap:12px">{% csrf_token %}<input type="hidden" name="action" value="decide">{% endif %}
+        <div class="radio-cards">{% for o in out.options %}
+          <label class="radio-card"{% if not manage %} style="cursor:default"{% endif %}>{% if manage %}<input type="radio" name="chosen" value="{{ o.action }}" {% if forloop.first %}checked{% endif %}>{% endif %}
+            <div style="flex:1"><div class="row between"><b>{{ forloop.counter }}. {{ o.label }}</b>{% if forloop.first %}<span class="badge badge-ai">{% translate "Top recommendation" %}</span>{% endif %}{% if o.action == "DISPOSE" %}<span class="badge badge-neutral">{% translate "Final option" %}</span>{% endif %}</div>
+              <ul class="reasons">{% for r in o.reasons %}<li>{% icon "check" 14 %}<span>{{ r }}</span></li>{% endfor %}</ul></div></label>{% endfor %}</div>
+        {% if out.limitations %}<ul class="reasons">{% for l in out.limitations %}<li class="lim">{% icon "info" 14 %}<span>{{ l }}</span></li>{% endfor %}{% for l in result.limitations %}<li class="lim">{% icon "info" 14 %}<span>{{ l }}</span></li>{% endfor %}</ul>{% endif %}
+        {% if manage %}
+          <div class="field"><label for="rs">{% translate "Reason" %} <span class="muted">{% translate "(required if you override the top option)" %}</span></label><textarea id="rs" name="reason" rows="2"></textarea></div>
+          <div class="row"><button class="btn btn-primary" type="submit">{% icon "arrow-right" 15 %} {% translate "Continue with selected action" %}</button><button class="btn btn-ghost" type="submit" name="action" value="defer">{% translate "Decide later" %}</button></div>
+          <p class="help">{% translate "Continuing opens the normal proposal/maintenance form; nothing is executed by this advice." %}</p></form>
+        {% endif %}
+        {% include "partials/ai_provenance.html" with result=result %}
+      </div></section>
+    {% if reviews %}<section class="card"><div class="card-head"><h2>{% icon "history" %} {% translate "Human decisions on this advice" %}</h2></div><ul class="list-plain card-body small">{% for r in reviews %}<li>{% badge r.choice r.get_choice_display %} {{ r.edits.chosen|default:"" }} {% translate "by" %} {{ r.actor.full_name }}{% if r.reason %} — “{{ r.reason }}”{% endif %}</li>{% endfor %}</ul></section>{% endif %}
+  {% else %}
+    <section class="card">{% include "partials/empty.html" with ico="sparkles" title="No advice yet" text="Get advice to compare reuse, repair, donation, recycling and disposal using this asset's recorded evidence." %}</section>
+  {% endif %}
+  </div>
+  <aside class="card"><div class="card-head"><h2>{% icon "scale" %} {% translate "Evidence used" %}</h2></div><div class="card-body"><dl class="dl" style="grid-template-columns:1fr auto">
+    <dt>{% translate "Condition" %}</dt><dd>{{ evidence.condition }}</dd><dt>{% translate "Status" %}</dt><dd>{{ evidence.status }}</dd>
+    <dt>{% translate "Age" %}</dt><dd>{% if evidence.age_years is not None %}{{ evidence.age_years }} {% translate "yrs" %}{% else %}<span class="unknown">{% translate "Unknown" %}</span>{% endif %}</dd>
+    <dt>{% translate "Service records" %}</dt><dd>{{ evidence.service_records_total }} ({{ evidence.open_service_records }} {% translate "open)" %}</dd>
+    <dt>{% translate "Repair estimate" %}</dt><dd>{% if evidence.repair_estimate_aed is not None %}{{ evidence.repair_estimate_aed|aed }}{% else %}<span class="unknown">{% translate "None recorded" %}</span>{% endif %}</dd>
+    <dt>{% translate "New price / unit" %}</dt><dd>{% if evidence.replacement_value_per_unit_aed is not None %}{{ evidence.replacement_value_per_unit_aed|aed }}{% else %}<span class="unknown">{% translate "Unknown" %}</span>{% endif %}</dd>
+    <dt>{% translate "Open demand" %}</dt><dd>{{ evidence.open_requests_same_category }} {% translate "request(s)," %} {{ evidence.units_requested_same_category }} {% translate "units" %}</dd>
+    <dt>{% translate "Unrepairable finding" %}</dt><dd>{{ evidence.unrepairable_finding|yesno:"Yes,No" }}</dd></dl>
+    <p class="help mt-s">{% translate "Carbon impact is not estimated here unless an approved factor exists — no figure is invented." %}</p></div></aside>
+</div>
+{% endblock %}
