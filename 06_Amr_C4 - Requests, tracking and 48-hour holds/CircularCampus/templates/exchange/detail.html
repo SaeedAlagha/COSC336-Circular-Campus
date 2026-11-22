@@ -1,0 +1,92 @@
+{% extends "base.html" %}{% load campus_ui i18n %}
+{% block title %}{{ req.reference }} {{ req.title }}{% endblock %}
+{% block content %}
+<div class="page-head">
+  <div><div class="crumbs"><a href="{% url 'exchange:list' %}">{% translate "Requests" %}</a> / {{ req.reference }}</div>
+    <div class="row" style="gap:12px"><h1>{{ req.title }}</h1>{% badge req.status req.status_label %}</div>
+    <p><span class="ref">{{ req.reference }}</span> · {{ req.department.name }} {% translate "· requested by" %} {{ req.requester.full_name }} {% translate "· version" %} {{ req.version }}</p></div>
+  <div class="head-actions">
+    {% if can_edit %}<a class="btn" href="{% url 'exchange:edit' req.pk %}">{% icon "pencil" 16 %} {% translate "Edit" %}</a>{% endif %}
+    {% if editable and req.is_open and 'exchange:matches'|installed %}<a class="btn btn-ai" href="{% url 'exchange:matches' req.pk %}">{% icon "sparkles" 16 %} {% translate "AI matches" %}</a>{% endif %}
+  </div>
+</div>
+
+<section class="card card-pad mb"><ol class="stepper" aria-label="{% translate "Request progress" %}">{% for s in steps %}<li class="{{ s.state }}">{{ s.label }}</li>{% endfor %}</ol></section>
+
+{% if req.status == "RETURNED" %}<div class="alert alert-warning mb">{% icon "undo-2" %}<div><strong class="alert-title">{% translate "Returned for clarification" %}</strong><div>{% for v in versions %}{% if forloop.first %}{% for a in v.approvals.all %}{% if a.decision == "RETURNED" %}“{{ a.reason }}” — {{ a.reviewer.full_name }}{% endif %}{% endfor %}{% endif %}{% endfor %}{% translate ". Edit the request, then submit a corrected version (the old decision is not reused)." %}</div></div></div>{% endif %}
+{% if req.status == "REJECTED" or req.status == "CANCELLED" %}<div class="alert alert-info mb">{% icon "info" %}<div><strong class="alert-title">{{ req.status_label }}</strong><div>{{ req.closed_reason|default:"No reason recorded." }} {% translate "History and decisions are preserved." %}</div></div></div>{% endif %}
+
+<div class="split-wide">
+  <div class="stack">
+    {% if can_choose %}
+    <section class="card" id="choose">
+      <div class="card-head"><h2>{% icon "package" %} {% if reserve_mode %}{% translate "Reserve more stock for the remaining need" %}{% else %}{% translate "Choose stock and submit" %}{% endif %}</h2><span class="chip">{{ remaining }} {% translate "unit" %}{{ remaining|pluralize }} {% translate "still needed" %}</span></div>
+      {% if pending_version and reserve_mode %}<div class="card-body"><p class="muted">{% translate "Version v" %}{{ pending_version.version_no }} {% translate "is already under review." %}</p></div>{% elif remaining > 0 %}
+      <form method="post" action="{% url 'exchange:action' req.pk %}" class="card-body grid" style="gap:14px" data-confirm="{% translate "Submit this request for review? Choosing stock creates a temporary 48-hour hold — it is not an approval." %}" data-confirm-ok="{% translate "Submit for review" %}">
+        {% csrf_token %}<input type="hidden" name="version" value="{{ req.version }}"><input type="hidden" name="idem" value="{{ form_key }}"><input type="hidden" name="match" value="{{ match_id }}">
+        <input type="hidden" name="action" value="{% if reserve_mode %}reserve{% else %}submit{% endif %}">
+        {% if preselect %}<div class="alert alert-ai">{% icon "sparkles" %}<div><strong class="alert-title">{% translate "Selected from AI matches:" %} {{ preselect.asset.asset_tag }}</strong><div>{% translate "Selecting a match doesn’t reserve anything. Confirm the quantity below; stock is re-checked when you submit." %}</div></div></div>{% endif %}
+        <div class="radio-cards" role="radiogroup" aria-label="{% translate "Eligible stock" %}">
+          {% for c in candidates %}
+          <label class="radio-card" {% if not c.ok %}style="opacity:.62;cursor:not-allowed"{% endif %}>
+            <input type="radio" name="asset" value="{{ c.asset.pk }}" {% if not c.ok %}disabled{% endif %} {% if preselect and preselect.asset.pk == c.asset.pk %}checked{% endif %}>
+            <div style="flex:1;min-width:0"><div class="row between"><span class="cell-title">{{ c.asset.name }}</span><span class="ref">{{ c.asset.asset_tag }}</span></div>
+              <div class="cell-sub">{{ c.asset.owner_department.name }} · {{ c.asset.condition_label }} · {{ c.free }} {% translate "free ·" %} {{ c.asset.building }}</div>
+              {% if not c.ok %}<div class="error-text" style="margin-top:4px">{% translate "Not eligible:" %} {{ c.why|join:"; "|default:"no free units" }}</div>{% endif %}</div>
+          </label>
+          {% empty %}<p class="muted">{% translate "No published stock from other departments right now. You can submit the need without a reservation — it stays open." %}</p>{% endfor %}
+          {% if not reserve_mode %}<label class="radio-card"><input type="radio" name="asset" value="" {% if not preselect %}checked{% endif %}><div><span class="cell-title">{% translate "Submit the need without reserving stock" %}</span><div class="cell-sub">{% translate "The approver can approve the need; you can reserve stock later." %}</div></div></label>{% endif %}
+        </div>
+        <div class="row" style="align-items:flex-end"><div class="field" style="width:180px"><label for="qty">{% translate "Quantity to reserve" %}</label><input id="qty" type="number" name="quantity" min="1" max="{{ remaining }}" value="{{ remaining }}"><div class="help">{% if req.allow_partial %}{% translate "Partial fulfilment allowed" %}{% else %}{% translate "Must cover the full need" %}{% endif %}</div></div>
+          <button class="btn btn-primary btn-lg" type="submit" data-loading="{% translate "Submitting…" %}"><span class="spinner"></span><span class="btn-label">{% icon "send" 16 %} {% if reserve_mode %}{% translate "Reserve & send for approval" %}{% else %}{% translate "Submit for review" %}{% endif %}</span></button></div>
+      </form>{% endif %}
+    </section>
+    {% endif %}
+
+    <section class="card"><div class="card-head"><h2>{% icon "truck" %} {% translate "Holds & transfers" %}</h2></div>
+      {% if holds %}<div class="table-wrap"><table class="table"><thead><tr><th>{% translate "Hold" %}</th><th>{% translate "Asset" %}</th><th class="num">{% translate "Qty" %}</th><th>{% translate "Status" %}</th><th>{% translate "Expiry / note" %}</th></tr></thead><tbody>
+        {% for h in holds %}<tr><td><span class="ref">{{ h.reference }}</span></td><td><a href="{% url 'catalog:asset' h.asset.pk %}">{{ h.asset.asset_tag }}</a> <span class="cell-sub">{{ h.asset.name|truncatechars:28 }}</span></td><td class="num">{{ h.quantity }}</td><td>{% badge h.status h.status_label %}{% if h.flagged_for_review %}<div class="cell-sub" style="color:var(--warning)">⚠ {{ h.flag_reason }}</div>{% endif %}</td>
+          <td class="small">{% if h.status == "PENDING_APPROVAL" %}{% translate "Expires" %} {{ h.expires_at|date:"d M, H:i" }} ({{ h.expires_at|timeuntil }}){% elif h.status == "ALLOCATED" %}{{ h.remaining_quantity }} {% translate "awaiting receipt · never auto-expires" %}{% else %}{{ h.release_reason|truncatechars:60 }}{% endif %}</td></tr>{% endfor %}
+      </tbody></table></div>{% else %}<div class="card-body muted">{% translate "No holds yet." %}</div>{% endif %}
+      {% if transfers %}<div class="divider" style="margin:0"></div><div class="table-wrap"><table class="table"><thead><tr><th>{% translate "Transfer" %}</th><th class="num">{% translate "Qty" %}</th><th>{% translate "Status" %}</th><th>{% translate "Received" %}</th><th></th></tr></thead><tbody>
+        {% for t in transfers %}<tr><td><span class="ref">{{ t.reference }}</span> <span class="cell-sub">{% translate "from" %} {{ t.source_asset.asset_tag }}</span></td><td class="num">{{ t.quantity }}</td><td>{% badge t.status t.status_label %}</td><td class="small">{% if t.received_asset %}{{ t.received_quantity }} → <a href="{% url 'catalog:asset' t.received_asset.pk %}">{{ t.received_asset.asset_tag }}</a>{% else %}—{% endif %}</td><td><a class="btn btn-sm" href="{% url 'workflow:transfer' t.pk as xlink %}{{ xlink }}">{% translate "Open" %}</a></td></tr>{% endfor %}
+      </tbody></table></div>{% endif %}
+    </section>
+
+    <section class="card"><div class="card-head"><h2>{% icon "shield-check" %} {% translate "Proposal versions & decisions" %}</h2></div>
+      <div class="card-body">
+      {% for v in versions %}
+        <div class="{% if not forloop.last %}mb{% endif %}"><div class="row between"><strong>{{ v.get_kind_display }} · v{{ v.version_no }}</strong>{% badge v.status v.get_status_display %}</div>
+          <div class="cell-sub">{% translate "Proposed by" %} {{ v.proposer.full_name }} · {{ v.created_at|date:"d M Y H:i" }} {% translate "· snapshot" %} <span class="mono">{{ v.snapshot_hash|slice:":10" }}</span></div>
+          {% for a in v.approvals.all %}<div class="stage {% if a.decision == 'APPROVED' %}ok{% elif a.decision == 'REJECTED' or a.decision == 'RETURNED' %}bad{% elif not a.decision and v.status == 'PENDING' %}now{% endif %}"><span class="stage-num">{{ a.stage_order }}</span><div><div class="cell-title" style="font-size:.86rem">{{ a.get_stage_display }}</div><div class="cell-sub">{% if a.reviewer %}{{ a.reviewer.full_name }}{% elif a.decision == "NOT_APPLICABLE" %}{% translate "Not applicable" %}{% else %}{% translate "Any authorised reviewer in scope" %}{% endif %}{% if a.decided_at %} · {{ a.decided_at|date:"d M H:i" }}{% endif %}{% if a.reason and a.decision != "NOT_APPLICABLE" %} · “{{ a.reason|truncatechars:80 }}”{% endif %}</div></div>{% badge a.decision|default:"PENDING" a.effective_status %}</div>{% endfor %}
+        </div>
+      {% empty %}<p class="muted">{% translate "Not submitted yet." %}</p>{% endfor %}
+      </div>
+    </section>
+  </div>
+
+  <div class="stack">
+    <section class="card"><div class="card-head"><h2>{% icon "file-text" %} {% translate "Need" %}</h2></div>
+      <div class="card-body"><p>{{ req.purpose }}</p>
+        <dl class="dl"><dt>{% translate "Category" %}</dt><dd>{{ req.category }}</dd><dt>{% translate "Quantity" %}</dt><dd>{{ req.quantity }} · {{ req.received_quantity }} {% translate "received" %}</dd>
+          <dt>{% translate "Minimum condition" %}</dt><dd>{{ req.get_preferred_condition_display }}</dd><dt>{% translate "Urgency" %}</dt><dd>{{ req.get_urgency_display }}</dd>
+          <dt>{% translate "Required by" %}</dt><dd>{{ req.required_date|date:"d M Y" }}</dd><dt>{% translate "Destination" %}</dt><dd>{{ req.destination }}</dd>
+          <dt>{% translate "Receiving custodian" %}</dt><dd>{{ req.receiving_custodian.full_name }}</dd><dt>{% translate "Assigned approver" %}</dt><dd>{{ req.assigned_approver.full_name|default:"Assigned on submission" }}</dd>
+          {% if req.specifications %}<dt>{% translate "Specifications" %}</dt><dd>{{ req.specifications }}</dd>{% endif %}
+          {% if req.mandatory_list %}<dt>{% translate "Mandatory" %}</dt><dd>{% for m in req.mandatory_list %}<span class="tag">{{ m }}</span>{% endfor %}</dd>{% endif %}
+          <dt>{% translate "Partial fulfilment" %}</dt><dd>{% if req.allow_partial %}{% translate "Allowed" %}{% else %}{% translate "Not allowed" %}{% endif %}</dd></dl></div></section>
+
+    {% if latest_match and 'exchange:match_result'|installed %}<a class="card card-pad ai-card" style="display:block;text-decoration:none" href="{% url 'exchange:match_result' req.pk latest_match.pk %}"><div class="row" style="flex-wrap:nowrap"><span class="ai-head" style="padding:0"><span class="ai-ico">{% icon "sparkles" 16 %}</span></span><div><div class="cell-title">{% translate "Latest AI ranking" %}</div><div class="cell-sub">{{ latest_match.created_at|timesince }} {% translate "ago ·" %} {{ latest_match.source_label }}</div></div></div></a>{% endif %}
+
+    {% if can_withdraw or can_cancel %}
+    <section class="card"><div class="card-head"><h2>{% icon "ban" %} {% if can_withdraw %}{% translate "Withdraw" %}{% else %}{% translate "Cancel" %}{% endif %}</h2></div>
+      <form class="card-body grid" style="gap:10px" method="post" action="{% url 'exchange:action' req.pk %}" data-confirm="{% if can_withdraw %}Withdraw this request? Any pending hold is released and history is kept.{% else %}Send a cancellation proposal to the approver? Only unreleased quantities can be cancelled; confirmed receipts are kept.{% endif %}" data-confirm-ok="{% if can_withdraw %}Withdraw{% else %}Send proposal{% endif %}">
+        {% csrf_token %}<input type="hidden" name="version" value="{{ req.version }}"><input type="hidden" name="action" value="{% if can_withdraw %}withdraw{% else %}cancel{% endif %}">
+        <div class="field"><label for="reason">{% translate "Reason" %}</label><textarea id="reason" name="reason" rows="2" required minlength="5"></textarea></div>
+        <button class="btn btn-danger" type="submit">{% if can_withdraw %}{% translate "Withdraw request" %}{% else %}{% translate "Request cancellation" %}{% endif %}</button>
+        <p class="help">{% if can_withdraw %}{% translate "Allowed before approval." %}{% else %}{% translate "After approval the assigned approver decides; released transfers must finish receipt or exception resolution." %}{% endif %}</p>
+      </form></section>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

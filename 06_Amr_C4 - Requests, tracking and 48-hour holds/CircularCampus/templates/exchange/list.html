@@ -1,0 +1,20 @@
+{% extends "base.html" %}{% load campus_ui i18n %}
+{% block title %}{% translate "My requests" %}{% endblock %}
+{% block content %}
+<div class="page-head">
+  <div><div class="crumbs">{% translate "Exchange / Requests" %}</div><h1>{% translate "Resource requests" %}</h1><p>{% translate "Track every need from draft to confirmed receipt. Holds and decisions are shown on each request." %}</p></div>
+  <div class="head-actions"><a class="btn btn-primary" href="{% url 'exchange:new' %}">{% icon "plus" 17 %} {% translate "New request" %}</a></div>
+</div>
+<div class="row between mb"><nav class="segmented" aria-label="{% translate "Filter requests" %}"><a href="?" class="{% if not status %}active{% endif %}">{% translate "All" %}</a><a href="?status=open" class="{% if status == 'open' %}active{% endif %}">{% translate "Open" %}</a><a href="?status=closed" class="{% if status == 'closed' %}active{% endif %}">{% translate "Closed" %}</a></nav></div>
+<section class="card">
+{% if requests %}
+<div class="table-wrap"><table class="table"><thead><tr><th>{% translate "Request" %}</th><th>{% translate "Category" %}</th><th class="num">{% translate "Received" %}</th><th>{% translate "Required by" %}</th><th>{% translate "Approver" %}</th><th>{% translate "Status" %}</th><th></th></tr></thead><tbody>
+{% for r in requests %}<tr>
+  <td><a class="cell-title" href="{% url 'exchange:request' r.pk %}">{{ r.title }}</a><div class="cell-sub">{{ r.reference }} · {{ r.department.name }} · {{ r.get_urgency_display }} {% translate "urgency" %}</div></td>
+  <td>{{ r.category }}</td><td class="num">{{ r.received_quantity }} / {{ r.quantity }}</td><td>{{ r.required_date|date:"d M Y" }}</td>
+  <td>{{ r.assigned_approver.full_name|default:"—" }}</td><td>{% badge r.status r.status_label %}</td>
+  <td><a class="btn btn-sm btn-ghost" href="{% url 'exchange:request' r.pk %}" aria-label="Open {{ r.reference }}">{% icon "chevron-right" 16 %}</a></td></tr>{% endfor %}
+</tbody></table></div>
+{% else %}{% url 'exchange:new' as u %}{% include "partials/empty.html" with ico="clipboard-list" title="No requests yet" text="Describe what your department needs — AI can rank matching surplus for you." link=u link_text="Create your first request" %}{% endif %}
+</section>
+{% endblock %}
