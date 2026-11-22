@@ -1,0 +1,14 @@
+{% extends "base.html" %}{% load campus_ui i18n %}
+{% block title %}{% translate "Approvals" %}{% endblock %}
+{% block content %}
+<div class="page-head"><div><div class="crumbs">{% translate "Workflow / Approvals" %}</div><h1>{% translate "Approval queue" %}</h1><p>{% translate "Stages you may decide now. Earlier stages must be complete, and you never see your own proposals here." %}</p></div></div>
+<section class="card mb"><div class="card-head"><h2>{% icon "shield-check" %} {% translate "Waiting for you" %}</h2><span class="chip">{{ pending|length }}</span></div>
+{% if pending %}<div class="table-wrap"><table class="table"><thead><tr><th>{% translate "Proposal" %}</th><th>{% translate "Stage" %}</th><th>{% translate "Proposed by" %}</th><th>{% translate "Submitted" %}</th><th></th></tr></thead><tbody>
+{% for a in pending %}<tr><td><div class="cell-title">{{ a.version.target.reference }} · {{ a.version.get_kind_display }}</div><div class="cell-sub">{% if a.version.request %}{{ a.version.request.title }}{% elif a.version.maintenance %}{{ a.version.maintenance.asset.asset_tag }} {% translate "repair" %}{% else %}{{ a.version.disposition.asset.asset_tag }} {{ a.version.disposition.get_action_display|lower }}{% endif %} · v{{ a.version.version_no }}</div></td>
+<td>{% badge "PENDING" a.get_stage_display %}</td><td>{{ a.version.proposer.full_name }}</td><td>{{ a.version.created_at|timesince }} {% translate "ago" %}</td><td><a class="btn btn-sm btn-primary" href="{% url 'workflow:approval' a.pk %}">{% translate "Review" %} {% icon "arrow-right" 14 %}</a></td></tr>{% endfor %}
+</tbody></table></div>{% else %}{% include "partials/empty.html" with ico="circle-check" title="Nothing to review" text="New proposals that need your stage will appear here and in your notifications." %}{% endif %}</section>
+<div class="grid grid-2">
+<section class="card"><div class="card-head"><h2>{% icon "history" %} {% translate "Your recent decisions" %}</h2></div>{% if decided %}<ul class="list-plain card-body">{% for a in decided %}<li class="row between"><span><a href="{% url 'workflow:approval' a.pk %}">{{ a.version.target.reference }}</a> <span class="cell-sub">{{ a.get_stage_display }}</span></span>{% badge a.decision a.get_decision_display %}</li>{% endfor %}</ul>{% else %}<div class="card-body muted">{% translate "No decisions yet." %}</div>{% endif %}</section>
+<section class="card"><div class="card-head"><h2>{% icon "hourglass" %} {% translate "Your proposals awaiting others" %}</h2></div>{% if mine_waiting %}<ul class="list-plain card-body">{% for a in mine_waiting %}<li class="row between"><span>{{ a.version.target.reference }} <span class="cell-sub">{{ a.get_stage_display }}</span></span><span class="chip">{{ a.reviewer.full_name|default:"Any reviewer in scope" }}</span></li>{% endfor %}</ul>{% else %}<div class="card-body muted">{% translate "None." %}</div>{% endif %}</section>
+</div>
+{% endblock %}
