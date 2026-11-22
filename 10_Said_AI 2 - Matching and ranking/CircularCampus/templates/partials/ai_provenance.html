@@ -1,0 +1,8 @@
+{% load campus_ui i18n %}<div class="provenance">
+  {% if result.fallback %}<span class="fallback-tag">{% icon "triangle-alert" 13 %} {% translate "Rule-based fallback — not AI-generated" %}</span>{% else %}<span class="live-tag">{% icon "sparkles" 13 %} {% translate "Gemini ·" %} {{ result.model_version.model }}</span>{% endif %}
+  <span>{% icon "settings" 13 %} {{ result.model_version.config_version }}</span>
+  <span>{% icon "gauge" 13 %} {% translate "Confidence:" %} {{ result.get_confidence_status_display|lower }}</span>
+  <span>{% icon "clock" 13 %} {{ result.task.latency_ms|default:"0" }} {% translate "ms" %}</span>
+  <span>{% icon "tag" 13 %} {% translate "Result" %} <span class="mono">{{ result.pk|stringformat:"s"|slice:":8" }}</span></span>
+  {% if result.fallback_reason %}<span>{% icon "info" 13 %} {{ result.fallback_reason }}</span>{% endif %}
+</div>

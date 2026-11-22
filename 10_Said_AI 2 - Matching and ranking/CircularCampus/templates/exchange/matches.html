@@ -1,0 +1,58 @@
+{% extends "base.html" %}{% load campus_ui i18n %}
+{% block title %}{% translate "AI matches ·" %} {{ req.reference }}{% endblock %}
+{% block content %}
+<div class="page-head">
+  <div><div class="crumbs"><a href="{% url 'exchange:list' %}">{% translate "Requests" %}</a> / <a href="{% url 'exchange:request' req.pk %}">{{ req.reference }}</a> {% translate "/ AI matches" %}</div>
+    <h1>{% translate "Ranked matches" %}</h1><p>{{ req.title }} {% translate "· needs" %} {{ req.quantity }} × {{ req.category }} {% translate "(min." %} {{ req.get_preferred_condition_display }}){% if req.mandatory_list %} {% translate "· must state" %} {{ req.mandatory_list|join:", " }}{% endif %} {% translate "· by" %} {{ req.required_date|date:"d M Y" }}</p></div>
+  <form method="post" class="head-actions">{% csrf_token %}<input type="hidden" name="action" value="run"><button class="btn btn-ai" type="submit" data-loading="{% translate "Ranking candidates…" %}"><span class="spinner"></span><span class="btn-label">{% icon "refresh-cw" 16 %} {% if result %}{% translate "Re-run ranking" %}{% else %}{% translate "Find matches" %}{% endif %}</span></button></form>
+</div>
+
+{% if not result %}
+<section class="card">{% include "partials/empty.html" with ico="sparkles" title="No ranking yet" text="Find matches to rank up to five eligible surplus items. Hard eligibility rules run first; the score is calculated by the application from the designed weights." %}</section>
+{% else %}
+{% if stale %}<div class="alert alert-warning mb">{% icon "triangle-alert" %}<div>{% translate "The request changed after this ranking. Re-run it for current results." %}</div></div>{% endif %}
+<div class="split">
+  <section class="ai-card">
+    <div class="ai-head"><span class="ai-ico">{% icon "sparkles" 16 %}</span><div style="flex:1"><h2>{% translate "Top" %} {{ rows|length }} {% translate "of" %} {{ out.eligible_count }} {% translate "eligible" %}</h2><div class="small muted">{{ out.method }}</div></div>
+      {% if out.top_pick %}<span class="badge badge-success">{% translate "Top pick" %} {{ out.top_pick }}</span>{% elif out.weak_matches %}<span class="badge badge-warning">{% translate "Weak matches" %}</span>{% endif %}</div>
+    <div class="ai-body" style="padding:0">
+      {% for row in rows %}{% with m=row.m %}
+      <article class="match {% if m.status == 'REJECTED' %}fade-in{% endif %}" {% if m.status == 'REJECTED' %}style="opacity:.55"{% endif %}>
+        <div style="position:relative"><span class="rank-badge">{{ m.rank }}</span><div class="score-ring" style="--p:{{ m.score }}" role="img" aria-label="Suitability {{ m.score }} out of 100"><b>{{ m.score|floatformat:0 }}</b><small>{% translate "/100 fit" %}</small></div></div>
+        <div style="min-width:0">
+          <div class="row between"><a class="cell-title" href="{% url 'catalog:asset' m.asset.pk %}">{{ m.asset.name }}</a><span class="ref">{{ m.asset.asset_tag }}</span></div>
+          <div class="cell-sub">{{ m.asset.owner_department.name }} · {{ m.asset.condition_label }} · {{ row.free }} {% translate "free now ·" %} {{ m.asset.building }}</div>
+          <p class="small" style="margin:8px 0 4px"><b>{% translate "Why:" %}</b> {{ row.explanation }}</p>
+          <ul class="reasons">{% for r in m.reasons|slice:":5" %}<li>{% icon "check" 14 %}<span>{{ r }}</span></li>{% endfor %}{% for l in m.limitations %}<li class="lim">{% icon "info" 14 %}<span>{{ l|capfirst }}</span></li>{% endfor %}</ul>
+          <div class="row mt-s" style="gap:6px"><span class="chip">{% translate "Evidence coverage" %} {{ m.coverage|pct }}</span>{% if m.coverage < 0.7 %}<span class="chip chip-warn">{% translate "Insufficient comparison evidence" %}</span>{% endif %}<span class="chip">{% translate "Model confidence: unavailable" %}</span>{% if m.status != "PROPOSED" %}{% badge m.status m.get_status_display %}{% endif %}</div>
+        </div>
+        <div class="match-actions grid" style="gap:10px">
+          <div class="comp-grid">{% for c in row.comps %}<div class="comp {% if c.missing %}missing{% endif %}"><span>{{ c.label }} <span class="muted">·{{ c.weight }}%</span></span><span class="num" style="text-align:right">{% if c.missing %}n/a{% else %}{{ c.value|floatformat:2 }}{% endif %}</span></div><div class="meter ai"><span style="width:{% if c.missing %}0{% else %}{% widthratio c.value 1 100 %}{% endif %}%"></span></div>{% endfor %}</div>
+          {% if m.status == "PROPOSED" %}<div class="row">
+            <form method="post">{% csrf_token %}<input type="hidden" name="action" value="select"><input type="hidden" name="match" value="{{ m.pk }}"><button class="btn btn-sm btn-primary" type="submit">{% icon "check" 14 %} {% translate "Select" %}</button></form>
+            <form method="post">{% csrf_token %}<input type="hidden" name="action" value="reject"><input type="hidden" name="match" value="{{ m.pk }}"><button class="btn btn-sm" type="submit">{% icon "x" 14 %} {% translate "Reject" %}</button></form></div>{% endif %}
+        </div>
+      </article>
+      {% endwith %}{% empty %}
+      <div class="card-body">{% include "partials/empty.html" with ico="search" title="No suitable match" text="No eligible stock passed the hard filters. Your request stays open — nothing is invented. You can submit the need without a reservation." %}</div>
+      {% endfor %}
+      <div class="card-body">{% include "partials/ai_provenance.html" with result=result %}</div>
+    </div>
+  </section>
+
+  <aside class="stack">
+    <section class="card card-pad small"><h3>{% translate "How to read this" %}</h3>
+      <ul class="reasons mt-s"><li>{% icon "check" 14 %}<span><b>{% translate "Suitability" %}</b> {% translate "is a 0–100 fit rating from the weights below — not the probability that AI is right." %}</span></li>
+        <li>{% icon "check" 14 %}<span><b>n/a</b> {% translate "factors had no evidence; they’re excluded, not scored as zero, and lower coverage." %}</span></li>
+        <li>{% icon "check" 14 %}<span><b>{% translate "Select" %}</b> {% translate "only pre-fills your submission. Stock is re-checked and a human approves." %}</span></li></ul></section>
+    {% if out.excluded %}<section class="card"><div class="card-head"><h2>{% icon "ban" %} {% translate "Excluded by hard rules" %}</h2><span class="chip">{{ out.excluded|length }}</span></div>
+      <ul class="list-plain card-body small">{% for e in out.excluded %}<li><span class="ref">{{ e.asset_tag }}</span> {{ e.name|truncatechars:30 }}<div class="cell-sub">{{ e.reasons|join:"; " }}</div></li>{% endfor %}</ul></section>{% endif %}
+    <section class="card"><div class="card-head"><h2>{% icon "x" %} {% translate "None of these fit?" %}</h2></div>
+      <form method="post" class="card-body grid" style="gap:10px">{% csrf_token %}<input type="hidden" name="action" value="reject_all">
+        <div class="field"><label for="rr">{% translate "Tell us why (optional)" %}</label><textarea id="rr" name="reason" rows="2"></textarea></div>
+        <button class="btn" type="submit">{% translate "Reject all suggestions" %}</button><p class="help">{% translate "Your feedback is stored with this AI result for evaluation." %}</p></form></section>
+    {% if reviews %}<section class="card"><div class="card-head"><h2>{% icon "history" %} {% translate "Your decisions" %}</h2></div><ul class="list-plain card-body small">{% for r in reviews %}<li>{% badge r.choice r.get_choice_display %} {% if r.selected_match %}{{ r.selected_match.asset.asset_tag }}{% else %}{% translate "all suggestions" %}{% endif %} · {{ r.reviewed_at|timesince }} {% translate "ago" %}</li>{% endfor %}</ul></section>{% endif %}
+  </aside>
+</div>
+{% endif %}
+{% endblock %}
