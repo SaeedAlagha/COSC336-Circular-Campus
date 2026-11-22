@@ -1,0 +1,2 @@
+# Optional: PostgreSQL support (design DR-02). Install with: setup --postgres
+psycopg[binary]==3.3.9
