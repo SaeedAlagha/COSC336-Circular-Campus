@@ -1,0 +1,14 @@
+{% extends "base.html" %}{% load campus_ui i18n %}
+{% block title %}{% translate "Maintenance" %}{% endblock %}
+{% block content %}
+<div class="page-head"><div><div class="crumbs">{% translate "Workflow / Maintenance" %}</div><h1>{% translate "Maintenance & disposition" %}</h1><p>{% translate "Defects restrict stock immediately. Repairs need approval; a custodian verifies safe return. Final dispositions need approval and completion evidence." %}</p></div></div>
+<nav class="segmented mb"><a href="?tab=open" class="{% if tab == 'open' %}active{% endif %}">{% translate "Open service" %}</a><a href="?tab=all" class="{% if tab == 'all' %}active{% endif %}">{% translate "All service records" %}</a></nav>
+<section class="card mb"><div class="card-head"><h2>{% icon "wrench" %} {% translate "Service records" %}</h2><span class="chip">{{ records|length }}</span></div>
+{% if records %}<div class="table-wrap"><table class="table"><thead><tr><th>{% translate "Record" %}</th><th>{% translate "Asset" %}</th><th>{% translate "Reported" %}</th><th>{% translate "Assigned" %}</th><th>{% translate "Status" %}</th><th></th></tr></thead><tbody>
+{% for m in records %}<tr><td><span class="ref">{{ m.reference }}</span><div class="cell-sub">{{ m.description|truncatechars:50 }}</div></td><td><a href="{% url 'catalog:asset' m.asset.pk %}">{{ m.asset.asset_tag }}</a><div class="cell-sub">{{ m.asset.name|truncatechars:30 }}</div></td><td class="small">{{ m.reported_at|date:"d M Y" }}<br><span class="muted">{{ m.reporter.full_name }}</span></td><td class="small">{{ m.assigned_staff.full_name|default:"Unassigned" }}</td><td>{% badge m.status m.status_label %}</td><td><a class="btn btn-sm" href="{% url 'maintenance:record' m.pk %}">{% translate "Open" %}</a></td></tr>{% endfor %}
+</tbody></table></div>{% else %}{% include "partials/empty.html" with ico="wrench" title="No open service records" text="Report a defect from any asset page." %}{% endif %}</section>
+<section class="card"><div class="card-head"><h2>{% icon "recycle" %} {% translate "Dispositions" %}</h2></div>
+{% if dispositions %}<div class="table-wrap"><table class="table"><thead><tr><th>{% translate "Disposition" %}</th><th>{% translate "Asset" %}</th><th>{% translate "Route" %}</th><th class="num">{% translate "Qty" %}</th><th>{% translate "Status" %}</th><th></th></tr></thead><tbody>
+{% for d in dispositions %}<tr><td><span class="ref">{{ d.reference }}</span></td><td><a href="{% url 'catalog:asset' d.asset.pk %}">{{ d.asset.asset_tag }}</a></td><td>{{ d.get_action_display }}</td><td class="num">{{ d.quantity }}</td><td>{% badge d.status d.get_status_display %}</td><td><a class="btn btn-sm" href="{% url 'maintenance:disposition' d.pk %}">{% translate "Open" %}</a></td></tr>{% endfor %}
+</tbody></table></div>{% else %}<div class="card-body muted">{% translate "No dispositions yet." %}</div>{% endif %}</section>
+{% endblock %}

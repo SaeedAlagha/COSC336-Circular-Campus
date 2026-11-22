@@ -1,0 +1,36 @@
+{% extends "base.html" %}{% load campus_ui i18n %}
+{% block title %}{{ d.reference }}{% endblock %}
+{% block content %}
+<div class="page-head"><div><div class="crumbs"><a href="{% url 'maintenance:list' %}">{% translate "Maintenance" %}</a> / {{ d.reference }}</div>
+  <div class="row" style="gap:12px"><h1>{{ d.get_action_display }} · {{ d.quantity }} {% translate "unit(s)" %}</h1>{% badge d.status d.get_status_display %}</div>
+  <p><a href="{% url 'catalog:asset' d.asset.pk %}">{{ d.asset.asset_tag }} · {{ d.asset.name }}</a> {% translate "· asset is" %} {{ d.asset.status_label }}</p></div></div>
+<section class="card card-pad mb"><ol class="stepper"><li class="done">{% translate "Proposed" %}</li><li class="{% if d.status == 'APPROVED' or d.status == 'COMPLETED' %}done{% elif d.status == 'REJECTED' %}stop{% else %}current{% endif %}">{% translate "Authorised" %}</li><li class="{% if d.status == 'COMPLETED' %}done{% elif d.status == 'APPROVED' %}current{% endif %}">{% translate "Completion evidence" %}</li><li class="{% if d.status == 'COMPLETED' %}done{% endif %}">{% translate "Final state" %}</li></ol></section>
+<div class="split"><div class="stack">
+  {% if d.status == "APPROVED" and manage %}
+  <section class="card"><div class="card-head"><h2>{% icon "circle-check" %} {% translate "Record completion evidence" %}</h2></div>
+    <form method="post" class="card-body form-grid" data-confirm="Record that the {{ d.get_action_display|lower }} actually happened? The asset's final state will be set and the units become non-reservable." data-confirm-ok="{% translate "Record completion" %}">{% csrf_token %}<input type="hidden" name="action" value="complete"><input type="hidden" name="idem" value="{{ form_key }}">
+      <div class="field"><label for="cd">{% translate "Completion date" %}</label><input id="cd" type="date" name="completion_date" max="{{ today|date:'Y-m-d' }}" value="{{ today|date:'Y-m-d' }}"></div>
+      <div class="field"><label for="cq">{% translate "Quantity completed" %}</label><input id="cq" type="number" name="quantity" value="{{ d.quantity }}" min="1"><div class="help">{% translate "Must equal the authorised" %} {{ d.quantity }}.</div></div>
+      <div class="field full"><label for="cr">{% translate "Recipient / processor" %}</label><input id="cr" type="text" name="recipient" value="{{ d.proposed_recipient }}"></div>
+      <div class="field full"><label for="ce">{% translate "Evidence" %} <span class="req">*</span></label><textarea id="ce" name="evidence" rows="2" required placeholder="{% translate "Receipt number, certificate of recycling, signed handover…" %}"></textarea></div>
+      {% if d.action == "COMPONENT_RECOVERY" %}<div class="field full"><label for="cc">{% translate "Recovered components" %}</label><textarea id="cc" name="components" rows="3" placeholder="{% translate "16GB DDR4 RAM module; 2
+512GB SSD; 1" %}"></textarea><div class="help">{% translate "One per line: name; quantity. Each becomes a new linked Draft asset." %}</div></div>{% endif %}
+      <div class="form-actions full"><button class="btn btn-primary" type="submit">{% translate "Record completion" %}</button></div></form></section>
+  {% elif d.status == "RETURNED" and manage %}
+  <section class="card"><div class="card-head"><h2>{% icon "undo-2" %} {% translate "Correct and resubmit" %}</h2></div>
+    <form method="post" class="card-body form-grid">{% csrf_token %}<input type="hidden" name="action" value="resubmit">
+      <div class="field full"><label>{% translate "Justification" %}</label><textarea name="justification" rows="2">{{ d.justification }}</textarea></div>
+      <div class="field full"><label>{% translate "Alternatives considered" %}</label><textarea name="alternatives" rows="2">{{ d.alternatives_considered }}</textarea></div>
+      <div class="field"><label>{% translate "Recipient" %}</label><input type="text" name="recipient" value="{{ d.proposed_recipient }}"></div><div class="field"><label>{% translate "Estimated cost (AED)" %}</label><input type="number" step="0.01" min="0" name="estimated_cost" value="{{ d.estimated_cost_aed|default:'' }}"></div>
+      <div class="field full"><label>{% translate "Evidence" %}</label><input type="text" name="evidence" value="{{ d.evidence_note }}"></div>
+      <div class="form-actions full"><button class="btn btn-primary" type="submit">{% translate "Resubmit as new version" %}</button></div></form></section>
+  {% endif %}
+  <section class="card"><div class="card-head"><h2>{% icon "file-text" %} {% translate "Proposal" %}</h2></div><div class="card-body"><dl class="dl">
+    <dt>{% translate "Proposed by" %}</dt><dd>{{ d.proposer.full_name }} · {{ d.created_at|date:"d M Y" }}</dd><dt>{% translate "Justification" %}</dt><dd>{{ d.justification }}</dd><dt>{% translate "Alternatives" %}</dt><dd>{{ d.alternatives_considered }}</dd>
+    <dt>{% translate "Recipient" %}</dt><dd>{{ d.proposed_recipient|default:"—" }}</dd><dt>{% translate "Estimated cost" %}</dt><dd>{% if d.estimated_cost_aed is not None %}{{ d.estimated_cost_aed|aed }}{% else %}<span class="unknown">{% translate "None" %}</span>{% endif %}</dd>
+    {% if d.ai_result %}<dt>{% translate "Advice" %}</dt><dd><span class="chip chip-ai">{{ d.ai_result.source_label }}</span></dd>{% endif %}
+    {% if d.completed_at %}<dt>{% translate "Completed" %}</dt><dd>{{ d.completion_date|date:"d M Y" }} · {{ d.completed_quantity }} {% translate "unit(s) →" %} {{ d.completion_recipient|default:"—" }}<br><span class="muted">{{ d.completion_evidence }}</span></dd>{% endif %}
+  </dl>{% if components %}<div class="divider"></div><h3 class="section-title">{% translate "Recovered components" %}</h3>{% for l in components %}<div><a href="{% url 'catalog:asset' l.child_asset.pk %}">{{ l.child_asset.asset_tag }}</a> {{ l.child_asset.name }} × {{ l.quantity }}</div>{% endfor %}{% endif %}</div></section>
+</div>
+<aside class="stack">{% for v in versions %}<section class="card"><div class="card-head"><h2>{% icon "shield-check" %} {% translate "Approval v" %}{{ v.version_no }}</h2>{% badge v.status v.get_status_display %}</div><div class="card-body">{% for a in v.approvals.all %}<div class="stage {% if a.decision == 'APPROVED' %}ok{% elif a.decision == 'REJECTED' or a.decision == 'RETURNED' %}bad{% elif not a.decision %}now{% endif %}"><span class="stage-num">{{ a.stage_order }}</span><div class="small"><b>{{ a.get_stage_display }}</b><div class="cell-sub">{{ a.reviewer.full_name|default:"—" }}{% if a.reason and a.decision != "NOT_APPLICABLE" %} · “{{ a.reason|truncatechars:60 }}”{% endif %}</div></div>{% if not a.decision and v.status == "PENDING" %}<a class="btn btn-sm" href="{% url 'workflow:approval' a.pk %}">{% translate "Open" %}</a>{% else %}{% badge a.decision|default:"PENDING" a.effective_status %}{% endif %}</div>{% endfor %}</div></section>{% endfor %}</aside></div>
+{% endblock %}

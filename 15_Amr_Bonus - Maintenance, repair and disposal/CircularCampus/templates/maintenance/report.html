@@ -1,0 +1,12 @@
+{% extends "base.html" %}{% load campus_ui i18n %}
+{% block title %}{% translate "Report defect ·" %} {{ asset.asset_tag }}{% endblock %}
+{% block content %}
+<div class="page-head"><div><div class="crumbs"><a href="{% url 'catalog:asset' asset.pk %}">{{ asset.asset_tag }}</a> {% translate "/ Report defect" %}</div><h1>{% translate "Report a defect or request inspection" %}</h1><p>{{ asset.name }} · {{ asset.location }}</p></div></div>
+<div class="split"><form class="card" method="post" data-confirm="Open a service record? {{ asset.asset_tag }} will be removed from availability and any holds flagged for review until it is verified safe." data-confirm-ok="{% translate "Report defect" %}">{% csrf_token %}
+  <div class="card-body grid" style="gap:14px">
+    {% if error %}<div class="alert alert-error">{% icon "circle-x" %}<div>{{ error }}</div></div>{% endif %}
+    <div class="field"><label for="d">{% translate "What is wrong?" %} <span class="req">*</span></label><textarea id="d" name="description" rows="4" required minlength="10" aria-describedby="dh">{{ description }}</textarea><div class="help" id="dh">{% translate "Describe the defect, when it was noticed and any safety concern." %}</div></div>
+    <div class="field"><label for="e">{% translate "Evidence" %}</label><input id="e" type="text" name="evidence" value="{{ evidence }}" placeholder="{% translate "Photo reference, ticket number…" %}"></div>
+    <div class="form-actions"><a class="btn btn-ghost" href="{% url 'catalog:asset' asset.pk %}">{% translate "Cancel" %}</a><button class="btn btn-primary" type="submit">{% icon "wrench" 16 %} {% translate "Report defect" %}</button></div></div></form>
+  <aside class="card card-pad small"><h3>{% icon "shield" 16 %} {% translate "Safety first" %}</h3><ul class="reasons mt-s"><li>{% icon "check" 14 %}<span>{% translate "The asset moves to" %} <b>{% translate "Under Inspection" %}</b> {% translate "and leaves the catalog." %}</span></li><li>{% icon "check" 14 %}<span>{% translate "Existing holds are flagged; release is blocked." %}</span></li><li>{% icon "check" 14 %}<span>{% translate "Only a custodian’s verified safe return restores availability." %}</span></li></ul></aside></div>
+{% endblock %}
