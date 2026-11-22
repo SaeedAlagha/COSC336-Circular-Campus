@@ -46,6 +46,13 @@ def request_text(r):
     return f"{r.title}. {r.category}. Purpose: {r.purpose} Specifications: {r.specifications}. Must have: {r.mandatory_specs}"
 
 
+def _same_category(asset_cat, req_cat):
+    """The requested category, a sub-category of it, or its parent group."""
+    if asset_cat is None:
+        return False
+    return asset_cat.pk == req_cat.pk or asset_cat.parent_id == req_cat.pk or (req_cat.parent_id is not None and asset_cat.pk == req_cat.parent_id)
+
+
 def hard_filter(asset, req, ignore_quantity=False):
     """Mandatory constraints (BR-12, FR-14, design 5.10). Returns (eligible, reasons)."""
     reasons = []
@@ -55,6 +62,8 @@ def hard_filter(asset, req, ignore_quantity=False):
         reasons.append("restricted for inspection/safety")
     if asset.reservations.filter(flagged_for_review=True, status__in=["PENDING_APPROVAL", "ALLOCATED"]).exists():
         reasons.append("held stock flagged for safety review")
+    if req.category_id and not _same_category(asset.category, req.category):
+        reasons.append(f"category {asset.category} does not match the requested {req.category}")
     if Condition.RANK.get(asset.condition, 0) < Condition.RANK.get(req.preferred_condition, 0):
         reasons.append(f"condition {asset.condition_label} is below the minimum {Condition.label(req.preferred_condition)}")
     haystack = _norm(" ".join([asset.name, asset.description, asset.specifications, asset.tags]))
