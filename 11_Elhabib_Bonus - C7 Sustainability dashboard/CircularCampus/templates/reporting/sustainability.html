@@ -1,0 +1,58 @@
+{% extends "base.html" %}{% load campus_ui i18n %}
+{% block title %}{% translate "Sustainability" %}{% endblock %}
+{% block content %}
+<div class="page-head"><div><div class="crumbs">{% translate "Insight / Sustainability" %}</div><h1>{% translate "Sustainability dashboard" %}</h1><p>{% translate "Deterministic indicators calculated from completed workflow records — never by AI. Every figure shows its formula, inputs, source and status; missing evidence is shown as unavailable, not zero." %}</p></div>
+  <div class="head-actions">{% if 'reporting:reports'|installed %}<a class="btn" href="{% url 'reporting:reports' %}">{% icon "file-text" 16 %} {% translate "AI narrative report" %}</a>{% endif %}</div></div>
+<form class="card filters mb" method="get" data-autosubmit><div class="filter-grid" style="grid-template-columns:repeat(3,minmax(0,1fr)) auto">
+  {% include "partials/field.html" with field=form.start %}{% include "partials/field.html" with field=form.end %}{% include "partials/field.html" with field=form.department %}
+  <div class="field"><span class="btn-label">{% translate " " %}</span><button class="btn btn-primary" type="submit">{% translate "Update" %}</button></div></div>
+  <div class="row small muted">{% icon "calendar" 14 %} {% translate "Period" %} {{ start|date:"d M Y" }} – {{ end|date:"d M Y" }} {% translate "· cutoff" %} {{ end|date:"d M Y" }} {% translate "· scope" %} {{ data.meta.scope }} {% translate "· calculation" %} {{ data.meta.version }}</div></form>
+
+<div class="grid grid-4">
+  {% with i=ind.items_reused %}{% include "reporting/_metric.html" with i=i ico="recycle" %}{% endwith %}
+  {% with i=ind.waste_diversion %}{% include "reporting/_metric.html" with i=i ico="leaf" %}{% endwith %}
+  {% with i=ind.avoided_value %}{% include "reporting/_metric.html" with i=i ico="coins" %}{% endwith %}
+  {% with i=ind.net_savings %}{% include "reporting/_metric.html" with i=i ico="trending-up" %}{% endwith %}
+  {% with i=ind.kg_diverted %}{% include "reporting/_metric.html" with i=i ico="scale" %}{% endwith %}
+  {% with i=ind.reuse_rate %}{% include "reporting/_metric.html" with i=i ico="gauge" %}{% endwith %}
+  {% with i=ind.repairs %}{% include "reporting/_metric.html" with i=i ico="wrench" %}{% endwith %}
+  {% with i=ind.life_extension %}{% include "reporting/_metric.html" with i=i ico="hourglass" %}{% endwith %}
+</div>
+
+<div class="grid grid-2 mt">
+  <section class="card"><div class="card-head"><h2>{% icon "layers" %} {% translate "Unwanted-asset cohort" %}</h2><span class="muted small">{% translate "distinct units" %}</span></div>
+    <div class="card-body chart">
+      {% if cohort and ind.waste_diversion.status != "unavailable" %}
+      <div class="seg-bar" role="img" aria-label="Cohort: {% for c in cohort %}{{ c.label }} {{ c.value }}{% if not forloop.last %}, {% endif %}{% endfor %}">
+        {% for c in cohort %}{% if c.value %}<span class="seg-{{ forloop.counter }}" style="flex:{{ c.value }}" tabindex="0" data-tip="{{ c.label }} · {{ c.pct }}% of cohort" data-tip-value="{{ c.value }} units"></span>{% endif %}{% endfor %}
+      </div>
+      <div class="legend">{% for c in cohort %}<span><i class="seg-{{ forloop.counter }}"></i>{{ c.label }} <b>{{ c.value }}</b> ({{ c.pct }}%)</span>{% endfor %}</div>
+      <p class="help">{% translate "Denominator = every unit that entered the surplus cohort in the period — diverted, pending and discarded — so the rate cannot exceed 100% (design 5.11)." %}</p>
+      {% else %}<div class="empty" style="padding:24px"><div class="empty-icon">{% icon "layers" 22 %}</div><p>{% translate "Unavailable —" %} {{ ind.waste_diversion.note }}</p></div>{% endif %}
+    </div></section>
+  <section class="card"><div class="card-head"><h2>{% icon "chart-column" %} {% translate "Units reused by category" %}</h2><span class="muted small">{% translate "counted once" %}</span></div>
+    <div class="card-body">
+      {% if by_cat %}<div class="hbars">{% for r in by_cat %}<div class="hbar" tabindex="0" data-tip="{{ r.label }} · units reused in period" data-tip-value="{{ r.value }} units"><span class="truncate">{{ r.label }}</span><div class="hbar-track"><div class="hbar-fill" style="width:{{ r.pct|widthpct }}%"></div></div><span class="num">{{ r.value }}</span></div>{% endfor %}</div>
+      <details class="table-view mt-s"><summary>{% translate "Show as table" %}</summary><table class="table mt-s"><thead><tr><th>{% translate "Category" %}</th><th class="num">{% translate "Units" %}</th></tr></thead><tbody>{% for r in by_cat %}<tr><td>{{ r.label }}</td><td class="num">{{ r.value }}</td></tr>{% endfor %}</tbody></table></details>
+      {% else %}<div class="empty" style="padding:24px"><div class="empty-icon">{% icon "chart-column" 22 %}</div><p>{% translate "No completed reuse transfers in this period." %}</p></div>{% endif %}
+    </div></section>
+</div>
+
+<div class="grid grid-2 mt">
+  {% with i=ind.carbon %}{% include "reporting/_metric.html" with i=i ico="leaf" wide=True %}{% endwith %}
+  <section class="card"><div class="card-head"><h2>{% icon "settings" %} {% translate "Emission factors" %}</h2><span class="muted small">{% translate "entered with a cited source" %}</span></div>
+    <div class="card-body">
+      {% for f in factors %}<div class="row between" style="padding:6px 0;border-bottom:1px solid var(--border)"><div><b>{{ f.category }}</b> · {{ f.replacement_kgco2e_per_unit }} {% translate "kg CO2e/unit · transport" %} {{ f.reuse_transport_kgco2e_per_transfer }} {% translate "kg" %}<div class="cell-sub">{{ f.source }} · {{ f.version }}</div></div>{% if f.is_synthetic %}<span class="badge badge-warning">{% translate "Synthetic" %}</span>{% else %}<span class="badge badge-success">{% translate "Sourced" %}</span>{% endif %}</div>
+      {% empty %}<p class="muted small">{% translate "No factors recorded, so carbon reduction is unavailable. This is deliberate: the prototype never invents a factor." %}</p>{% endfor %}
+      {% if can_factor %}<details class="more mt-s"><summary>{% icon "plus" 14 %} {% translate "Record a factor" %}</summary>
+        <form method="post" class="form-grid mt-s">{% csrf_token %}
+          <div class="field full"><label for="fc">{% translate "Category" %}</label><select id="fc" name="category">{% for c in categories %}<option value="{{ c.pk }}">{{ c }}</option>{% endfor %}</select></div>
+          <div class="field"><label for="fr">{% translate "Replacement kg CO2e / unit" %}</label><input id="fr" type="number" step="0.01" min="0" name="replacement" required></div>
+          <div class="field"><label for="ft">{% translate "Transport kg CO2e / transfer" %}</label><input id="ft" type="number" step="0.01" min="0" name="transport" value="0"></div>
+          <div class="field full"><label for="fs">{% translate "Source citation" %}</label><input id="fs" type="text" name="source" required placeholder="{% translate "Publication, dataset, page" %}"></div>
+          <div class="field"><label for="fv">{% translate "Version" %}</label><input id="fv" type="text" name="version" required placeholder="e.g. 2026.1"></div>
+          <div class="field" style="align-self:end"><label class="check"><input type="checkbox" name="is_synthetic"> {% translate "Synthetic / illustrative only" %}</label></div>
+          <div class="form-actions full"><button class="btn btn-primary" type="submit">{% translate "Save factor" %}</button></div></form></details>{% endif %}
+    </div></section>
+</div>
+{% endblock %}
