@@ -1,0 +1,22 @@
+{% extends "base.html" %}{% load campus_ui i18n %}
+{% block title %}{{ subject.full_name }}{% endblock %}
+{% block content %}
+<div class="page-head"><div><div class="crumbs"><a href="{% url 'accounts:users' %}">{% translate "Accounts" %}</a> / {{ subject.campus_id }}</div><div class="row" style="gap:12px"><h1>{{ subject.full_name }}</h1>{% if subject.is_active %}{% badge "AVAILABLE" "Active" %}{% else %}{% badge "CANCELLED" "Deactivated" %}{% endif %}</div><p>{{ subject.campus_id }} · {{ subject.department.name }}{% if subject.email %} · {{ subject.email }}{% endif %}</p></div></div>
+<div class="split">
+  <div class="stack">
+    <section class="card"><div class="card-head"><h2>{% icon "shield" %} {% translate "Role grants" %}</h2></div>
+      <div class="table-wrap"><table class="table"><thead><tr><th>{% translate "Role" %}</th><th>{% translate "Scope" %}</th><th>{% translate "Granted" %}</th><th>{% translate "Status" %}</th><th></th></tr></thead><tbody>
+      {% for g in grants %}<tr><td class="cell-title">{{ g.role.name }}</td><td>{% if g.scope_department %}{{ g.scope_department.name }}{% else %}<span class="chip">{% translate "Campus-wide (explicit)" %}</span>{% endif %}</td><td class="small">{{ g.granted_at|date:"d M Y" }}</td><td>{% if g.active %}{% badge "AVAILABLE" "Active" %}{% else %}{% badge "CANCELLED" "Revoked" %}{% endif %}</td>
+        <td>{% if g.active %}<form method="post" data-confirm="Revoke {{ g.role.name }} from {{ subject.full_name }}?" data-confirm-ok="{% translate "Revoke" %}">{% csrf_token %}<input type="hidden" name="action" value="revoke"><input type="hidden" name="grant" value="{{ g.pk }}"><button class="btn btn-sm btn-danger" type="submit">{% translate "Revoke" %}</button></form>{% endif %}</td></tr>
+      {% empty %}<tr><td colspan="5" class="muted">{% translate "No roles — this account can sign in but cannot do anything." %}</td></tr>{% endfor %}
+      </tbody></table></div>
+      <form method="post" class="card-foot form-grid" style="grid-template-columns:1fr 1fr auto;align-items:end">{% csrf_token %}<input type="hidden" name="action" value="grant">{% include "partials/field.html" with field=grant_form.role %}{% include "partials/field.html" with field=grant_form.scope_department %}<button class="btn btn-primary" type="submit">{% translate "Grant" %}</button></form>
+    </section>
+    <section class="card"><div class="card-head"><h2>{% icon "pencil" %} {% translate "Profile" %}</h2></div><form method="post" class="card-body form-grid">{% csrf_token %}<input type="hidden" name="action" value="edit">{% for f in edit_form %}{% include "partials/field.html" with field=f %}{% endfor %}<div class="form-actions full"><button class="btn" type="submit">{% translate "Save profile" %}</button></div></form></section>
+  </div>
+  <aside class="stack">
+    <section class="card"><div class="card-head"><h2>{% icon "lock" %} {% translate "Password reset" %}</h2></div><form method="post" class="card-body grid" style="gap:12px" novalidate>{% csrf_token %}<input type="hidden" name="action" value="password">{% include "partials/form_errors.html" with form=pw_form %}{% for f in pw_form %}{% include "partials/field.html" with field=f %}{% endfor %}<button class="btn" type="submit">{% translate "Set password" %}</button></form></section>
+    <section class="card card-pad">{% if subject.is_active %}<form method="post" data-confirm="Deactivate {{ subject.full_name }}? Their session ends immediately; history is kept." data-confirm-ok="{% translate "Deactivate" %}">{% csrf_token %}<input type="hidden" name="action" value="deactivate"><button class="btn btn-danger btn-block" type="submit">{% icon "ban" 15 %} {% translate "Deactivate account" %}</button></form>{% else %}<form method="post">{% csrf_token %}<input type="hidden" name="action" value="activate"><button class="btn btn-block" type="submit">{% translate "Reactivate account" %}</button></form>{% endif %}<p class="help mt-s">{% translate "Accounts are never deleted, so ownership, approvals and service history stay intact." %}</p></section>
+  </aside>
+</div>
+{% endblock %}

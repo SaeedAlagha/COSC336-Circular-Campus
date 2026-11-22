@@ -1,0 +1,9 @@
+{% extends "base.html" %}{% load campus_ui i18n %}
+{% block title %}{% translate "Dashboard" %}{% endblock %}
+{% block content %}
+<section class="hero">
+  <div class="eyebrow">{{ primary_role }} · {{ request.user.department.name }}</div>
+  <h1>{% translate "Good to see you," %} {{ request.user.first_name }}.</h1>
+  <p>{% translate "Keep campus resources in circulation." %}</p>
+</section>
+{% endblock %}

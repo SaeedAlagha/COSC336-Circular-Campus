@@ -1,0 +1,47 @@
+{% extends "base.html" %}{% load campus_ui i18n %}
+{% block title %}{% translate "Sign in" %}{% endblock %}
+{% block shell %}
+<div class="auth">
+  <section class="auth-art">
+    <div class="orbit" aria-hidden="true"></div>
+    <a class="brand" href="#" style="padding:0"><span class="brand-mark">{% icon "recycle" 22 %}</span><span><span class="brand-name">{% translate "Circular Campus" %}</span><br><span class="brand-sub">{% translate "Khalifa University · COSC 336 prototype" %}</span></span></a>
+    <div style="position:relative;z-index:1">
+      <div class="eyebrow" style="color:#9df0d6">{% translate "Reuse before you replace" %}</div>
+      <h1 style="margin-top:10px">{% translate "Keep campus resources in circulation." %}</h1>
+      <p style="margin-top:12px">{% translate "Find surplus equipment across departments, request it through accountable approvals, and track every asset from registration to reuse, repair or responsible disposal." %}</p>
+      <div class="auth-points">
+        <div class="auth-point"><span class="ic">{% icon "shield-check" 18 %}</span><div><b>{% translate "Human-approved, never automatic" %}</b><span>{% translate "Separate approval, release and receipt — no self-approval." %}</span></div></div>
+        <div class="auth-point"><span class="ic">{% icon "sparkles" 18 %}</span><div><b>{% translate "AI that explains itself" %}</b><span>{% translate "Ranked matches, advice and summaries you review before anything changes." %}</span></div></div>
+        <div class="auth-point"><span class="ic">{% icon "leaf" 18 %}</span><div><b>{% translate "Evidence-based impact" %}</b><span>{% translate "Deterministic metrics with formulas — unknown stays unknown." %}</span></div></div>
+      </div>
+    </div>
+  </section>
+  <section class="auth-form">
+    <div class="auth-card">
+      {% include "partials/messages.html" %}
+      <div class="card">
+        <h2 style="font-size:1.4rem">{% translate "Sign in" %}</h2>
+        <p class="muted" style="margin:6px 0 20px">{% translate "Use your campus ID and password." %}</p>
+        <form method="post" novalidate>{% csrf_token %}
+          {% if form.non_field_errors %}<div class="alert alert-error mb" role="alert">{% icon "circle-x" %}<div>{% for e in form.non_field_errors %}{{ e }}{% endfor %}</div></div>{% endif %}
+          <input type="hidden" name="next" value="{{ request.GET.next|default:'' }}">
+          <div class="grid" style="gap:14px">
+            {% include "partials/field.html" with field=form.campus_id %}
+            {% include "partials/field.html" with field=form.password %}
+            <button class="btn btn-primary btn-lg btn-block" type="submit" data-loading="{% translate "Signing in…" %}"><span class="spinner"></span><span class="btn-label">{% translate "Sign in" %}</span></button>
+          </div>
+        </form>
+      </div>
+      {% if demo_mode %}
+      <details class="demo-accounts card card-pad">
+        <summary><strong>{% translate "Quick sign-in" %}</strong></summary>
+        <p class="muted" style="margin-top:8px">{% translate "Click Use to fill in a campus ID. The password is in the README." %}</p>
+        <table><tbody>
+          {% for id, name, summary in demo_users %}<tr><td><span class="ref">{{ id }}</span></td><td>{{ name }}<div class="muted">{{ summary }}</div></td><td><button type="button" data-fill-id="{{ id }}">{% translate "Use" %}</button></td></tr>{% endfor %}
+        </tbody></table>
+      </details>
+      {% endif %}
+    </div>
+  </section>
+</div>
+{% endblock %}
