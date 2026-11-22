@@ -1,0 +1,33 @@
+{% extends "base.html" %}{% load campus_ui i18n %}
+{% block title %}{% if req %}{% translate "Edit" %} {{ req.reference }}{% else %}{% translate "New request" %}{% endif %}{% endblock %}
+{% block content %}
+<div class="page-head"><div><div class="crumbs"><a href="{% url 'exchange:list' %}">{% translate "Requests" %}</a> / {% if req %}{{ req.reference }}{% else %}{% translate "New" %}{% endif %}</div>
+  <h1>{% if req %}{% translate "Correct" %} {{ req.reference }}{% else %}{% translate "Describe your need" %}{% endif %}</h1>
+  <p>{% translate "Saving creates a" %} <b>{% translate "draft" %}</b>{% translate ". Next you choose stock (manually or with AI matches) and submit — only submission creates a 48-hour hold." %}</p></div></div>
+{% if from_assistant %}<div class="alert alert-ai mb">{% icon "sparkles" %}<div><strong class="alert-title">{% translate "Draft prepared by the assistant" %}</strong><div>{% translate "Review every field — nothing has been submitted. The normal validation and approval workflow applies." %}</div></div></div>{% endif %}
+<form method="post" novalidate>{% csrf_token %}{% if req %}<input type="hidden" name="version" value="{{ req.version }}">{% endif %}<input type="hidden" name="prefill_asset" value="{{ prefill_asset }}">
+<div class="split">
+  <div class="stack">
+    {% include "partials/form_errors.html" %}
+    <section class="card"><div class="card-head"><h2>{% icon "clipboard-list" %} {% translate "The need" %}</h2></div><div class="card-body form-grid">
+      {% include "partials/field.html" with field=form.title full=True %}
+      {% include "partials/field.html" with field=form.category %}{% include "partials/field.html" with field=form.quantity %}
+      {% include "partials/field.html" with field=form.purpose full=True %}
+      {% include "partials/field.html" with field=form.specifications %}{% include "partials/field.html" with field=form.mandatory_specs %}
+      {% include "partials/field.html" with field=form.preferred_condition %}{% include "partials/field.html" with field=form.urgency %}
+      {% include "partials/field.html" with field=form.allow_partial full=True %}
+    </div></section>
+    <section class="card"><div class="card-head"><h2>{% icon "map-pin" %} {% translate "Delivery & receipt" %}</h2></div><div class="card-body form-grid">
+      {% include "partials/field.html" with field=form.required_date %}{% include "partials/field.html" with field=form.receiving_custodian %}
+      {% include "partials/field.html" with field=form.destination_campus %}{% include "partials/field.html" with field=form.destination_building %}
+      {% include "partials/field.html" with field=form.destination_room %}
+    </div></section>
+    <div class="form-actions"><a class="btn btn-ghost" href="{% url 'exchange:list' %}">{% translate "Cancel" %}</a><button class="btn btn-primary btn-lg" type="submit" data-loading="{% translate "Saving…" %}"><span class="spinner"></span><span class="btn-label">{% translate "Save draft & choose stock" %}</span></button></div>
+  </div>
+  <aside class="stack">
+    <section class="card card-pad small"><h3>{% icon "info" 16 %} {% translate "What happens next" %}</h3>
+      <ol class="stepper mt" style="font-size:.72rem"><li class="current">{% translate "Draft" %}</li><li>{% translate "Choose stock" %}</li><li>{% translate "Review" %}</li><li>{% translate "Handover" %}</li></ol>
+      <ul class="reasons mt"><li>{% icon "check" 14 %}<span>{% translate "Mandatory specs and safety outrank any match score." %}</span></li><li>{% icon "check" 14 %}<span>{% translate "The receiving custodian must confirm receipt before custody moves." %}</span></li><li>{% icon "check" 14 %}<span>{% translate "You can’t approve your own request." %}</span></li></ul></section>
+  </aside>
+</div></form>
+{% endblock %}
