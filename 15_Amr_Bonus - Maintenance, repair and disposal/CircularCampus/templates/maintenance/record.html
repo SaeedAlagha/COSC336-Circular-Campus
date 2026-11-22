@@ -1,0 +1,64 @@
+{% extends "base.html" %}{% load campus_ui i18n %}
+{% block title %}{{ r.reference }}{% endblock %}
+{% block content %}
+<div class="page-head"><div><div class="crumbs"><a href="{% url 'maintenance:list' %}">{% translate "Maintenance" %}</a> / {{ r.reference }}</div>
+  <div class="row" style="gap:12px"><h1>{% translate "Service record" %} {{ r.reference }}</h1>{% badge r.status r.status_label %}</div>
+  <p><a href="{% url 'catalog:asset' r.asset.pk %}">{{ r.asset.asset_tag }} · {{ r.asset.name }}</a> {% translate "· asset is" %} {{ r.asset.status_label }}</p></div></div>
+<section class="card card-pad mb"><ol class="stepper">{% for s in steps %}<li class="{{ s.state }}">{{ s.label }}</li>{% endfor %}</ol></section>
+<div class="split">
+  <div class="stack">
+    {% if is_staff and r.status == "REPORTED" %}<section class="card card-pad"><div class="row between"><div><h2>{% translate "Start inspection" %}</h2><p class="muted small" style="margin:4px 0 0">{% translate "Assigns this record to you." %}</p></div><form method="post">{% csrf_token %}<input type="hidden" name="action" value="start"><input type="hidden" name="version" value="{{ r.version }}"><button class="btn btn-primary" type="submit">{% icon "search" 16 %} {% translate "Start inspection" %}</button></form></div></section>{% endif %}
+
+    {% if is_staff and r.status == "UNDER_INSPECTION" %}
+    <section class="card"><div class="card-head"><h2>{% icon "search" %} {% translate "Record inspection findings" %}</h2></div>
+      <form method="post" class="card-body form-grid">{% csrf_token %}<input type="hidden" name="action" value="inspect"><input type="hidden" name="version" value="{{ r.version }}">
+        <div class="field full"><label for="f">{% translate "Findings" %} <span class="req">*</span></label><textarea id="f" name="finding" rows="3" required></textarea></div>
+        <fieldset class="fieldset full"><legend>{% translate "Result" %}</legend><div class="radio-cards">{% for v, l in results %}<label class="radio-card"><input type="radio" name="result" value="{{ v }}" {% if forloop.first %}checked{% endif %}><div>{{ l }}</div></label>{% endfor %}</div></fieldset>
+        <div class="field"><label for="wt">{% translate "Work type (if repair needed)" %}</label><select id="wt" name="work_type"><option value="">—</option>{% for v, l in work_types %}<option value="{{ v }}">{% translate l %}</option>{% endfor %}</select></div>
+        <div class="field"><label for="pc">{% translate "Estimated cost (AED)" %}</label><input id="pc" type="number" min="0" step="0.01" name="proposed_cost" placeholder="{% translate "Blank = unknown" %}"><div class="help">{% translate "Any cost (or an unknown one) goes to finance review before approval." %}</div></div>
+        <div class="field full"><label for="pw">{% translate "Proposed work" %}</label><textarea id="pw" name="proposed_work" rows="2"></textarea></div>
+        <div class="form-actions full"><button class="btn btn-primary" type="submit">{% translate "Record inspection" %}</button></div></form></section>
+    {% endif %}
+
+    {% if is_staff and r.status == "IN_SERVICE" %}
+    <section class="card"><div class="card-head"><h2>{% icon "wrench" %} {% translate "Record completed work" %}</h2></div>
+      <form method="post" class="card-body form-grid">{% csrf_token %}<input type="hidden" name="action" value="work"><input type="hidden" name="version" value="{{ r.version }}">
+        <div class="field full"><label for="wd">{% translate "Work done" %} <span class="req">*</span></label><textarea id="wd" name="work_done" rows="3" required></textarea></div>
+        <div class="field"><label for="ac">{% translate "Actual cost (AED)" %}</label><input id="ac" type="number" min="0" step="0.01" name="actual_cost" placeholder="{% translate "Blank = unknown" %}"></div>
+        <div class="field"><label for="acn">{% translate "Resulting condition" %}</label><select id="acn" name="after_condition">{% for v, l in conditions %}<option value="{{ v }}" {% if v == "GOOD" %}selected{% endif %}>{% translate l %}</option>{% endfor %}</select></div>
+        <div class="form-actions full"><button class="btn btn-primary" type="submit">{% translate "Record work" %}</button></div></form></section>
+    {% endif %}
+
+    {% if r.status == "AWAITING_VERIFICATION" %}
+    <section class="card"><div class="card-head"><h2>{% icon "circle-check" %} {% translate "Verify safe return" %}</h2><span class="chip">{% translate "Custodian — not the technician" %}</span></div>
+      {% if can_verify %}
+      <form method="post" class="card-body form-grid" data-confirm="{% translate "Record this verification? A safe result returns the asset to In Use; unsafe keeps it restricted." %}" data-confirm-ok="{% translate "Record verification" %}">{% csrf_token %}<input type="hidden" name="action" value="verify"><input type="hidden" name="version" value="{{ r.version }}">
+        <fieldset class="fieldset full"><legend>{% translate "Is the asset safe to return to service?" %}</legend><div class="row"><label class="check"><input type="radio" name="safe" value="yes" checked> {% translate "Yes, verified safe" %}</label><label class="check"><input type="radio" name="safe" value="no"> {% translate "No — reassess" %}</label></div></fieldset>
+        <div class="field"><label for="vc">{% translate "Verified condition" %}</label><select id="vc" name="after_condition">{% for v, l in conditions %}<option value="{{ v }}" {% if v == r.after_condition|default:r.asset.condition %}selected{% endif %}>{% translate l %}</option>{% endfor %}</select></div>
+        <div class="field"><label for="ru">{% translate "Revised usable-until date" %}</label><input id="ru" type="date" name="revised_usable_until"><div class="help">{% translate "Only if supported by the service evidence (used for life extension; blank = unavailable)." %}</div></div>
+        <div class="field full"><label for="vn">{% translate "Verification evidence" %} <span class="req">*</span></label><textarea id="vn" name="note" rows="2" required placeholder="{% translate "Tests performed, checks passed…" %}"></textarea></div>
+        <div class="form-actions full"><button class="btn btn-primary" type="submit">{% translate "Record verification" %}</button></div></form>
+      {% else %}<div class="card-body muted small">{% translate "Waiting for an asset custodian of" %} {{ r.asset.owner_department.name }} {% translate "(who did not perform the work) to verify." %}</div>{% endif %}
+    </section>
+    {% endif %}
+
+    {% if r.status == "UNREPAIRABLE" %}<div class="alert alert-warning">{% icon "triangle-alert" %}<div><strong class="alert-title">{% translate "Unrepairable — never disposed automatically" %}</strong><div>{% translate "The asset stays Unavailable. Its custodian may request sustainable-action advice or propose component recovery, recycling or disposal through approval." %}</div></div></div>{% endif %}
+
+    <section class="card"><div class="card-head"><h2>{% icon "history" %} {% translate "Service history" %}</h2></div><div class="card-body"><ol class="timeline">
+      {% for e in events %}<li><span class="tl-dot {% if e.event_type == 'DEFECT_REPORTED' or e.event_type == 'UNREPAIRABLE' %}danger{% elif e.event_type == 'RETURNED_TO_SERVICE' %}{% else %}warn{% endif %}">{% icon "circle-dot" 12 %}</span><div class="tl-title">{{ e.label }}</div><div class="tl-meta">{{ e.occurred_at|date:"d M Y, H:i" }} · {{ e.actor.full_name|default:"System" }}</div>{% if e.reason %}<div class="tl-diff">{{ e.reason|truncatechars:220 }}</div>{% endif %}</li>{% endfor %}
+    </ol></div></section>
+  </div>
+  <aside class="stack">
+    <section class="card"><div class="card-head"><h2>{% icon "info" %} {% translate "Record" %}</h2></div><div class="card-body"><dl class="dl">
+      <dt>{% translate "Reported by" %}</dt><dd>{{ r.reporter.full_name }} · {{ r.reported_at|date:"d M Y" }}</dd><dt>{% translate "Defect" %}</dt><dd>{{ r.description }}</dd>{% if r.evidence_note %}<dt>{% translate "Evidence" %}</dt><dd>{{ r.evidence_note }}</dd>{% endif %}
+      <dt>{% translate "Assigned staff" %}</dt><dd>{{ r.assigned_staff.full_name|default:"Unassigned" }}</dd><dt>{% translate "Condition before" %}</dt><dd>{{ r.before_condition|title }}</dd>
+      {% if r.proposed_work %}<dt>{% translate "Proposed" %}</dt><dd>{{ r.get_work_type_display }} — {{ r.proposed_work }} · {% if r.proposed_cost_aed is not None %}{{ r.proposed_cost_aed|aed }}{% else %}<span class="unknown">{% translate "cost unknown" %}</span>{% endif %}</dd>{% endif %}
+      {% if r.work_done %}<dt>{% translate "Work done" %}</dt><dd>{{ r.work_done }} · {% if r.actual_cost_aed is not None %}{{ r.actual_cost_aed|aed }}{% else %}<span class="unknown">{% translate "cost unknown" %}</span>{% endif %}</dd>{% endif %}
+      {% if r.after_condition %}<dt>{% translate "Condition after" %}</dt><dd>{{ r.after_condition|title }}</dd>{% endif %}
+      {% if r.verified_by %}<dt>{% translate "Verified by" %}</dt><dd>{{ r.verified_by.full_name }} · {{ r.verified_at|date:"d M Y" }}<br><span class="muted">{{ r.verification_note }}</span></dd>{% endif %}
+    </dl></div></section>
+    {% for i in inspections %}<section class="card card-pad small"><div class="row between"><h3>{% translate "Inspection" %}</h3><span class="chip">{{ i.get_result_display }}</span></div><p class="mt-s">{{ i.finding }}</p><p class="help">{{ i.inspector.full_name }} · {{ i.inspected_at|date:"d M Y H:i" }}</p></section>{% endfor %}
+    {% for v in versions %}<section class="card"><div class="card-head"><h2>{% icon "shield-check" %} {% translate "Repair approval v" %}{{ v.version_no }}</h2>{% badge v.status v.get_status_display %}</div><div class="card-body">{% for a in v.approvals.all %}<div class="stage {% if a.decision == 'APPROVED' %}ok{% elif a.decision == 'REJECTED' or a.decision == 'RETURNED' %}bad{% elif not a.decision %}now{% endif %}"><span class="stage-num">{{ a.stage_order }}</span><div class="small"><b>{{ a.get_stage_display }}</b><div class="cell-sub">{{ a.reviewer.full_name|default:"—" }}</div></div>{% if not a.decision and v.status == "PENDING" %}<a class="btn btn-sm" href="{% url 'workflow:approval' a.pk %}">{% translate "Open" %}</a>{% else %}{% badge a.decision|default:"PENDING" a.effective_status %}{% endif %}</div>{% endfor %}</div></section>{% endfor %}
+  </aside>
+</div>
+{% endblock %}
