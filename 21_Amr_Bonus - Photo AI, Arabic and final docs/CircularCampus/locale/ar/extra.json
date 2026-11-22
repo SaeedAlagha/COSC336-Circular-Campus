@@ -1,0 +1,15 @@
+{
+"Department:": "القسم:",
+"campus-wide": "على مستوى الحرم",
+"Required (FR-05). Separate with semicolons, e.g. 24-inch; HDMI.": "مطلوب (FR-05). افصل بفواصل منقوطة، مثل 24-inch; HDMI.",
+"Campus ID is required.": "رقم الحرم الجامعي مطلوب.",
+"Campus ID must contain digits only. Use the 9-digit university ID, e.g. 100060412.": "يجب أن يحتوي رقم الحرم الجامعي على أرقام فقط. استخدم الرقم الجامعي المكوّن من 9 أرقام، مثل 100060412.",
+"Campus ID must start with 1000. Use the 9-digit university ID, e.g. 100060412.": "يجب أن يبدأ رقم الحرم الجامعي بـ 1000. استخدم الرقم الجامعي المكوّن من 9 أرقام، مثل 100060412.",
+"Unique 9-digit university ID starting with 1000, e.g. 100060412.": "رقم جامعي فريد من 9 أرقام يبدأ بـ 1000، مثل 100060412.",
+"Use the 9-digit university ID, e.g. 100060412.": "استخدم الرقم الجامعي المكوّن من 9 أرقام، مثل 100060412.",
+"Enter your 9-digit university ID.": "أدخل رقمك الجامعي المكوّن من 9 أرقام.",
+"no roles yet": "لا أدوار بعد",
+"Quick sign-in": "تسجيل دخول سريع",
+"Click Use to fill in a campus ID. The password is in the README.": "اضغط «استخدام» لملء رقم الحرم الجامعي. كلمة المرور موجودة في ملف README.",
+"Uses an illustrative (unverified) factor. ": "يستخدم معاملًا توضيحيًا (غير موثّق). "
+}

@@ -1,0 +1,4901 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\nLanguage: ar\nPlural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+msgid "(min."
+msgstr "(الحد الأدنى"
+
+msgid "(required if you override the top option)"
+msgstr "(مطلوب إذا اخترت غير الخيار الأول)"
+
+msgid "(required to reject or return)"
+msgstr "(مطلوب للرفض أو الإرجاع)"
+
+msgid "(who did not perform the work) to verify."
+msgstr "(الذي لم ينفّذ العمل) للتحقق."
+
+msgid "). Approval converts it to an allocation that never auto-expires."
+msgstr "). تحوّل الموافقة الحجز إلى تخصيص لا تنتهي صلاحيته تلقائيًا."
+
+msgid "). If you later change the address the app runs on, reprint them; the printed ID always works when typed into the scanner."
+msgstr "). إذا غيّرت لاحقًا عنوان تشغيل التطبيق فأعد طباعتها؛ الرقم المطبوع يعمل دائمًا عند كتابته في الماسح."
+
+msgid ", is ranked"
+msgstr "، في المرتبة"
+
+msgid ", or read"
+msgstr "، أو اقرأ"
+
+msgid ", or the default listed in README (local demo only)."
+msgstr "، أو كلمة المرور الافتراضية في ملف README (للعرض المحلي فقط)."
+
+msgid ", start a"
+msgstr "، ابدأ"
+
+msgid ". Advice is not authorisation."
+msgstr ". النصيحة ليست تفويضًا."
+
+msgid ". Edit the request, then submit a corrected version (the old decision is not reused)."
+msgstr ". عدّل الطلب ثم أرسل نسخة مصححة (لا يُعاد استخدام القرار السابق)."
+
+msgid ". Next you choose stock (manually or with AI matches) and submit — only submission creates a 48-hour hold."
+msgstr ". بعد ذلك اختر المخزون (يدويًا أو بمطابقات الذكاء الاصطناعي) وأرسل — الإرسال وحده يُنشئ حجزًا لمدة 48 ساعة."
+
+msgid ". This is a proposal — approval and completion evidence come later."
+msgstr ". هذا مقترح — الموافقة وأدلة الإنجاز تأتي لاحقًا."
+
+msgid "/ AI matches"
+msgstr "/ مطابقات الذكاء الاصطناعي"
+
+msgid "/ Edit"
+msgstr "/ تعديل"
+
+msgid "/ Propose disposition"
+msgstr "/ اقتراح التصرف"
+
+msgid "/ Report defect"
+msgstr "/ الإبلاغ عن عطل"
+
+msgid "/ Sustainable-action advice"
+msgstr "/ نصيحة الإجراء المستدام"
+
+msgid "/100 fit"
+msgstr "/100 ملاءمة"
+
+msgid "16GB DDR4 RAM module; 2\n512GB SSD; 1"
+msgstr "16GB DDR4 RAM module; 2\n512GB SSD; 1"
+
+msgid "2 · Release eligibility & safety"
+msgstr "2 · أهلية الإفراج والسلامة"
+
+msgid "2–12 capital letters, e.g. ENG."
+msgstr "من 2 إلى 12 حرفًا لاتينيًا كبيرًا، مثل ENG."
+
+msgid "3 · Finance cost review"
+msgstr "3 · مراجعة التكلفة المالية"
+
+msgid "4 · Authorise proposal"
+msgstr "4 · اعتماد المقترح"
+
+msgid ": a defect restricts stock; work needs an approved repair; a custodian (not the technician) verifies safe return."
+msgstr ": العطل يقيّد المخزون؛ العمل يحتاج إصلاحًا معتمدًا؛ ويتحقق أمين العهدة (لا الفني) من العودة الآمنة."
+
+msgid ": donation, recycling, retirement and disposal need a proposal, approval"
+msgstr ": التبرع وإعادة التدوير والإحالة للتقاعد والتخلص تحتاج مقترحًا وموافقة"
+
+msgid ": the releasing custodian records release; only the designated receiving custodian’s matching receipt moves custody, department and location. Mismatches go to Exception."
+msgstr ": أمين العهدة المُسلِّم يسجّل الإفراج؛ ولا تنتقل العهدة والقسم والموقع إلا بتأكيد استلام مطابق من أمين العهدة المستلِم المحدد. أي اختلاف يحوّل النقل إلى استثناء."
+
+msgid "A campus ID is required."
+msgstr "رقم الحرم الجامعي مطلوب."
+
+msgid "A cost adds a finance review stage."
+msgstr "وجود تكلفة يضيف مرحلة مراجعة مالية."
+
+msgid "A proposal for this request is already under review."
+msgstr "يوجد مقترح لهذا الطلب قيد المراجعة بالفعل."
+
+msgid "A reason is required to reject or return a proposal."
+msgstr "يلزم ذكر سبب لرفض المقترح أو إرجاعه."
+
+msgid "A report period can cover at most five years."
+msgstr "يمكن أن تغطي فترة التقرير خمس سنوات كحد أقصى."
+
+msgid "A selected match must belong to the same AI result."
+msgstr "يجب أن تنتمي المطابقة المختارة إلى نتيجة الذكاء الاصطناعي نفسها."
+
+msgid "A serial number must contain at least one digit."
+msgstr "يجب أن يحتوي الرقم التسلسلي على رقم واحد على الأقل."
+
+msgid "A short name for the need, e.g. “Monitors for the robotics lab”."
+msgstr "اسم قصير للاحتياج، مثل «شاشات لمختبر الروبوتات»."
+
+msgid "A split must leave at least one unit in the source batch."
+msgstr "يجب أن يُبقي التقسيم وحدة واحدة على الأقل في الدفعة الأصلية."
+
+msgid "A transfer alone does not prove savings (SUS-03). One decision per transfer — no double attribution."
+msgstr "النقل وحده لا يثبت تحقيق وفورات (SUS-03). قرار واحد لكل عملية نقل — دون احتساب مزدوج."
+
+msgid "A used item cannot be worth more than buying it new."
+msgstr "لا يمكن أن تكون قيمة القطعة المستعملة أعلى من شرائها جديدة."
+
+msgid "AI boundaries"
+msgstr "حدود الذكاء الاصطناعي"
+
+msgid "AI classification"
+msgstr "التصنيف بالذكاء الاصطناعي"
+
+msgid "AI fallback mode"
+msgstr "وضع البديل الاحتياطي"
+
+msgid "AI matches"
+msgstr "مطابقات الذكاء الاصطناعي"
+
+msgid "AI matches ·"
+msgstr "مطابقات الذكاء الاصطناعي ·"
+
+msgid "AI narrative report"
+msgstr "تقرير سردي بالذكاء الاصطناعي"
+
+msgid "AI reports"
+msgstr "تقارير الذكاء الاصطناعي"
+
+msgid "AI suggests; people decide. AI never approves, releases, confirms receipt, changes custody, sets permissions, calculates financial totals or publishes reports. When Gemini is unavailable, labelled rule-based fallbacks keep every workflow usable."
+msgstr "الذكاء الاصطناعي يقترح والبشر يقررون. لا يوافق الذكاء الاصطناعي أبدًا، ولا يُفرج، ولا يؤكد الاستلام، ولا يغيّر العهدة، ولا يحدد الصلاحيات، ولا يحسب الإجماليات المالية، ولا ينشر التقارير. عند تعذّر Gemini تُبقي البدائل القاعدية الموسومة كل سير العمل قابلًا للاستخدام."
+
+msgid "AI that explains itself"
+msgstr "ذكاء اصطناعي يشرح نفسه"
+
+msgid "Accept & edit"
+msgstr "قبول وتعديل"
+
+msgid "Accept partial fulfilment"
+msgstr "قبول التلبية الجزئية"
+
+msgid "Accept the confirmed evidence"
+msgstr "قبول الأدلة المؤكدة"
+
+msgid "Access denied"
+msgstr "تم رفض الوصول"
+
+msgid "Account"
+msgstr "الحساب"
+
+msgid "Account updated."
+msgstr "تم تحديث الحساب."
+
+msgid "Accounts"
+msgstr "الحسابات"
+
+msgid "Accounts & roles"
+msgstr "الحسابات والأدوار"
+
+msgid "Accounts are never deleted, so ownership, approvals and service history stay intact."
+msgstr "لا تُحذف الحسابات أبدًا، لتبقى الملكية والموافقات وسجل الخدمة سليمة."
+
+msgid "Action"
+msgstr "الإجراء"
+
+msgid "Action advice ·"
+msgstr "نصيحة الإجراء ·"
+
+msgid "Action refused"
+msgstr "تم رفض الإجراء"
+
+msgid "Actor"
+msgstr "المنفّذ"
+
+msgid "Actual cost"
+msgstr "التكلفة الفعلية"
+
+msgid "Actual cost (AED)"
+msgstr "التكلفة الفعلية (درهم)"
+
+msgid "Actual transfer cost (AED)"
+msgstr "تكلفة النقل الفعلية (درهم)"
+
+msgid "Actual transfer cost; unknown stays empty."
+msgstr "تكلفة النقل الفعلية؛ تبقى فارغة إذا كانت غير معروفة."
+
+msgid "Add a file"
+msgstr "إضافة ملف"
+
+msgid "Add department"
+msgstr "إضافة قسم"
+
+msgid "Additional holds can be added only to an approved, open request."
+msgstr "لا يمكن إضافة حجوزات إضافية إلا لطلب معتمد ومفتوح."
+
+msgid "Administration"
+msgstr "الإدارة"
+
+msgid "Administration / Accounts"
+msgstr "الإدارة / الحسابات"
+
+msgid "Administration / Audit trail"
+msgstr "الإدارة / سجل التدقيق"
+
+msgid "Administration / Departments"
+msgstr "الإدارة / الأقسام"
+
+msgid "Administrators cannot grant themselves approval authority."
+msgstr "لا يمكن للمسؤولين منح أنفسهم صلاحية الموافقة."
+
+msgid "Advice"
+msgstr "النصيحة"
+
+msgid "Advice is optional and never executes anything. Every action follows its normal approval path."
+msgstr "النصيحة اختيارية ولا تنفّذ أي شيء. كل إجراء يتبع مسار الموافقة المعتاد."
+
+msgid "Advice only — any action still needs the normal proposal and human approval."
+msgstr "نصيحة فقط — أي إجراء ما زال يحتاج المقترح المعتاد وموافقة بشرية."
+
+msgid "Advice reviewed before proposing (advisory only)."
+msgstr "تمت مراجعة النصيحة قبل الاقتراح (استشارية فقط)."
+
+msgid "Advice the custodian reviewed"
+msgstr "النصيحة التي راجعها أمين العهدة"
+
+msgid "After"
+msgstr "بعد"
+
+msgid "After approval the assigned approver decides; released transfers must finish receipt or exception resolution."
+msgstr "بعد الموافقة يقرر المعتمِد المعيَّن؛ ويجب أن تُستكمل عمليات النقل المُفرَج عنها بالاستلام أو بحل الاستثناء."
+
+msgid "After:"
+msgstr "بعد:"
+
+msgid "Age"
+msgstr "العمر"
+
+msgid "Age from (yrs)"
+msgstr "العمر من (سنوات)"
+
+msgid "Age to (yrs)"
+msgstr "العمر إلى (سنوات)"
+
+msgid "Age:"
+msgstr "العمر:"
+
+msgid "Ai choice"
+msgstr "اختيار الذكاء الاصطناعي"
+
+msgid "Ai result"
+msgstr "نتيجة الذكاء الاصطناعي"
+
+msgid "Ai suggested"
+msgstr "اقتراح الذكاء الاصطناعي"
+
+msgid "Alert deleted."
+msgstr "تم حذف التنبيه."
+
+msgid "Alert name"
+msgstr "اسم التنبيه"
+
+msgid "All"
+msgstr "الكل"
+
+msgid "All categories"
+msgstr "كل الفئات"
+
+msgid "All departments"
+msgstr "كل الأقسام"
+
+msgid "All notifications marked as read."
+msgstr "تم تعليم كل الإشعارات كمقروءة."
+
+msgid "All service records"
+msgstr "كل سجلات الخدمة"
+
+msgid "All suggestions rejected. Your request stays open — use manual search or submit the need without a reservation."
+msgstr "تم رفض كل الاقتراحات. يبقى طلبك مفتوحًا — استخدم البحث اليدوي أو أرسل الاحتياج دون حجز."
+
+msgid "All time"
+msgstr "كل الأوقات"
+
+msgid "Allocated"
+msgstr "مخصّص"
+
+msgid "Allocated (approved)"
+msgstr "مخصّص (معتمد)"
+
+msgid "Allocated quantity not yet consumed by a confirmed receipt."
+msgstr "كمية مخصّصة لم يستهلكها بعد استلام مؤكد."
+
+msgid "Allow smaller batches; each part gets its own approval and transfer."
+msgstr "السماح بدفعات أصغر؛ لكل جزء موافقته ونقله الخاص."
+
+msgid "Allowed"
+msgstr "مسموح"
+
+msgid "Allowed before approval."
+msgstr "مسموح قبل الموافقة."
+
+msgid "Already available for “"
+msgstr "متاح بالفعل لـ «"
+
+msgid "Alternatives"
+msgstr "البدائل"
+
+msgid "Alternatives considered"
+msgstr "البدائل التي تم النظر فيها"
+
+msgid "An assigned approver (not you) authorises the route."
+msgstr "معتمِد معيَّن (غيرك) يعتمد المسار."
+
+msgid "An audit event needs a human actor or a named service principal."
+msgstr "يحتاج حدث التدقيق إلى منفّذ بشري أو جهة خدمة مسمّاة."
+
+msgid "An earlier stage must be decided first."
+msgstr "يجب البت في مرحلة سابقة أولًا."
+
+msgid "An item cannot be ready for reuse before it was purchased."
+msgstr "لا يمكن أن تكون القطعة جاهزة لإعادة الاستخدام قبل شرائها."
+
+msgid "Analyse photo"
+msgstr "تحليل الصورة"
+
+msgid "Analysing description…"
+msgstr "جارٍ تحليل الوصف…"
+
+msgid "Another proposal for this request is still under review."
+msgstr "مقترح آخر لهذا الطلب ما زال قيد المراجعة."
+
+msgid "Answers citing records outside your context are discarded and replaced with “I don’t know”."
+msgstr "تُستبعد الإجابات التي تستشهد بسجلات خارج نطاقك وتُستبدل بعبارة «لا أعرف»."
+
+msgid "Answers use only records you are allowed to see."
+msgstr "تستخدم الإجابات السجلات المسموح لك برؤيتها فقط."
+
+msgid "Any"
+msgstr "أي"
+
+msgid "Any authorised reviewer for"
+msgstr "أي مراجع مخوّل لـ"
+
+msgid "Any authorised reviewer in scope"
+msgstr "أي مراجع مخوّل ضمن النطاق"
+
+msgid "Any category"
+msgstr "أي فئة"
+
+msgid "Any condition"
+msgstr "أي حالة"
+
+msgid "Any cost (or an unknown one) goes to finance review before approval."
+msgstr "أي تكلفة (أو تكلفة غير معروفة) تذهب للمراجعة المالية قبل الموافقة."
+
+msgid "Any projectors or display screens available?"
+msgstr "هل تتوفر أجهزة عرض أو شاشات عرض؟"
+
+msgid "Any status"
+msgstr "أي حالة"
+
+msgid "Append-only evidence: actor, time, record, action, outcome and before/after values. Nothing here can be edited or deleted."
+msgstr "أدلة غير قابلة للتعديل: المنفّذ والوقت والسجل والإجراء والنتيجة والقيم قبل وبعد. لا يمكن تعديل أو حذف أي شيء هنا."
+
+msgid "Applied to the form — edit freely before saving."
+msgstr "طُبّق على النموذج — عدّل بحرية قبل الحفظ."
+
+msgid "Apply"
+msgstr "تطبيق"
+
+msgid "Approval alone is required before completion can be recorded; this proposal is not approved."
+msgstr "يجب أن يكون المقترح معتمدًا قبل تسجيل الإنجاز؛ هذا المقترح غير معتمد."
+
+msgid "Approval alone never changes custody, location or department."
+msgstr "الموافقة وحدها لا تغيّر العهدة أو الموقع أو القسم أبدًا."
+
+msgid "Approval decisions"
+msgstr "قرارات الموافقة"
+
+msgid "Approval queue"
+msgstr "قائمة الموافقات"
+
+msgid "Approval v"
+msgstr "الموافقة على النسخة"
+
+msgid "Approvals"
+msgstr "الموافقات"
+
+msgid "Approvals, releases, receipts and service checks assigned to you will appear here."
+msgstr "ستظهر هنا الموافقات والإفراجات والاستلامات وفحوص الخدمة المسندة إليك."
+
+msgid "Approve"
+msgstr "موافقة"
+
+msgid "Approve / release / receive / dispose requests are refused before any AI call."
+msgstr "تُرفض طلبات الموافقة / الإفراج / الاستلام / التخلص قبل أي استدعاء للذكاء الاصطناعي."
+
+msgid "Approve v"
+msgstr "اعتماد النسخة"
+
+msgid "Approved"
+msgstr "معتمد"
+
+msgid "Approved handovers. Release and receipt are separate confirmations by different custodians."
+msgstr "عمليات تسليم معتمدة. الإفراج والاستلام تأكيدان منفصلان من أمينَي عهدة مختلفين."
+
+msgid "Approved policy statements"
+msgstr "بيانات السياسات المعتمدة"
+
+msgid "Approved requests need a cancellation decision from the approver. Use 'Request cancellation'."
+msgstr "الطلبات المعتمدة تحتاج قرار إلغاء من المعتمِد. استخدم «طلب إلغاء»."
+
+msgid "Approved — awaiting completion evidence"
+msgstr "معتمد — بانتظار أدلة الإنجاز"
+
+msgid "Approved-request cancellation"
+msgstr "إلغاء طلب معتمد"
+
+msgid "Approver"
+msgstr "المعتمِد"
+
+msgid "Arrangements"
+msgstr "الترتيبات"
+
+msgid "As a system administrator you see technical events only (accounts, departments, roles, configuration, access)."
+msgstr "بصفتك مسؤول النظام ترى الأحداث التقنية فقط (الحسابات، الأقسام، الأدوار، الإعدادات، الوصول)."
+
+msgid "Ask"
+msgstr "اسأل"
+
+msgid "Ask a question in words."
+msgstr "اكتب سؤالًا بالكلمات."
+
+msgid "Ask about available assets, your requests or campus policy. Answers use only records you are allowed to see and cite them. The assistant never approves, releases or changes anything."
+msgstr "اسأل عن الأصول المتاحة أو طلباتك أو سياسات الحرم. تستخدم الإجابات السجلات المسموح لك برؤيتها فقط وتستشهد بها. المساعد لا يوافق ولا يُفرج ولا يغيّر أي شيء أبدًا."
+
+msgid "Ask the campus assistant"
+msgstr "اسأل مساعد الحرم الجامعي"
+
+msgid "Assessing evidence…"
+msgstr "جارٍ تقييم الأدلة…"
+
+msgid "Asset"
+msgstr "الأصل"
+
+msgid "Asset Custodian"
+msgstr "أمين العهدة"
+
+msgid "Asset ID"
+msgstr "رقم الأصل"
+
+msgid "Asset-life extension"
+msgstr "إطالة عمر الأصل"
+
+msgid "Assets in disposition cannot enter maintenance."
+msgstr "لا يمكن للأصول قيد التصرف دخول الصيانة."
+
+msgid "Assets with an unknown purchase date or value never match an age or value range — they are not treated as zero. Value filters apply only to records whose financial fields you may see."
+msgstr "الأصول ذات تاريخ شراء أو قيمة غير معروفة لا تطابق أي نطاق عمر أو قيمة — ولا تُعامل كصفر. مرشحات القيمة تنطبق فقط على السجلات التي يحق لك رؤية حقولها المالية."
+
+msgid "Assigned"
+msgstr "مُسند"
+
+msgid "Assigned Approver"
+msgstr "المعتمِد المعيَّن"
+
+msgid "Assigned approver"
+msgstr "المعتمِد المعيَّن"
+
+msgid "Assigned approver for this department's proposals (BR-02)."
+msgstr "المعتمِد المعيَّن لمقترحات هذا القسم (BR-02)."
+
+msgid "Assigned reviewer; for pooled stages the deciding user is stored at decision time."
+msgstr "المراجع المعيَّن؛ في المراحل المشتركة يُحفظ المستخدم صاحب القرار وقت اتخاذه."
+
+msgid "Assigned staff"
+msgstr "الموظف المُسند"
+
+msgid "Assigns this record to you."
+msgstr "يُسند هذا السجل إليك."
+
+msgid "Assistant"
+msgstr "المساعد"
+
+msgid "At least 10 characters."
+msgstr "10 أحرف على الأقل."
+
+msgid "At least 12 characters; passphrases with spaces are welcome."
+msgstr "12 حرفًا على الأقل؛ العبارات الطويلة مع المسافات مرحّب بها."
+
+msgid "At least 8 characters."
+msgstr "8 أحرف على الأقل."
+
+msgid "At most 50 component lines."
+msgstr "50 سطرًا للمكوّنات كحد أقصى."
+
+msgid "Audio-Visual"
+msgstr "سمعي بصري"
+
+msgid "Audio-Visual / Conference & audio"
+msgstr "سمعي بصري / المؤتمرات والصوت"
+
+msgid "Audio-Visual / Projector"
+msgstr "سمعي بصري / جهاز عرض"
+
+msgid "Audit events are append-only."
+msgstr "أحداث التدقيق قابلة للإضافة فقط."
+
+msgid "Audit events cannot be deleted."
+msgstr "لا يمكن حذف أحداث التدقيق."
+
+msgid "Audit search needs the auditor or system-administrator permission."
+msgstr "البحث في التدقيق يحتاج صلاحية المدقق أو مسؤول النظام."
+
+msgid "Audit trail"
+msgstr "سجل التدقيق"
+
+msgid "Authorise"
+msgstr "اعتماد"
+
+msgid "Authorised"
+msgstr "معتمَد"
+
+msgid "Authorised by"
+msgstr "اعتمده"
+
+msgid "Availability"
+msgstr "التوفر"
+
+msgid "Availability alerts"
+msgstr "تنبيهات التوفر"
+
+msgid "Availability legend"
+msgstr "دليل التوفر"
+
+msgid "Available"
+msgstr "متاح"
+
+msgid "Available listings"
+msgstr "القوائم المتاحة"
+
+msgid "Avoided (AED)"
+msgstr "المُوفَّر (درهم)"
+
+msgid "Avoided purchase"
+msgstr "شراء تم تجنّبه"
+
+msgid "Avoided purchases & savings"
+msgstr "المشتريات المتجنَّبة والوفورات"
+
+msgid "Avoided-purchase review"
+msgstr "مراجعة الشراء المتجنَّب"
+
+msgid "Avoided-purchase values are included in points but shown only to reporting roles."
+msgstr "قيم المشتريات المتجنَّبة محسوبة ضمن النقاط لكنها تظهر لأدوار التقارير فقط."
+
+msgid "Awaiting Approval"
+msgstr "بانتظار الموافقة"
+
+msgid "Awaiting Verification"
+msgstr "بانتظار التحقق"
+
+msgid "Badges"
+msgstr "الشارات"
+
+msgid "Baseline expected retirement (SUS-06)."
+msgstr "التاريخ المتوقع الأساسي للإحالة للتقاعد (SUS-06)."
+
+msgid "Batch of"
+msgstr "دفعة من"
+
+msgid "Before"
+msgstr "قبل"
+
+msgid "Before:"
+msgstr "قبل:"
+
+msgid "Blank = unknown"
+msgstr "فارغ = غير معروف"
+
+msgid "Blank if none"
+msgstr "فارغ إذا لم يوجد"
+
+msgid "Blank if none/unknown"
+msgstr "فارغ إذا لم يوجد/غير معروف"
+
+msgid "Bonus: the receiver scanned the asset's QR label at handover."
+msgstr "إضافي: مسح المستلِم رمز QR الخاص بالأصل عند التسليم."
+
+msgid "Books & Media"
+msgstr "الكتب والوسائط"
+
+msgid "Books & Media / Textbooks"
+msgstr "الكتب والوسائط / الكتب الدراسية"
+
+msgid "Browse catalog"
+msgstr "تصفح الكتالوج"
+
+msgid "Budget saver"
+msgstr "موفّر الميزانية"
+
+msgid "Building"
+msgstr "المبنى"
+
+msgid "CAMPUS_DEMO_PASSWORD"
+msgstr "CAMPUS_DEMO_PASSWORD"
+
+msgid "Calculate snapshot"
+msgstr "احسب اللقطة"
+
+msgid "Calculated by"
+msgstr "احتُسب بواسطة"
+
+msgid "Calculating…"
+msgstr "جارٍ الحساب…"
+
+msgid "Calculation"
+msgstr "الحساب"
+
+msgid "Camera preview"
+msgstr "معاينة الكاميرا"
+
+msgid "Campus"
+msgstr "الحرم"
+
+msgid "Campus / building"
+msgstr "الحرم / المبنى"
+
+msgid "Campus ID"
+msgstr "رقم الحرم الجامعي"
+
+msgid "Campus ID format is wrong."
+msgstr "صيغة رقم الحرم الجامعي غير صحيحة."
+
+msgid "Campus ID is required."
+msgstr "رقم الحرم الجامعي مطلوب."
+
+msgid "Campus ID must contain digits only. Use the 9-digit university ID, e.g. 100060412."
+msgstr "يجب أن يحتوي رقم الحرم الجامعي على أرقام فقط. استخدم الرقم الجامعي المكوّن من 9 أرقام، مثل 100060412."
+
+msgid "Campus ID must start with 1000. Use the 9-digit university ID, e.g. 100060412."
+msgstr "يجب أن يبدأ رقم الحرم الجامعي بـ 1000. استخدم الرقم الجامعي المكوّن من 9 أرقام، مثل 100060412."
+
+msgid "Campus ID: a letter prefix, a dash and 3–6 digits, e.g. U-0001."
+msgstr "رقم الحرم الجامعي: بادئة حرفية ثم شرطة ثم من 3 إلى 6 أرقام، مثل U-0001."
+
+msgid "Campus assistant"
+msgstr "مساعد الحرم الجامعي"
+
+msgid "Campus-wide"
+msgstr "على مستوى الحرم"
+
+msgid "Campus-wide (explicit)"
+msgstr "على مستوى الحرم (صريح)"
+
+msgid "Campus-wide reports need a campus-wide reporting grant; choose your department."
+msgstr "تقارير مستوى الحرم تحتاج صلاحية تقارير على مستوى الحرم؛ اختر قسمك."
+
+msgid "Cancel"
+msgstr "إلغاء"
+
+msgid "Cancel this transfer; the allocation is released back to"
+msgstr "إلغاء هذا النقل؛ يُعاد التخصيص إلى"
+
+msgid "Cancel unreleased quantities — “"
+msgstr "إلغاء الكميات غير المُفرج عنها — «"
+
+msgid "Cancellation proposal sent to the approver. Nothing changes until they decide."
+msgstr "أُرسل مقترح الإلغاء إلى المعتمِد. لا يتغير شيء حتى يقرر."
+
+msgid "Cancellation reason"
+msgstr "سبب الإلغاء"
+
+msgid "Cancelled"
+msgstr "ملغى"
+
+msgid "Cannot be repaired safely"
+msgstr "لا يمكن إصلاحه بأمان"
+
+msgid "Can’t find it?"
+msgstr "لم تجده؟"
+
+msgid "Carbon impact is not estimated here unless an approved factor exists — no figure is invented."
+msgstr "لا يُقدَّر الأثر الكربوني هنا إلا بوجود معامل معتمد — لا تُخترع أي أرقام."
+
+msgid "Catalog"
+msgstr "الكتالوج"
+
+msgid "Category"
+msgstr "الفئة"
+
+msgid "Change"
+msgstr "تغيير"
+
+msgid "Choose a JPEG or PNG photo."
+msgstr "اختر صورة بصيغة JPEG أو PNG."
+
+msgid "Choose a category."
+msgstr "اختر فئة."
+
+msgid "Choose a condition."
+msgstr "اختر حالة."
+
+msgid "Choose a custodian of this department."
+msgstr "اختر أمين عهدة من هذا القسم."
+
+msgid "Choose a custodian of your department."
+msgstr "اختر أمين عهدة من قسمك."
+
+msgid "Choose a date within 90 days of the required date."
+msgstr "اختر تاريخًا خلال 90 يومًا من التاريخ المطلوب."
+
+msgid "Choose a date within the next two years."
+msgstr "اختر تاريخًا خلال السنتين القادمتين."
+
+msgid "Choose a disposition route."
+msgstr "اختر مسار التصرف."
+
+msgid "Choose a file to upload."
+msgstr "اختر ملفًا لرفعه."
+
+msgid "Choose a future date or leave blank."
+msgstr "اختر تاريخًا مستقبليًا أو اتركه فارغًا."
+
+msgid "Choose a method."
+msgstr "اختر طريقة."
+
+msgid "Choose a non-empty file."
+msgstr "اختر ملفًا غير فارغ."
+
+msgid "Choose a photo first."
+msgstr "اختر صورة أولًا."
+
+msgid "Choose a report type."
+msgstr "اختر نوع التقرير."
+
+msgid "Choose a resolution."
+msgstr "اختر طريقة الحل."
+
+msgid "Choose a result."
+msgstr "اختر نتيجة."
+
+msgid "Choose a route."
+msgstr "اختر مسارًا."
+
+msgid "Choose a shorter period."
+msgstr "اختر فترة أقصر."
+
+msgid "Choose a stronger password."
+msgstr "اختر كلمة مرور أقوى."
+
+msgid "Choose a type."
+msgstr "اختر نوعًا."
+
+msgid "Choose a unique asset ID."
+msgstr "اختر رقم أصل فريدًا."
+
+msgid "Choose accept or return to source."
+msgstr "اختر القبول أو الإعادة إلى المصدر."
+
+msgid "Choose an action."
+msgstr "اختر إجراءً."
+
+msgid "Choose an active department."
+msgstr "اختر قسمًا نشطًا."
+
+msgid "Choose an approved role."
+msgstr "اختر دورًا معتمدًا."
+
+msgid "Choose an inspection result."
+msgstr "اختر نتيجة الفحص."
+
+msgid "Choose an item first."
+msgstr "اختر عنصرًا أولًا."
+
+msgid "Choose approve, reject or return."
+msgstr "اختر الموافقة أو الرفض أو الإرجاع."
+
+msgid "Choose collection or delivery."
+msgstr "اختر الاستلام بنفسك أو التوصيل."
+
+msgid "Choose how to resolve the exception."
+msgstr "اختر طريقة حل الاستثناء."
+
+msgid "Choose repair or refurbish."
+msgstr "اختر الإصلاح أو التجديد."
+
+msgid "Choose stock"
+msgstr "اختيار المخزون"
+
+msgid "Choose stock and submit"
+msgstr "اختر المخزون وأرسل"
+
+msgid "Choose the condition you observed."
+msgstr "اختر الحالة التي لاحظتها."
+
+msgid "Choose the resulting condition."
+msgstr "اختر الحالة الناتجة."
+
+msgid "Choose the type of work."
+msgstr "اختر نوع العمل."
+
+msgid "Choose the verified condition."
+msgstr "اختر الحالة التي تم التحقق منها."
+
+msgid "Choose today or a later date."
+msgstr "اختر اليوم أو تاريخًا لاحقًا."
+
+msgid "Circular Campus"
+msgstr "الحرم الدائري"
+
+msgid "Circular Campus · scan to open"
+msgstr "الحرم الدائري · امسح للفتح"
+
+msgid "Circular champion"
+msgstr "بطل الاقتصاد الدائري"
+
+msgid "Circular champions"
+msgstr "أبطال الاقتصاد الدائري"
+
+msgid "Citation for the factor (publication, dataset, page)."
+msgstr "مرجع المعامل (منشور، مجموعة بيانات، صفحة)."
+
+msgid "Cite the factor source and version."
+msgstr "اذكر مصدر المعامل وإصداره."
+
+msgid "Classic, deterministic tables. CSV exports use exactly these filters and your permissions; spreadsheet formulas are neutralised. AI narratives live separately in"
+msgstr "جداول تقليدية محددة. تصدير CSV يستخدم المرشحات نفسها وصلاحياتك؛ وتُعطَّل صيغ جداول البيانات. التقارير السردية بالذكاء الاصطناعي موجودة بشكل منفصل في"
+
+msgid "Classification & tagging"
+msgstr "التصنيف والوسوم"
+
+msgid "Clear filters"
+msgstr "مسح المرشحات"
+
+msgid "Click Use to fill in a campus ID. The password is in the README."
+msgstr "اضغط «استخدام» لملء رقم الحرم الجامعي. كلمة المرور موجودة في ملف README."
+
+msgid "Closed"
+msgstr "مغلق"
+
+msgid "Code"
+msgstr "الرمز"
+
+msgid "Collected by…, slip number, vehicle…"
+msgstr "استلمه…، رقم الإيصال، المركبة…"
+
+msgid "Collection by receiver"
+msgstr "استلام من قبل المستلِم"
+
+msgid "Comma-separated keywords, e.g. monitor, HDMI, 24-inch."
+msgstr "كلمات مفتاحية مفصولة بفواصل، مثل monitor, HDMI, 24-inch."
+
+msgid "Comma-separated terms every candidate must state, e.g. HDMI. Safety and mandatory specs outrank a high score."
+msgstr "مصطلحات مفصولة بفواصل يجب أن يذكرها كل مرشح، مثل HDMI. السلامة والمواصفات الإلزامية تتقدم على الدرجة العالية."
+
+msgid "Comma-separated terms used by rule-based classification fallback."
+msgstr "مصطلحات مفصولة بفواصل يستخدمها التصنيف القاعدي البديل."
+
+msgid "Commit the"
+msgstr "اعتماد"
+
+msgid "Committing…"
+msgstr "جارٍ التنفيذ…"
+
+msgid "Complete the avoided-purchase evidence."
+msgstr "أكمل أدلة الشراء المتجنَّب."
+
+msgid "Completed"
+msgstr "مكتمل"
+
+msgid "Completed & cancelled"
+msgstr "مكتمل وملغى"
+
+msgid "Completed / Closed"
+msgstr "مكتمل / مغلق"
+
+msgid "Completed dispositions are read-only; record a correction event instead."
+msgstr "التصرفات المكتملة للقراءة فقط؛ سجّل حدث تصحيح بدلًا من ذلك."
+
+msgid "Completed transfers"
+msgstr "عمليات النقل المكتملة"
+
+msgid "Completion cannot be before the proposal was made."
+msgstr "لا يمكن أن يسبق الإنجاز تاريخ تقديم المقترح."
+
+msgid "Completion date"
+msgstr "تاريخ الإنجاز"
+
+msgid "Completion evidence"
+msgstr "أدلة الإنجاز"
+
+msgid "Completion evidence recorded; the final state is now set."
+msgstr "تم تسجيل أدلة الإنجاز؛ تم تثبيت الحالة النهائية."
+
+msgid "Component Recovered"
+msgstr "تم استخلاص المكوّنات"
+
+msgid "Components"
+msgstr "المكوّنات"
+
+msgid "Computer Science"
+msgstr "علوم الحاسوب"
+
+msgid "Condition"
+msgstr "الحالة"
+
+msgid "Condition after"
+msgstr "الحالة بعد"
+
+msgid "Condition before"
+msgstr "الحالة قبل"
+
+msgid "Condition observed"
+msgstr "الحالة الملاحظة"
+
+msgid "Condition:"
+msgstr "الحالة:"
+
+msgid "Confidence unavailable."
+msgstr "الثقة غير متاحة."
+
+msgid "Confidence unavailable: the model does not return a calibrated probability."
+msgstr "الثقة غير متاحة: النموذج لا يعيد احتمالًا معايَرًا."
+
+msgid "Confidence:"
+msgstr "الثقة:"
+
+msgid "Confidence: unavailable"
+msgstr "الثقة: غير متاحة"
+
+msgid "Confirm"
+msgstr "تأكيد"
+
+msgid "Confirm password"
+msgstr "تأكيد كلمة المرور"
+
+msgid "Confirm receipt"
+msgstr "تأكيد الاستلام"
+
+msgid "Confirm what you physically counted and inspected? A matching receipt moves custody, department and location now; a mismatch opens an Exception."
+msgstr "هل تؤكد ما عددته وفحصته فعليًا؟ الاستلام المطابق ينقل العهدة والقسم والموقع الآن؛ وأي اختلاف يفتح استثناءً."
+
+msgid "Confirmed AED 5,000 or more in avoided purchases"
+msgstr "أكّد مشتريات متجنَّبة بقيمة 5,000 درهم أو أكثر"
+
+msgid "Consumed"
+msgstr "مُستهلك"
+
+msgid "Continue with selected action"
+msgstr "المتابعة بالإجراء المختار"
+
+msgid "Continuing opens the normal proposal/maintenance form; nothing is executed by this advice."
+msgstr "المتابعة تفتح نموذج المقترح/الصيانة المعتاد؛ لا تنفّذ هذه النصيحة أي شيء."
+
+msgid "Controls"
+msgstr "الضوابط"
+
+msgid "Conversation"
+msgstr "المحادثة"
+
+msgid "Correct"
+msgstr "تصحيح"
+
+msgid "Correct and resubmit"
+msgstr "تصحيح وإعادة إرسال"
+
+msgid "Correct the highlighted fields."
+msgstr "صحّح الحقول المظللة."
+
+msgid "Corrected proposal resubmitted as a new version."
+msgstr "أُعيد إرسال المقترح المصحح كنسخة جديدة."
+
+msgid "Costs cannot be negative. Unknown stays unknown — never zero."
+msgstr "لا يمكن أن تكون التكاليف سالبة. غير المعروف يبقى غير معروف — وليس صفرًا."
+
+msgid "Counted once per unit (SUS-09)"
+msgstr "يُحتسب مرة واحدة لكل وحدة (SUS-09)"
+
+msgid "Coverage below 70% → “insufficient evidence”; all scores below 70 → “weak matches”."
+msgstr "تغطية أقل من 70% ← «أدلة غير كافية»؛ وكل الدرجات أقل من 70 ← «مطابقات ضعيفة»."
+
+msgid "Create a request"
+msgstr "إنشاء طلب"
+
+msgid "Create a snapshot to start."
+msgstr "أنشئ لقطة للبدء."
+
+msgid "Create account"
+msgstr "إنشاء حساب"
+
+msgid "Create one on the left, or press “Notify me” on a catalog search."
+msgstr "أنشئ تنبيهًا من النموذج المجاور، أو اضغط «نبّهني» عند البحث في الكتالوج."
+
+msgid "Create your first request"
+msgstr "أنشئ طلبك الأول"
+
+msgid "Critical terms every candidate must state, separated by commas (BR-12)."
+msgstr "مصطلحات حرجة يجب أن يذكرها كل مرشح، مفصولة بفواصل (BR-12)."
+
+msgid "Current new-purchase price per unit."
+msgstr "سعر الشراء الجديد الحالي للوحدة."
+
+msgid "Current value / unit"
+msgstr "القيمة الحالية / للوحدة"
+
+msgid "Current value cannot exceed the new-purchase price."
+msgstr "لا يمكن أن تتجاوز القيمة الحالية سعر الشراء الجديد."
+
+msgid "Current value per unit (AED)"
+msgstr "القيمة الحالية للوحدة (درهم)"
+
+msgid "Custodian"
+msgstr "أمين العهدة"
+
+msgid "Custodian in your department who will confirm receipt."
+msgstr "أمين عهدة في قسمك سيؤكد الاستلام."
+
+msgid "Custodian — not the technician"
+msgstr "أمين العهدة — وليس الفني"
+
+msgid "Custodians"
+msgstr "أمناء العهدة"
+
+msgid "Custody commits"
+msgstr "انتقال العهدة"
+
+msgid "Custody, department and status can only change through transfer and life-cycle workflows. Corrections to condition, quantity or location are recorded with your reason."
+msgstr "لا تتغير العهدة والقسم والحالة إلا عبر النقل ودورة الحياة. تُسجَّل تصحيحات الحالة أو الكمية أو الموقع مع السبب الذي تذكره."
+
+msgid "Dashboard"
+msgstr "لوحة التحكم"
+
+msgid "Data rules"
+msgstr "قواعد البيانات"
+
+msgid "Database totals"
+msgstr "إجماليات قاعدة البيانات"
+
+msgid "Dates must be YYYY-MM-DD."
+msgstr "يجب أن تكون التواريخ بصيغة YYYY-MM-DD."
+
+msgid "Dates, value & sustainability inputs"
+msgstr "التواريخ والقيمة ومدخلات الاستدامة"
+
+msgid "Deactivate"
+msgstr "تعطيل"
+
+msgid "Deactivate account"
+msgstr "تعطيل الحساب"
+
+msgid "Deactivate instead of delete: assets, requests and history that reference a department are kept."
+msgstr "التعطيل بدل الحذف: تُحفظ الأصول والطلبات والسجل المرتبطة بالقسم."
+
+msgid "Decide later"
+msgstr "القرار لاحقًا"
+
+msgid "Deciding"
+msgstr "جارٍ القرار"
+
+msgid "Decision deferred; the advice is kept for reference."
+msgstr "تم تأجيل القرار؛ احتُفظ بالنصيحة للرجوع إليها."
+
+msgid "Decision recorded: retain in current use."
+msgstr "تم تسجيل القرار: الإبقاء في الاستخدام الحالي."
+
+msgid "Default approver"
+msgstr "المعتمِد الافتراضي"
+
+msgid "Defaults to you."
+msgstr "افتراضيًا أنت."
+
+msgid "Defect"
+msgstr "عطل"
+
+msgid "Defects restrict stock immediately. Repairs need approval; a custodian verifies safe return. Final dispositions need approval and completion evidence."
+msgstr "الأعطال تقيّد المخزون فورًا. الإصلاحات تحتاج موافقة، ويتحقق أمين العهدة من العودة الآمنة. التصرفات النهائية تحتاج موافقة وأدلة إنجاز."
+
+msgid "Delivery & receipt"
+msgstr "التوصيل والاستلام"
+
+msgid "Delivery by releasing department"
+msgstr "توصيل من القسم المُسلِّم"
+
+msgid "Demand ·"
+msgstr "الطلب ·"
+
+msgid "Demo accounts"
+msgstr "الحسابات التجريبية"
+
+msgid "Demo environment — all people, assets and amounts are synthetic. Carbon factors are not seeded."
+msgstr "بيئة تجريبية — كل الأشخاص والأصول والمبالغ اصطناعية. لم تُضَف معاملات الكربون."
+
+msgid "Denied"
+msgstr "مرفوض"
+
+msgid "Denominator = every unit that entered the surplus cohort in the period — diverted, pending and discarded — so the rate cannot exceed 100% (design 5.11)."
+msgstr "المقام = كل وحدة دخلت مجموعة الفائض في الفترة — المحوَّلة والمعلقة والمستبعدة — لذا لا يمكن أن يتجاوز المعدل 100% (التصميم 5.11)."
+
+msgid "Department"
+msgstr "القسم"
+
+msgid "Department Representative"
+msgstr "ممثل القسم"
+
+msgid "Department asset register"
+msgstr "سجل أصول القسم"
+
+msgid "Department code"
+msgstr "رمز القسم"
+
+msgid "Department code format is wrong."
+msgstr "صيغة رمز القسم غير صحيحة."
+
+msgid "Department code: 2–12 capital letters, e.g. IT."
+msgstr "رمز القسم: من 2 إلى 12 حرفًا لاتينيًا كبيرًا، مثل IT."
+
+msgid "Department credited (receiving or owning)."
+msgstr "القسم المستفيد (المستلِم أو المالك)."
+
+msgid "Department name"
+msgstr "اسم القسم"
+
+msgid "Department saved."
+msgstr "تم حفظ القسم."
+
+msgid "Department that owned the units when they entered the cohort."
+msgstr "القسم الذي كان يملك الوحدات عند دخولها المجموعة."
+
+msgid "Department whose role scope decides this stage."
+msgstr "القسم الذي يحدد نطاق دوره هذه المرحلة."
+
+msgid "Department:"
+msgstr "القسم:"
+
+msgid "Departments"
+msgstr "الأقسام"
+
+msgid "Departments ranked by verified circular actions. Every point comes from a completed, evidence-linked workflow record — the same records as the sustainability dashboard — and is counted once."
+msgstr "ترتيب الأقسام حسب الإجراءات الدائرية الموثّقة. كل نقطة مصدرها سجل سير عمل مكتمل ومرتبط بالأدلة — السجلات نفسها في لوحة الاستدامة — وتُحتسب مرة واحدة."
+
+msgid "Describe the defect (at least 10 characters)."
+msgstr "صف العطل (10 أحرف على الأقل)."
+
+msgid "Describe the defect, when it was noticed and any safety concern."
+msgstr "صف العطل ومتى لوحظ وأي مخاوف تتعلق بالسلامة."
+
+msgid "Describe the proposed repair or refurbishment."
+msgstr "صف الإصلاح أو التجديد المقترح."
+
+msgid "Describe the work (at least 8 characters)."
+msgstr "صف العمل (8 أحرف على الأقل)."
+
+msgid "Describe the work completed."
+msgstr "صف العمل المنجز."
+
+msgid "Describe what is wrong."
+msgstr "صف المشكلة."
+
+msgid "Describe what your department needs — AI can rank matching surplus for you."
+msgstr "صف ما يحتاجه قسمك — يمكن للذكاء الاصطناعي ترتيب الفائض المطابق لك."
+
+msgid "Describe your need"
+msgstr "صف احتياجك"
+
+msgid "Description"
+msgstr "الوصف"
+
+msgid "Desired specifications."
+msgstr "المواصفات المطلوبة."
+
+msgid "Destination"
+msgstr "الوجهة"
+
+msgid "Destination campus"
+msgstr "حرم الوجهة"
+
+msgid "Details"
+msgstr "التفاصيل"
+
+msgid "Deterministic indicators calculated from completed workflow records — never by AI. Every figure shows its formula, inputs, source and status; missing evidence is shown as unavailable, not zero."
+msgstr "مؤشرات محددة تُحسب من سجلات سير العمل المكتملة — وليس بالذكاء الاصطناعي أبدًا. يعرض كل رقم صيغته ومدخلاته ومصدره وحالته؛ والأدلة الناقصة تظهر كـ«غير متاح» لا كصفر."
+
+msgid "Deterministic metrics with formulas — unknown stays unknown."
+msgstr "مقاييس محددة بصيغ واضحة — غير المعروف يبقى غير معروف."
+
+msgid "Did this reuse replace a purchase the department would otherwise make?"
+msgstr "هل حلّت إعادة الاستخدام هذه محل شراء كان القسم سيقوم به؟"
+
+msgid "Dimensions"
+msgstr "الأبعاد"
+
+msgid "Dimensions must be greater than zero."
+msgstr "يجب أن تكون الأبعاد أكبر من صفر."
+
+msgid "Dimensions: two or three numbers with a unit, e.g. 140 x 70 cm or 120 x 60 x 75 cm."
+msgstr "الأبعاد: رقمان أو ثلاثة مع وحدة، مثل 140 x 70 cm أو 120 x 60 x 75 cm."
+
+msgid "Disassemble for usable components"
+msgstr "تفكيك لاستخلاص المكوّنات الصالحة"
+
+msgid "Dismiss"
+msgstr "إغلاق"
+
+msgid "Dispose (final option)"
+msgstr "التخلص (الخيار الأخير)"
+
+msgid "Disposed"
+msgstr "تم التخلص منه"
+
+msgid "Disposition"
+msgstr "التصرف"
+
+msgid "Disposition Pending"
+msgstr "التصرف قيد الانتظار"
+
+msgid "Dispositions"
+msgstr "التصرفات"
+
+msgid "Diverted"
+msgstr "المحوَّل"
+
+msgid "Diverted 5 or more units from landfill"
+msgstr "حوّل 5 وحدات أو أكثر بعيدًا عن المكبّ"
+
+msgid "Do you accept this delivery?"
+msgstr "هل تقبل هذا التسليم؟"
+
+msgid "Donate"
+msgstr "تبرع"
+
+msgid "Donated"
+msgstr "تم التبرع به"
+
+msgid "Dr. Aisha Rahman (U-3002)"
+msgstr "د. عائشة رحمن (U-3002)"
+
+msgid "Dr. Hamad Al Ketbi (U-3001)"
+msgstr "د. حمد الكتبي (U-3001)"
+
+msgid "Draft"
+msgstr "مسودة"
+
+msgid "Draft exactly as generated, preserved for provenance."
+msgstr "المسودة كما أُنشئت تمامًا، محفوظة لإثبات المصدر."
+
+msgid "Draft prepared by the assistant"
+msgstr "مسودة أعدها المساعد"
+
+msgid "Draft — not published"
+msgstr "مسودة — غير منشورة"
+
+msgid "Drafted by Gemini from the snapshot only"
+msgstr "صاغها Gemini من اللقطة فقط"
+
+msgid "Drafting from snapshot…"
+msgstr "جارٍ الصياغة من اللقطة…"
+
+msgid "Drafts open the normal form; only you can submit."
+msgstr "المسودات تفتح النموذج المعتاد؛ وأنت وحدك من يمكنه الإرسال."
+
+msgid "Each component quantity must be between 1 and 10,000."
+msgstr "يجب أن تكون كمية كل مكوّن بين 1 و10,000."
+
+msgid "Each highlighted field explains the correction needed. Your other entries were kept."
+msgstr "كل حقل مظلل يشرح التصحيح المطلوب. تم الاحتفاظ بباقي مدخلاتك."
+
+msgid "Edit"
+msgstr "تعديل"
+
+msgid "Edit the text to match the snapshot."
+msgstr "عدّل النص ليطابق اللقطة."
+
+msgid "Edits re-run validation and require a fresh review. The original draft is preserved for provenance."
+msgstr "التعديلات تعيد التحقق وتتطلب مراجعة جديدة. المسودة الأصلية محفوظة لإثبات المصدر."
+
+msgid "Eligible stock"
+msgstr "المخزون المؤهل"
+
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+msgid "Emission factor recorded with its source. Carbon estimates now use it and stay labelled as estimates."
+msgstr "تم تسجيل معامل الانبعاث مع مصدره. تقديرات الكربون تستخدمه الآن وتبقى موسومة كتقديرات."
+
+msgid "Emission factors"
+msgstr "معاملات الانبعاث"
+
+msgid "Empty = explicitly approved campus-wide grant."
+msgstr "فارغ = صلاحية معتمدة صراحةً على مستوى الحرم."
+
+msgid "Empty = unknown."
+msgstr "فارغ = غير معروف."
+
+msgid "Engineering"
+msgstr "الهندسة"
+
+msgid "Enter a name and description before asking for a suggestion."
+msgstr "أدخل اسمًا ووصفًا قبل طلب اقتراح."
+
+msgid "Enter a name and description, then ask for a suggestion. Nothing changes until you accept it and save — you can always classify manually."
+msgstr "أدخل اسمًا ووصفًا ثم اطلب اقتراحًا. لا يتغير شيء حتى تقبله وتحفظ — ويمكنك دائمًا التصنيف يدويًا."
+
+msgid "Enter the actual completion date (not in the future)."
+msgstr "أدخل تاريخ الإنجاز الفعلي (ليس في المستقبل)."
+
+msgid "Enter the counted quantity."
+msgstr "أدخل الكمية المعدودة."
+
+msgid "Enter the quantity to reserve."
+msgstr "أدخل الكمية المراد حجزها."
+
+msgid "Enter your 9-digit university ID."
+msgstr "أدخل رقمك الجامعي المكوّن من 9 أرقام."
+
+msgid "Est. transfer cost"
+msgstr "تكلفة النقل التقديرية"
+
+msgid "Estimated carbon avoided"
+msgstr "الكربون المتجنَّب التقديري"
+
+msgid "Estimated cost"
+msgstr "التكلفة التقديرية"
+
+msgid "Estimated cost (AED)"
+msgstr "التكلفة التقديرية (درهم)"
+
+msgid "Estimated transfer cost (AED)"
+msgstr "تكلفة النقل التقديرية (درهم)"
+
+msgid "Every batch your custodian role covers, in every life-cycle state."
+msgstr "كل دفعة يغطيها دورك كأمين عهدة، في كل مراحل دورة الحياة."
+
+msgid "Every figure in the text appears in the snapshot. You must still read it and confirm it."
+msgstr "كل رقم في النص موجود في اللقطة. ما زال عليك قراءته وتأكيده."
+
+msgid "Every word must appear in the item's name, description, tags or specifications."
+msgstr "يجب أن تظهر كل كلمة في اسم العنصر أو وصفه أو وسومه أو مواصفاته."
+
+msgid "Every word must appear in the item, e.g. HDMI monitor."
+msgstr "يجب أن تظهر كل كلمة في العنصر، مثل HDMI monitor."
+
+msgid "Evidence"
+msgstr "الأدلة"
+
+msgid "Evidence coverage"
+msgstr "تغطية الأدلة"
+
+msgid "Evidence used"
+msgstr "الأدلة المستخدمة"
+
+msgid "Evidence-based impact"
+msgstr "أثر قائم على الأدلة"
+
+msgid "Excellent"
+msgstr "ممتاز"
+
+msgid "Exception"
+msgstr "استثناء"
+
+msgid "Exception resolved."
+msgstr "تم حل الاستثناء."
+
+msgid "Exchange"
+msgstr "التبادل"
+
+msgid "Exchange /"
+msgstr "التبادل /"
+
+msgid "Exchange / My alerts"
+msgstr "التبادل / تنبيهاتي"
+
+msgid "Exchange / QR labels"
+msgstr "التبادل / ملصقات QR"
+
+msgid "Exchange / Requests"
+msgstr "التبادل / الطلبات"
+
+msgid "Exchange / Scan"
+msgstr "التبادل / المسح"
+
+msgid "Exchange steps"
+msgstr "خطوات التبادل"
+
+msgid "Exchange · Life cycle"
+msgstr "التبادل · دورة الحياة"
+
+msgid "Excluded by hard rules"
+msgstr "مستبعد بالقواعد الصارمة"
+
+msgid "Existing holds are flagged; release is blocked."
+msgstr "تم وسم الحجوزات الحالية؛ الإفراج محظور."
+
+msgid "Expected retirement"
+msgstr "الإحالة المتوقعة للتقاعد"
+
+msgid "Expected retirement (baseline)"
+msgstr "الإحالة المتوقعة للتقاعد (أساسي)"
+
+msgid "Expected retirement must be within 30 years."
+msgstr "يجب أن تكون الإحالة المتوقعة للتقاعد خلال 30 سنة."
+
+msgid "Expired"
+msgstr "منتهي الصلاحية"
+
+msgid "Expires"
+msgstr "ينتهي"
+
+msgid "Expiry / note"
+msgstr "الانتهاء / ملاحظة"
+
+msgid "Explain the decision (at least 5 characters)."
+msgstr "اشرح القرار (5 أحرف على الأقل)."
+
+msgid "Explain why the condition, location or quantity is being corrected."
+msgstr "اشرح سبب تصحيح الحالة أو الموقع أو الكمية."
+
+msgid "Explicitly accept partial fulfilment from smaller batches (BR-15)."
+msgstr "اقبل صراحةً التلبية الجزئية من دفعات أصغر (BR-15)."
+
+msgid "Explicitly not applicable"
+msgstr "غير منطبق صراحةً"
+
+msgid "Export CSV"
+msgstr "تصدير CSV"
+
+msgid "Facilities & Estates"
+msgstr "المرافق والعقارات"
+
+msgid "Failed"
+msgstr "فشل"
+
+msgid "Fair"
+msgstr "مقبول"
+
+msgid "False records that the reuse did not replace a needed purchase."
+msgstr "«لا» تعني أن إعادة الاستخدام لم تحل محل شراء ضروري."
+
+msgid "False when these units were already counted (repeat transfer)."
+msgstr "«لا» عندما تكون هذه الوحدات قد احتُسبت مسبقًا (نقل متكرر)."
+
+msgid "Fewer than"
+msgstr "أقل من"
+
+msgid "Figures not in the snapshot:"
+msgstr "أرقام غير موجودة في اللقطة:"
+
+msgid "File"
+msgstr "الملف"
+
+msgid "Files must be 10 MB or smaller."
+msgstr "يجب أن يكون حجم الملفات 10 ميغابايت أو أقل."
+
+msgid "Filter"
+msgstr "تصفية"
+
+msgid "Filter assets"
+msgstr "تصفية الأصول"
+
+msgid "Filter requests"
+msgstr "تصفية الطلبات"
+
+msgid "Final option"
+msgstr "الخيار الأخير"
+
+msgid "Final state"
+msgstr "الحالة النهائية"
+
+msgid "Finance Officer"
+msgstr "المسؤول المالي"
+
+msgid "Financial fields"
+msgstr "الحقول المالية"
+
+msgid "Find matches"
+msgstr "البحث عن مطابقات"
+
+msgid "Find matches to rank up to five eligible surplus items. Hard eligibility rules run first; the score is calculated by the application from the designed weights."
+msgstr "ابحث عن مطابقات لترتيب حتى خمسة عناصر فائضة مؤهلة. تُطبَّق قواعد الأهلية الصارمة أولًا؛ ويحسب التطبيق الدرجة من الأوزان المصممة."
+
+msgid "Find surplus equipment across departments, request it through accountable approvals, and track every asset from registration to reuse, repair or responsible disposal."
+msgstr "اعثر على المعدات الفائضة عبر الأقسام، واطلبها عبر موافقات خاضعة للمساءلة، وتتبع كل أصل من التسجيل حتى إعادة الاستخدام أو الإصلاح أو التخلص المسؤول."
+
+msgid "Findings"
+msgstr "النتائج"
+
+msgid "First share"
+msgstr "أول مشاركة"
+
+msgid "Fix-it team"
+msgstr "فريق الإصلاح"
+
+msgid "Form version"
+msgstr "نسخة النموذج"
+
+msgid "Formula"
+msgstr "الصيغة"
+
+msgid "Formula, inputs & source"
+msgstr "الصيغة والمدخلات والمصدر"
+
+msgid "Formula."
+msgstr "الصيغة."
+
+msgid "Formulas & evidence"
+msgstr "الصيغ والأدلة"
+
+msgid "Free"
+msgstr "متاح"
+
+msgid "Free to request"
+msgstr "متاح للطلب"
+
+msgid "Fresh on the exchange"
+msgstr "جديد في التبادل"
+
+msgid "From"
+msgstr "من"
+
+msgid "From today up to two years ahead."
+msgstr "من اليوم وحتى سنتين قادمتين."
+
+msgid "From → To"
+msgstr "من ← إلى"
+
+msgid "Fulfilled"
+msgstr "تمت التلبية"
+
+msgid "Full name"
+msgstr "الاسم الكامل"
+
+msgid "Full name may contain only letters, spaces, apostrophes, hyphens and dots."
+msgstr "يمكن أن يحتوي الاسم الكامل على حروف ومسافات وفواصل عليا وشرطات ونقاط فقط."
+
+msgid "Furniture"
+msgstr "الأثاث"
+
+msgid "Furniture (FurnitureAsset metadata)"
+msgstr "الأثاث (بيانات FurnitureAsset)"
+
+msgid "Furniture / Chair"
+msgstr "الأثاث / كرسي"
+
+msgid "Furniture / Desk & table"
+msgstr "الأثاث / مكتب وطاولة"
+
+msgid "Furniture / Storage"
+msgstr "الأثاث / تخزين"
+
+msgid "Furniture / Whiteboard"
+msgstr "الأثاث / سبورة بيضاء"
+
+msgid "Furniture only, e.g. 140 x 70 cm or 120 x 60 x 75 cm."
+msgstr "للأثاث فقط، مثل 140 x 70 cm أو 120 x 60 x 75 cm."
+
+msgid "Furniture only, e.g. Oak, Steel."
+msgstr "للأثاث فقط، مثل Oak أو Steel."
+
+msgid "Gave 10 or more units to other departments"
+msgstr "قدّم 10 وحدات أو أكثر لأقسام أخرى"
+
+msgid "Gave at least 1 unit to another department"
+msgstr "قدّم وحدة واحدة على الأقل لقسم آخر"
+
+msgid "Gemini configured"
+msgstr "تم إعداد Gemini"
+
+msgid "Gemini draft"
+msgstr "مسودة Gemini"
+
+msgid "Gemini drafted the narrative from the snapshot. Review and edit it — it is NOT published."
+msgstr "صاغ Gemini السرد من اللقطة. راجعه وعدّله — إنه غير منشور."
+
+msgid "Gemini ·"
+msgstr "Gemini ·"
+
+msgid "General"
+msgstr "عام"
+
+msgid "Generate a draft from the frozen totals. Generating never publishes."
+msgstr "أنشئ مسودة من الإجماليات المجمّدة. الإنشاء لا ينشر أبدًا."
+
+msgid "Generate narrative"
+msgstr "إنشاء السرد"
+
+msgid "Generated reports"
+msgstr "التقارير المُنشأة"
+
+msgid "Generous giver"
+msgstr "معطاء سخي"
+
+msgid "Get a notification when matching surplus is published"
+msgstr "احصل على إشعار عند نشر فائض مطابق"
+
+msgid "Get advice"
+msgstr "احصل على نصيحة"
+
+msgid "Get advice to compare reuse, repair, donation, recycling and disposal using this asset's recorded evidence."
+msgstr "احصل على نصيحة للمقارنة بين إعادة الاستخدام والإصلاح والتبرع وإعادة التدوير والتخلص باستخدام الأدلة المسجلة لهذا الأصل."
+
+msgid "Give a reason of at least 8 characters."
+msgstr "اذكر سببًا من 8 أحرف على الأقل."
+
+msgid "Give keywords or choose a category, otherwise every item would match."
+msgstr "اذكر كلمات مفتاحية أو اختر فئة، وإلا ستطابق كل العناصر."
+
+msgid "Give the justification and the alternatives considered (reuse, repair, donation…)."
+msgstr "اذكر المبررات والبدائل التي تم النظر فيها (إعادة الاستخدام، الإصلاح، التبرع…)."
+
+msgid "Given"
+msgstr "المُقدَّم"
+
+msgid "Go to dashboard"
+msgstr "الذهاب إلى لوحة التحكم"
+
+msgid "Good"
+msgstr "جيد"
+
+msgid "Good to see you,"
+msgstr "سعدنا برؤيتك،"
+
+msgid "Grant"
+msgstr "منح"
+
+msgid "Grant the approver role first."
+msgstr "امنح دور المعتمِد أولًا."
+
+msgid "Granted"
+msgstr "مُنح"
+
+msgid "Group similar parts on one line."
+msgstr "اجمع القطع المتشابهة في سطر واحد."
+
+msgid "Guardrails"
+msgstr "الضمانات"
+
+msgid "Handover"
+msgstr "التسليم"
+
+msgid "Handover arrangements"
+msgstr "ترتيبات التسليم"
+
+msgid "Handover arrangements saved."
+msgstr "تم حفظ ترتيبات التسليم."
+
+msgid "Handover date"
+msgstr "تاريخ التسليم"
+
+msgid "Hard filters (visibility, safety, condition, mandatory specs, date, quantity) run first. The 0–100 suitability score is a weighted mean of the available factors; missing factors are excluded and lower the evidence coverage. It is a fit rating — not the probability that the AI is right."
+msgstr "تُطبَّق المرشحات الصارمة (الظهور، السلامة، الحالة، المواصفات الإلزامية، التاريخ، الكمية) أولًا. درجة الملاءمة من 0 إلى 100 متوسط موزون للعوامل المتاحة؛ وتُستبعد العوامل الناقصة فتنخفض تغطية الأدلة. إنها تقييم للملاءمة — وليست احتمال صحة الذكاء الاصطناعي."
+
+msgid "Held"
+msgstr "محجوز"
+
+msgid "Held (pending approval)"
+msgstr "محجوز (بانتظار الموافقة)"
+
+msgid "Held (pending)"
+msgstr "محجوز (معلّق)"
+
+msgid "Help & policies"
+msgstr "المساعدة والسياسات"
+
+msgid "Hi"
+msgstr "مرحبًا"
+
+msgid "Hidden for your role (NFR-09)"
+msgstr "مخفي لدورك (NFR-09)"
+
+msgid "High"
+msgstr "عالية"
+
+msgid "High-demand categories"
+msgstr "الفئات الأكثر طلبًا"
+
+msgid "History and decisions are preserved."
+msgstr "يتم حفظ السجل والقرارات."
+
+msgid "Hold"
+msgstr "حجز"
+
+msgid "Hold expires"
+msgstr "ينتهي الحجز"
+
+msgid "Holds & allocations"
+msgstr "الحجوزات والتخصيصات"
+
+msgid "Holds & transfers"
+msgstr "الحجوزات وعمليات النقل"
+
+msgid "How Circular Campus works"
+msgstr "كيف يعمل الحرم الدائري"
+
+msgid "How long is a reservation held?"
+msgstr "كم مدة الاحتفاظ بالحجز؟"
+
+msgid "How match scores work"
+msgstr "كيف تعمل درجات المطابقة"
+
+msgid "How to read this"
+msgstr "كيف تقرأ هذا"
+
+msgid "Human decisions on this advice"
+msgstr "القرارات البشرية بشأن هذه النصيحة"
+
+msgid "Human edit & review"
+msgstr "التعديل والمراجعة البشرية"
+
+msgid "Human-approved, never automatic"
+msgstr "بموافقة بشرية، وليس تلقائيًا أبدًا"
+
+msgid "I checked every statement against the snapshot and the data-only tables."
+msgstr "تحققت من كل عبارة مقابل اللقطة والجداول المعتمدة على البيانات فقط."
+
+msgid "I need 3 HDMI monitors for a teaching lab by next month"
+msgstr "أحتاج 3 شاشات HDMI لمختبر تعليمي بحلول الشهر القادم"
+
+msgid "ID"
+msgstr "المعرّف"
+
+msgid "IT Equipment"
+msgstr "معدات تقنية المعلومات"
+
+msgid "IT Equipment / Desktop computer"
+msgstr "معدات تقنية المعلومات / حاسوب مكتبي"
+
+msgid "IT Equipment / Laptop"
+msgstr "معدات تقنية المعلومات / حاسوب محمول"
+
+msgid "IT Equipment / Monitor"
+msgstr "معدات تقنية المعلومات / شاشة"
+
+msgid "IT Equipment / Networking"
+msgstr "معدات تقنية المعلومات / الشبكات"
+
+msgid "IT Equipment / Printer & scanner"
+msgstr "معدات تقنية المعلومات / طابعة وماسح ضوئي"
+
+msgid "IT equipment (ITAsset metadata)"
+msgstr "معدات تقنية المعلومات (بيانات ITAsset)"
+
+msgid "IT equipment only, e.g. SN-48213-B."
+msgstr "لمعدات تقنية المعلومات فقط، مثل SN-48213-B."
+
+msgid "IT equipment only. Comma-separated from: HDMI, DisplayPort, VGA, DVI, USB-A, USB-C, Thunderbolt, Ethernet, Audio jack, SD card, Power (e.g. 2x USB-C, HDMI)."
+msgstr "لمعدات تقنية المعلومات فقط. قائمة مفصولة بفواصل من: HDMI، DisplayPort، VGA، DVI، USB-A، USB-C، Thunderbolt، Ethernet، Audio jack، SD card، Power (مثل 2x USB-C, HDMI)."
+
+msgid "ITAsset / FurnitureAsset"
+msgstr "ITAsset / FurnitureAsset"
+
+msgid "Identification & description"
+msgstr "التعريف والوصف"
+
+msgid "Immutable deterministic totals the narrative must follow."
+msgstr "إجماليات محددة غير قابلة للتغيير يجب أن يلتزم بها السرد."
+
+msgid "In Maintenance"
+msgstr "قيد الصيانة"
+
+msgid "In Service"
+msgstr "قيد الخدمة"
+
+msgid "In Use"
+msgstr "قيد الاستخدام"
+
+msgid "In progress"
+msgstr "قيد التنفيذ"
+
+msgid "In-app notices for requests, decisions, holds, transfers, maintenance and dispositions. Opening a link re-checks your permission."
+msgstr "إشعارات داخل التطبيق للطلبات والقرارات والحجوزات وعمليات النقل والصيانة والتصرفات. فتح أي رابط يعيد التحقق من صلاحيتك."
+
+msgid "Indicator"
+msgstr "المؤشر"
+
+msgid "Inferred values are suggestions, not verified facts."
+msgstr "القيم المستنتجة اقتراحات وليست حقائق موثّقة."
+
+msgid "Inputs"
+msgstr "المدخلات"
+
+msgid "Insight"
+msgstr "الرؤى"
+
+msgid "Insight / AI reports"
+msgstr "الرؤى / تقارير الذكاء الاصطناعي"
+
+msgid "Insight / Assistant"
+msgstr "الرؤى / المساعد"
+
+msgid "Insight / Leaderboard"
+msgstr "الرؤى / لوحة الصدارة"
+
+msgid "Insight / Operational reports"
+msgstr "الرؤى / التقارير التشغيلية"
+
+msgid "Insight / Sustainability"
+msgstr "الرؤى / الاستدامة"
+
+msgid "Inspection"
+msgstr "الفحص"
+
+msgid "Inspection recorded."
+msgstr "تم تسجيل الفحص."
+
+msgid "Inspection ref, photos…"
+msgstr "مرجع الفحص، صور…"
+
+msgid "Inspection started and assigned to you."
+msgstr "بدأ الفحص وأُسند إليك."
+
+msgid "Insufficient comparison evidence"
+msgstr "أدلة المقارنة غير كافية"
+
+msgid "Insufficient evidence"
+msgstr "أدلة غير كافية"
+
+msgid "Internal reuse, repair, donation…"
+msgstr "إعادة استخدام داخلية، إصلاح، تبرع…"
+
+msgid "Invalid input"
+msgstr "إدخال غير صالح"
+
+msgid "Is the asset safe to return to service?"
+msgstr "هل الأصل آمن للعودة إلى الخدمة؟"
+
+msgid "JPEG or PNG, up to 5 MB. Sent to Gemini for this one suggestion and not stored."
+msgstr "JPEG أو PNG حتى 5 ميغابايت. تُرسل إلى Gemini لهذا الاقتراح فقط ولا تُخزَّن."
+
+msgid "JPEG, PNG or PDF up to 10 MB. Files are checked by content and only served to people who can see this asset."
+msgstr "JPEG أو PNG أو PDF حتى 10 ميغابايت. تُفحص الملفات حسب المحتوى ولا تُعرض إلا لمن يمكنه رؤية هذا الأصل."
+
+msgid "JPEG, PNG or PDF, up to 10 MB."
+msgstr "JPEG أو PNG أو PDF حتى 10 ميغابايت."
+
+msgid "Judged from one photo: hidden faults and specifications cannot be seen."
+msgstr "الحكم من صورة واحدة: لا يمكن رؤية الأعطال والمواصفات المخفية."
+
+msgid "Justification"
+msgstr "المبررات"
+
+msgid "Keep campus resources in circulation."
+msgstr "أبقِ موارد الحرم في دورة الاستخدام."
+
+msgid "Keywords"
+msgstr "الكلمات المفتاحية"
+
+msgid "Khalifa University · COSC 336 prototype"
+msgstr "جامعة خليفة · نموذج أولي لمقرر COSC 336"
+
+msgid "Kind"
+msgstr "النوع"
+
+msgid "Labels encode a link to this server ("
+msgstr "تحمل الملصقات رابطًا إلى هذا الخادم ("
+
+msgid "Laboratory Equipment"
+msgstr "معدات المختبرات"
+
+msgid "Laboratory Equipment / Lab apparatus"
+msgstr "معدات المختبرات / أجهزة مختبرية"
+
+msgid "Laboratory Equipment / Microscope"
+msgstr "معدات المختبرات / مجهر"
+
+msgid "Laboratory Equipment / Test & measurement"
+msgstr "معدات المختبرات / الاختبار والقياس"
+
+msgid "Last 12 months"
+msgstr "آخر 12 شهرًا"
+
+msgid "Last 90 days"
+msgstr "آخر 90 يومًا"
+
+msgid "Last match"
+msgstr "آخر مطابقة"
+
+msgid "Latest AI ranking"
+msgstr "أحدث ترتيب بالذكاء الاصطناعي"
+
+msgid "Leaderboard"
+msgstr "لوحة الصدارة"
+
+msgid "Leave blank if unknown"
+msgstr "اتركه فارغًا إذا كان غير معروف"
+
+msgid "Leave empty if unknown — it stays “Unknown”."
+msgstr "اتركه فارغًا إذا كان غير معروف — سيبقى «غير معروف»."
+
+msgid "Leave empty only for an approved campus-wide grant."
+msgstr "اتركه فارغًا فقط لصلاحية معتمدة على مستوى الحرم."
+
+msgid "Leave unknown values empty"
+msgstr "اترك القيم غير المعروفة فارغة"
+
+msgid "Letters, spaces, apostrophes, hyphens and dots."
+msgstr "حروف ومسافات وفواصل عليا وشرطات ونقاط."
+
+msgid "Library & Learning"
+msgstr "المكتبة والتعلم"
+
+msgid "Life extension"
+msgstr "إطالة العمر"
+
+msgid "Life-cycle actions"
+msgstr "إجراءات دورة الحياة"
+
+msgid "Life-cycle events are append-only; record a correction instead."
+msgstr "أحداث دورة الحياة قابلة للإضافة فقط؛ سجّل تصحيحًا بدلًا من ذلك."
+
+msgid "Life-cycle events cannot be deleted."
+msgstr "لا يمكن حذف أحداث دورة الحياة."
+
+msgid "Life-cycle history"
+msgstr "سجل دورة الحياة"
+
+msgid "Life-cycle status"
+msgstr "حالة دورة الحياة"
+
+msgid "List at least one recovered component."
+msgstr "اذكر مكوّنًا مستخلصًا واحدًا على الأقل."
+
+msgid "List recovered components as 'name; quantity' per line."
+msgstr "اذكر المكوّنات المستخلصة بصيغة «الاسم; الكمية» في كل سطر."
+
+msgid "Listed assets"
+msgstr "الأصول المدرجة"
+
+msgid "Live AI calls with validated output; rules take over on failure."
+msgstr "استدعاءات حية للذكاء الاصطناعي مع مخرجات موثّقة؛ تتولى القواعد عند الفشل."
+
+msgid "Location"
+msgstr "الموقع"
+
+msgid "Looking at the photo…"
+msgstr "جارٍ فحص الصورة…"
+
+msgid "Low"
+msgstr "منخفضة"
+
+msgid "Main navigation"
+msgstr "التنقل الرئيسي"
+
+msgid "Maintenance"
+msgstr "الصيانة"
+
+msgid "Maintenance & disposition"
+msgstr "الصيانة والتصرف"
+
+msgid "Maintenance Staff"
+msgstr "فريق الصيانة"
+
+msgid "Maintenance opened / closed"
+msgstr "الصيانة المفتوحة / المغلقة"
+
+msgid "Maintenance trends"
+msgstr "اتجاهات الصيانة"
+
+msgid "Manage"
+msgstr "إدارة"
+
+msgid "Management / Auditor"
+msgstr "الإدارة / المدقق"
+
+msgid "Management bulletin"
+msgstr "نشرة الإدارة"
+
+msgid "Mandatory"
+msgstr "إلزامي"
+
+msgid "Mandatory specifications"
+msgstr "المواصفات الإلزامية"
+
+msgid "Mandatory specs and safety outrank any match score."
+msgstr "المواصفات الإلزامية والسلامة تتقدم على أي درجة مطابقة."
+
+msgid "Manual"
+msgstr "يدوي"
+
+msgid "Mark all as read"
+msgstr "تعليم الكل كمقروء"
+
+msgid "Mark as read"
+msgstr "تعليم كمقروء"
+
+msgid "Mark as reviewed"
+msgstr "تعليم كمُراجَع"
+
+msgid "Marked as reviewed. Publishing is a separate, explicit step."
+msgstr "تم التعليم كمُراجَع. النشر خطوة منفصلة وصريحة."
+
+msgid "Match"
+msgstr "المطابقة"
+
+msgid "Matching & ranking"
+msgstr "المطابقة والترتيب"
+
+msgid "Matching receipt"
+msgstr "استلام مطابق"
+
+msgid "Material"
+msgstr "المادة"
+
+msgid "Material: words only, e.g. Oak, Steel, Laminated wood."
+msgstr "المادة: كلمات فقط، مثل Oak أو Steel أو Laminated wood."
+
+msgid "Method"
+msgstr "الطريقة"
+
+msgid "Min. free units"
+msgstr "الحد الأدنى للوحدات المتاحة"
+
+msgid "Minimum condition"
+msgstr "الحد الأدنى للحالة"
+
+msgid "Minimum free units"
+msgstr "الحد الأدنى للوحدات المتاحة"
+
+msgid "Missing"
+msgstr "ناقص"
+
+msgid "Model confidence unavailable."
+msgstr "ثقة النموذج غير متاحة."
+
+msgid "Model confidence: unavailable"
+msgstr "ثقة النموذج: غير متاحة"
+
+msgid "Month"
+msgstr "الشهر"
+
+msgid "Monthly exchange summary"
+msgstr "ملخص التبادل الشهري"
+
+msgid "More filters — location, quantity, age, value, status"
+msgstr "مرشحات إضافية — الموقع، الكمية، العمر، القيمة، الحالة"
+
+msgid "Most free units"
+msgstr "الأكثر وحدات متاحة"
+
+msgid "Must be less than the replacement factor."
+msgstr "يجب أن يكون أقل من معامل الاستبدال."
+
+msgid "Must cover the full need"
+msgstr "يجب أن يغطي الاحتياج كاملًا"
+
+msgid "Must equal the approved quantity ("
+msgstr "يجب أن تساوي الكمية المعتمدة ("
+
+msgid "Must equal the authorised"
+msgstr "يجب أن تساوي الكمية المعتمدة"
+
+msgid "My alerts"
+msgstr "تنبيهاتي"
+
+msgid "My assets"
+msgstr "أصولي"
+
+msgid "My requests"
+msgstr "طلباتي"
+
+msgid "Name"
+msgstr "الاسم"
+
+msgid "Name or campus ID"
+msgstr "الاسم أو رقم الحرم الجامعي"
+
+msgid "Name the recipient or processor."
+msgstr "اذكر اسم الجهة المستلِمة أو المعالِجة."
+
+msgid "Named service principal when no human actor (e.g. hold-expiry job)."
+msgstr "جهة خدمة مسماة عند عدم وجود منفّذ بشري (مثل مهمة انتهاء الحجوزات)."
+
+msgid "Narrative"
+msgstr "السرد"
+
+msgid "Narrative confidence unavailable; human review is mandatory before publication."
+msgstr "ثقة السرد غير متاحة؛ المراجعة البشرية إلزامية قبل النشر."
+
+msgid "Narrative draft"
+msgstr "مسودة السرد"
+
+msgid "Narrative saved as a draft. Review it again before publishing."
+msgstr "تم حفظ السرد كمسودة. راجعه مجددًا قبل النشر."
+
+msgid "Narrative text (editable)"
+msgstr "نص السرد (قابل للتعديل)"
+
+msgid "Narrative type"
+msgstr "نوع السرد"
+
+msgid "Need"
+msgstr "الاحتياج"
+
+msgid "Needs a Gemini key — without it, only the typed text can be used."
+msgstr "يحتاج مفتاح Gemini — بدونه يمكن استخدام النص المكتوب فقط."
+
+msgid "Net financial savings"
+msgstr "صافي الوفورات المالية"
+
+msgid "New"
+msgstr "جديد"
+
+msgid "New alert"
+msgstr "تنبيه جديد"
+
+msgid "New conversation"
+msgstr "محادثة جديدة"
+
+msgid "New password"
+msgstr "كلمة المرور الجديدة"
+
+msgid "New price / unit"
+msgstr "السعر الجديد / للوحدة"
+
+msgid "New proposals that need your stage will appear here and in your notifications."
+msgstr "ستظهر هنا وفي إشعاراتك المقترحات الجديدة التي تحتاج مرحلتك."
+
+msgid "New records are saved as"
+msgstr "تُحفظ السجلات الجديدة بحالة"
+
+msgid "New report"
+msgstr "تقرير جديد"
+
+msgid "New request"
+msgstr "طلب جديد"
+
+msgid "New-purchase price / unit"
+msgstr "سعر الشراء الجديد / للوحدة"
+
+msgid "New-purchase price per unit (AED)"
+msgstr "سعر الشراء الجديد للوحدة (درهم)"
+
+msgid "Newest"
+msgstr "الأحدث"
+
+msgid "Next"
+msgstr "التالي"
+
+msgid "No API key — features use clearly labelled rule-based fallbacks."
+msgstr "لا يوجد مفتاح API — الميزات تستخدم بدائل قاعدية موسومة بوضوح."
+
+msgid "No Gemini key configured: a labelled keyword-rule fallback will answer."
+msgstr "لم يُضبط مفتاح Gemini: سيجيب بديل قاعدي موسوم يعتمد على الكلمات المفتاحية."
+
+msgid "No advice yet"
+msgstr "لا توجد نصيحة بعد"
+
+msgid "No alerts yet"
+msgstr "لا توجد تنبيهات بعد"
+
+msgid "No approved emission factor is recorded for these categories, so no carbon figure is claimed."
+msgstr "لا يوجد معامل انبعاث معتمد لهذه الفئات، لذا لا يُدّعى أي رقم للكربون."
+
+msgid "No approver is assigned for this department."
+msgstr "لا يوجد معتمِد معيَّن لهذا القسم."
+
+msgid "No asset has that code. Check the printed ID under the QR label (e.g. A-101)."
+msgstr "لا يوجد أصل بهذا الرمز. تحقق من الرقم المطبوع تحت ملصق QR (مثل A-101)."
+
+msgid "No asset in this period has both a baseline retirement date and a supported revised usable-until date."
+msgstr "لا يوجد أصل في هذه الفترة لديه تاريخ إحالة أساسي وتاريخ صلاحية استخدام منقّح مدعوم معًا."
+
+msgid "No assets match"
+msgstr "لا توجد أصول مطابقة"
+
+msgid "No attachments."
+msgstr "لا توجد مرفقات."
+
+msgid "No batches to label"
+msgstr "لا توجد دفعات لوضع ملصقات عليها"
+
+msgid "No circular actions yet in this period"
+msgstr "لا توجد إجراءات دائرية بعد في هذه الفترة"
+
+msgid "No completed reuse transfers in this period."
+msgstr "لا توجد عمليات نقل مكتملة لإعادة الاستخدام في هذه الفترة."
+
+msgid "No confirmed avoided purchases to apply a factor to."
+msgstr "لا توجد مشتريات متجنَّبة مؤكدة لتطبيق معامل عليها."
+
+msgid "No decisions yet."
+msgstr "لا توجد قرارات بعد."
+
+msgid "No dispositions yet."
+msgstr "لا توجد تصرفات بعد."
+
+msgid "No diverted units with a recorded unit weight in this period."
+msgstr "لا توجد وحدات محوَّلة بوزن وحدة مسجل في هذه الفترة."
+
+msgid "No eligible stock passed the hard filters. Your request stays open — nothing is invented. You can submit the need without a reservation."
+msgstr "لم يجتز أي مخزون مؤهل المرشحات الصارمة. يبقى طلبك مفتوحًا — لا يُخترع شيء. يمكنك إرسال الاحتياج دون حجز."
+
+msgid "No events recorded."
+msgstr "لا توجد أحداث مسجلة."
+
+msgid "No events yet."
+msgstr "لا توجد أحداث بعد."
+
+msgid "No factors recorded, so carbon reduction is unavailable. This is deliberate: the prototype never invents a factor."
+msgstr "لا توجد معاملات مسجلة، لذا خفض الكربون غير متاح. هذا مقصود: النموذج الأولي لا يخترع أي معامل."
+
+msgid "No holds yet."
+msgstr "لا توجد حجوزات بعد."
+
+msgid "No matches yet — watching new listings"
+msgstr "لا توجد مطابقات بعد — نراقب القوائم الجديدة"
+
+msgid "No matching events"
+msgstr "لا توجد أحداث مطابقة"
+
+msgid "No notifications"
+msgstr "لا توجد إشعارات"
+
+msgid "No notifications yet."
+msgstr "لا توجد إشعارات بعد."
+
+msgid "No open service records"
+msgstr "لا توجد سجلات خدمة مفتوحة"
+
+msgid "No published listings yet."
+msgstr "لا توجد قوائم منشورة بعد."
+
+msgid "No published stock from other departments right now. You can submit the need without a reservation — it stays open."
+msgstr "لا يوجد مخزون منشور من أقسام أخرى حاليًا. يمكنك إرسال الاحتياج دون حجز — سيبقى مفتوحًا."
+
+msgid "No ranking yet"
+msgstr "لا يوجد ترتيب بعد"
+
+msgid "No reports yet"
+msgstr "لا توجد تقارير بعد"
+
+msgid "No requests match."
+msgstr "لا توجد طلبات مطابقة."
+
+msgid "No requests yet"
+msgstr "لا توجد طلبات بعد"
+
+msgid "No role assigned"
+msgstr "لا يوجد دور مُسند"
+
+msgid "No roles"
+msgstr "لا أدوار"
+
+msgid "No roles — this account can sign in but cannot do anything."
+msgstr "لا أدوار — يمكن لهذا الحساب تسجيل الدخول لكنه لا يستطيع فعل أي شيء."
+
+msgid "No suitable match"
+msgstr "لا توجد مطابقة مناسبة"
+
+msgid "No transfers here"
+msgstr "لا توجد عمليات نقل هنا"
+
+msgid "No transfers match."
+msgstr "لا توجد عمليات نقل مطابقة."
+
+msgid "No units entered the surplus cohort in this period (zero denominator)."
+msgstr "لم تدخل أي وحدات مجموعة الفائض في هذه الفترة (مقام صفري)."
+
+msgid "No units entered the unwanted-asset cohort in this period (zero denominator)."
+msgstr "لم تدخل أي وحدات مجموعة الأصول غير المرغوبة في هذه الفترة (مقام صفري)."
+
+msgid "No unresolved holds or allocations may exist."
+msgstr "يجب ألا توجد حجوزات أو تخصيصات غير محسومة."
+
+msgid "No — no saving is claimed"
+msgstr "لا — لا تُدّعى أي وفورات"
+
+msgid "No — reassess"
+msgstr "لا — أعد التقييم"
+
+msgid "No — report non-receipt or a problem"
+msgstr "لا — أبلغ عن عدم الاستلام أو مشكلة"
+
+msgid "None"
+msgstr "لا شيء"
+
+msgid "None of these fit?"
+msgstr "لا شيء من هذه مناسب؟"
+
+msgid "None recorded"
+msgstr "لم يُسجَّل شيء"
+
+msgid "None."
+msgstr "لا شيء."
+
+msgid "Normal"
+msgstr "عادية"
+
+msgid "Not allowed"
+msgstr "غير مسموح"
+
+msgid "Not applicable"
+msgstr "غير منطبق"
+
+msgid "Not drafted"
+msgstr "لم تتم صياغته"
+
+msgid "Not drafted yet"
+msgstr "لم تتم صياغته بعد"
+
+msgid "Not eligible:"
+msgstr "غير مؤهل:"
+
+msgid "Not listed"
+msgstr "غير مدرج"
+
+msgid "Not stated"
+msgstr "غير مذكور"
+
+msgid "Not submitted yet."
+msgstr "لم يُرسل بعد."
+
+msgid "Note"
+msgstr "ملاحظة"
+
+msgid "Nothing is awaiting verification."
+msgstr "لا يوجد شيء بانتظار التحقق."
+
+msgid "Nothing is waiting on you right now — browse the catalog or check your requests."
+msgstr "لا شيء بانتظارك الآن — تصفح الكتالوج أو راجع طلباتك."
+
+msgid "Nothing to review"
+msgstr "لا شيء للمراجعة"
+
+msgid "Nothing was received; choose 'return to source' instead."
+msgstr "لم يُستلم شيء؛ اختر «الإعادة إلى المصدر» بدلًا من ذلك."
+
+msgid "Notifications"
+msgstr "الإشعارات"
+
+msgid "Notify me"
+msgstr "نبّهني"
+
+msgid "Numbers given for unavailable indicators:"
+msgstr "أرقام مذكورة لمؤشرات غير متاحة:"
+
+msgid "Observed feature values and weights; missing ones listed separately."
+msgstr "قيم العوامل الملاحظة وأوزانها؛ والعوامل الناقصة مدرجة بشكل منفصل."
+
+msgid "On or after the proposal date."
+msgstr "في تاريخ المقترح أو بعده."
+
+msgid "One component per line: name; quantity"
+msgstr "مكوّن واحد في كل سطر: الاسم; الكمية"
+
+msgid "One per line: name; quantity. Each becomes a new linked Draft asset."
+msgstr "واحد في كل سطر: الاسم; الكمية. يصبح كل منها أصلًا جديدًا مرتبطًا بحالة مسودة."
+
+msgid "Only JPEG, PNG or PDF files are accepted."
+msgstr "تُقبل ملفات JPEG أو PNG أو PDF فقط."
+
+msgid "Only Procurement or Finance officers for the receiving department can confirm avoided purchases."
+msgstr "وحدهم مسؤولو المشتريات أو المالية في القسم المستلِم يمكنهم تأكيد المشتريات المتجنَّبة."
+
+msgid "Only a custodian’s verified safe return restores availability."
+msgstr "لا يعيد التوفر إلا تحقق أمين العهدة من العودة الآمنة."
+
+msgid "Only an asset custodian for this department can register assets."
+msgstr "وحده أمين عهدة هذا القسم يمكنه تسجيل الأصول."
+
+msgid "Only an asset custodian for this department can verify safe return."
+msgstr "وحده أمين عهدة هذا القسم يمكنه التحقق من العودة الآمنة."
+
+msgid "Only an authorised approver (not the requester) can resolve transfer exceptions."
+msgstr "وحده معتمِد مخوّل (وليس مقدّم الطلب) يمكنه حل استثناءات النقل."
+
+msgid "Only approved, open requests use cancellation proposals."
+msgstr "مقترحات الإلغاء للطلبات المعتمدة والمفتوحة فقط."
+
+msgid "Only asset custodians can register assets."
+msgstr "وحدهم أمناء العهدة يمكنهم تسجيل الأصول."
+
+msgid "Only asset custodians print labels."
+msgstr "وحدهم أمناء العهدة يطبعون الملصقات."
+
+msgid "Only completed transfers can be reviewed for avoided purchases."
+msgstr "لا يمكن مراجعة المشتريات المتجنَّبة إلا لعمليات النقل المكتملة."
+
+msgid "Only custodians have an asset register."
+msgstr "سجل الأصول لأمناء العهدة فقط."
+
+msgid "Only drafts and returned requests can be edited. Material changes after submission need a new review."
+msgstr "لا يمكن تعديل إلا المسودات والطلبات المُعادة. التغييرات الجوهرية بعد الإرسال تحتاج مراجعة جديدة."
+
+msgid "Only if supported by the service evidence (used for life extension; blank = unavailable)."
+msgstr "فقط إذا دعمته أدلة الخدمة (يُستخدم لإطالة العمر؛ فارغ = غير متاح)."
+
+msgid "Only maintenance staff can record service work."
+msgstr "وحده فريق الصيانة يمكنه تسجيل أعمال الخدمة."
+
+msgid "Only maintenance staff for this department can inspect."
+msgstr "وحده فريق صيانة هذا القسم يمكنه الفحص."
+
+msgid "Only maintenance staff for this department can record inspections."
+msgstr "وحده فريق صيانة هذا القسم يمكنه تسجيل الفحوص."
+
+msgid "Only reporting officers (procurement, finance, sustainability) can create report drafts."
+msgstr "وحدهم مسؤولو التقارير (المشتريات، المالية، الاستدامة) يمكنهم إنشاء مسودات التقارير."
+
+msgid "Only reporting officers can edit narratives."
+msgstr "وحدهم مسؤولو التقارير يمكنهم تعديل السرد."
+
+msgid "Only reporting officers can generate narratives."
+msgstr "وحدهم مسؤولو التقارير يمكنهم إنشاء السرد."
+
+msgid "Only reporting officers can publish reports."
+msgstr "وحدهم مسؤولو التقارير يمكنهم نشر التقارير."
+
+msgid "Only reporting officers can review narratives."
+msgstr "وحدهم مسؤولو التقارير يمكنهم مراجعة السرد."
+
+msgid "Only requesters and department representatives have request lists."
+msgstr "قوائم الطلبات لمقدمي الطلبات وممثلي الأقسام فقط."
+
+msgid "Only requesters or department representatives can create requests."
+msgstr "وحدهم مقدمو الطلبات أو ممثلو الأقسام يمكنهم إنشاء الطلبات."
+
+msgid "Only requesters or department representatives can set availability alerts."
+msgstr "وحدهم مقدمو الطلبات أو ممثلو الأقسام يمكنهم ضبط تنبيهات التوفر."
+
+msgid "Only returned proposals can be corrected."
+msgstr "لا يمكن تصحيح إلا المقترحات المُعادة."
+
+msgid "Only reviewers have an approval queue."
+msgstr "قائمة الموافقات للمراجعين فقط."
+
+msgid "Only safe stock that is not under inspection, maintenance or disposition can be published."
+msgstr "لا يمكن نشر إلا المخزون الآمن غير الخاضع للفحص أو الصيانة أو التصرف."
+
+msgid "Only sustainability officers can record emission factors."
+msgstr "وحدهم مسؤولو الاستدامة يمكنهم تسجيل معاملات الانبعاث."
+
+msgid "Only system administrators can manage accounts and departments."
+msgstr "وحدهم مسؤولو النظام يمكنهم إدارة الحسابات والأقسام."
+
+msgid "Only system administrators can manage accounts."
+msgstr "وحدهم مسؤولو النظام يمكنهم إدارة الحسابات."
+
+msgid "Only the assigned releasing custodian can record the release."
+msgstr "وحده أمين العهدة المُسلِّم المعيَّن يمكنه تسجيل الإفراج."
+
+msgid "Only the custodian or a sustainability officer can request action advice."
+msgstr "وحده أمين العهدة أو مسؤول الاستدامة يمكنه طلب نصيحة الإجراء."
+
+msgid "Only the designated receiving custodian can confirm receipt."
+msgstr "وحده أمين العهدة المستلِم المحدد يمكنه تأكيد الاستلام."
+
+msgid "Only the releasing or receiving custodian can arrange this handover."
+msgstr "وحده أمين العهدة المُسلِّم أو المستلِم يمكنه ترتيب هذا التسليم."
+
+msgid "Only the requester can review matches for this request."
+msgstr "وحده مقدم الطلب يمكنه مراجعة مطابقات هذا الطلب."
+
+msgid "Only this department's custodian can add attachments."
+msgstr "وحده أمين عهدة هذا القسم يمكنه إضافة مرفقات."
+
+msgid "Only this department's custodian can correct the proposal."
+msgstr "وحده أمين عهدة هذا القسم يمكنه تصحيح المقترح."
+
+msgid "Only this department's custodian can edit the asset."
+msgstr "وحده أمين عهدة هذا القسم يمكنه تعديل الأصل."
+
+msgid "Only this department's custodian can print its labels."
+msgstr "وحده أمين عهدة هذا القسم يمكنه طباعة ملصقاته."
+
+msgid "Only this department's custodian can propose a disposition."
+msgstr "وحده أمين عهدة هذا القسم يمكنه اقتراح التصرف."
+
+msgid "Only this department's custodian can publish the asset."
+msgstr "وحده أمين عهدة هذا القسم يمكنه نشر الأصل."
+
+msgid "Only this department's custodian can record completion."
+msgstr "وحده أمين عهدة هذا القسم يمكنه تسجيل الإنجاز."
+
+msgid "Only this department's custodian can unpublish the asset."
+msgstr "وحده أمين عهدة هذا القسم يمكنه إلغاء نشر الأصل."
+
+msgid "Open"
+msgstr "مفتوح"
+
+msgid "Open asset"
+msgstr "فتح الأصل"
+
+msgid "Open catalog"
+msgstr "فتح الكتالوج"
+
+msgid "Open demand"
+msgstr "الطلب المفتوح"
+
+msgid "Open disposition"
+msgstr "فتح التصرف"
+
+msgid "Open in request form to review & confirm"
+msgstr "افتح في نموذج الطلب للمراجعة والتأكيد"
+
+msgid "Open navigation"
+msgstr "فتح التنقل"
+
+msgid "Open request"
+msgstr "فتح الطلب"
+
+msgid "Open requests"
+msgstr "الطلبات المفتوحة"
+
+msgid "Open service"
+msgstr "خدمة مفتوحة"
+
+msgid "Open service record"
+msgstr "فتح سجل خدمة"
+
+msgid "Open the assistant"
+msgstr "فتح المساعد"
+
+msgid "Operational reports"
+msgstr "التقارير التشغيلية"
+
+msgid "Optional — required context if something is wrong"
+msgstr "اختياري — مطلوب لتوضيح السياق إذا كان هناك خطأ"
+
+msgid "Optional; must be a valid address when given."
+msgstr "اختياري؛ يجب أن يكون عنوانًا صالحًا عند إدخاله."
+
+msgid "Options are ranked from reuse to disposal. Numbers come from recorded evidence only. You decide; any action goes through its normal approval."
+msgstr "الخيارات مرتبة من إعادة الاستخدام إلى التخلص. الأرقام مأخوذة من الأدلة المسجلة فقط. أنت تقرر؛ وأي إجراء يمر بموافقته المعتادة."
+
+msgid "Or suggest from a photo"
+msgstr "أو اقترح من صورة"
+
+msgid "Or type the code printed under the label."
+msgstr "أو اكتب الرمز المطبوع تحت الملصق."
+
+msgid "Or write it yourself:"
+msgstr "أو اكتبه بنفسك:"
+
+msgid "Other cost"
+msgstr "تكلفة أخرى"
+
+msgid "Other related cost (AED)"
+msgstr "تكلفة أخرى ذات صلة (درهم)"
+
+msgid "Outcome"
+msgstr "النتيجة"
+
+msgid "Owner department"
+msgstr "القسم المالك"
+
+msgid "Page"
+msgstr "الصفحة"
+
+msgid "Page not found"
+msgstr "الصفحة غير موجودة"
+
+msgid "Partial fulfilment"
+msgstr "التلبية الجزئية"
+
+msgid "Partial fulfilment allowed"
+msgstr "التلبية الجزئية مسموحة"
+
+msgid "Partially Fulfilled"
+msgstr "تمت التلبية جزئيًا"
+
+msgid "Password"
+msgstr "كلمة المرور"
+
+msgid "Password reset"
+msgstr "إعادة تعيين كلمة المرور"
+
+msgid "Password reset."
+msgstr "تمت إعادة تعيين كلمة المرور."
+
+msgid "Password: the value of"
+msgstr "كلمة المرور: قيمة"
+
+msgid "Passwords are stored only as salted hashes."
+msgstr "تُخزَّن كلمات المرور كتجزئات مملّحة فقط."
+
+msgid "Path inside protected storage — not a public URL."
+msgstr "مسار داخل التخزين المحمي — وليس رابطًا عامًا."
+
+msgid "Pending"
+msgstr "معلّق"
+
+msgid "Pending Approval"
+msgstr "بانتظار الموافقة"
+
+msgid "Period"
+msgstr "الفترة"
+
+msgid "Period end"
+msgstr "نهاية الفترة"
+
+msgid "Period start"
+msgstr "بداية الفترة"
+
+msgid "Photo reference, ticket number…"
+msgstr "مرجع الصورة، رقم التذكرة…"
+
+msgid "Photos & documents"
+msgstr "الصور والمستندات"
+
+msgid "Photos for AI classification must be 5 MB or smaller."
+msgstr "يجب أن تكون صور التصنيف بالذكاء الاصطناعي 5 ميغابايت أو أقل."
+
+msgid "Photos/documents are added on the asset page (JPEG, PNG, PDF ≤ 10 MB)."
+msgstr "تُضاف الصور/المستندات من صفحة الأصل (JPEG وPNG وPDF ≤ 10 ميغابايت)."
+
+msgid "Please confirm"
+msgstr "يرجى التأكيد"
+
+msgid "Please correct the alert."
+msgstr "يرجى تصحيح التنبيه."
+
+msgid "Please correct the following"
+msgstr "يرجى تصحيح ما يلي"
+
+msgid "Please correct the highlighted fields."
+msgstr "يرجى تصحيح الحقول المظللة."
+
+msgid "Point your camera at an asset's label to open its page — history, status and the actions your role allows."
+msgstr "وجّه الكاميرا نحو ملصق الأصل لفتح صفحته — السجل والحالة والإجراءات التي يتيحها دورك."
+
+msgid "Points"
+msgstr "النقاط"
+
+msgid "Points = 10 × units given to other departments + 5 × units received and reused + 8 × units diverted from landfill (donated, recycled, components) + 15 × repairs returned to service + 1 per AED 100 of confirmed avoided purchases."
+msgstr "النقاط = 10 × الوحدات المقدَّمة لأقسام أخرى + 5 × الوحدات المستلمة والمعاد استخدامها + 8 × الوحدات المحوَّلة عن المكبّ (تبرع، إعادة تدوير، مكوّنات) + 15 × الإصلاحات العائدة للخدمة + نقطة لكل 100 درهم من المشتريات المتجنَّبة المؤكدة."
+
+msgid "Points appear when transfers are received, items are repaired, or dispositions are completed with evidence."
+msgstr "تظهر النقاط عند استلام عمليات النقل أو إصلاح العناصر أو إنجاز التصرفات مع الأدلة."
+
+msgid "Policy"
+msgstr "السياسة"
+
+msgid "Poor"
+msgstr "ضعيف"
+
+msgid "Poor-condition stock must be inspected before it can be offered for reuse."
+msgstr "يجب فحص المخزون ذي الحالة الضعيفة قبل عرضه لإعادة الاستخدام."
+
+msgid "Port counts must be between 1 and 16."
+msgstr "يجب أن يكون عدد المنافذ بين 1 و16."
+
+msgid "Ports"
+msgstr "المنافذ"
+
+msgid "Previous"
+msgstr "السابق"
+
+msgid "Price reference"
+msgstr "مرجع السعر"
+
+msgid "Print"
+msgstr "طباعة"
+
+msgid "Print QR labels"
+msgstr "طباعة ملصقات QR"
+
+msgid "Print a QR label for this batch"
+msgstr "طباعة ملصق QR لهذه الدفعة"
+
+msgid "Procurement / Finance"
+msgstr "المشتريات / المالية"
+
+msgid "Procurement Officer"
+msgstr "مسؤول المشتريات"
+
+msgid "Profile"
+msgstr "الملف الشخصي"
+
+msgid "Proposal"
+msgstr "المقترح"
+
+msgid "Proposal versions & decisions"
+msgstr "نسخ المقترح والقرارات"
+
+msgid "Propose an end-of-life route"
+msgstr "اقتراح مسار نهاية العمر"
+
+msgid "Propose disposition ·"
+msgstr "اقتراح التصرف ·"
+
+msgid "Propose donation / recycling / retirement"
+msgstr "اقتراح التبرع / إعادة التدوير / الإحالة للتقاعد"
+
+msgid "Proposed"
+msgstr "مقترح"
+
+msgid "Proposed / pending approval"
+msgstr "مقترح / بانتظار الموافقة"
+
+msgid "Proposed by"
+msgstr "اقترحه"
+
+msgid "Proposed cost"
+msgstr "التكلفة المقترحة"
+
+msgid "Proposed recipient / processor"
+msgstr "الجهة المستلِمة / المعالِجة المقترحة"
+
+msgid "Proposed work"
+msgstr "العمل المقترح"
+
+msgid "Prototype for coursework. Demo data is synthetic."
+msgstr "نموذج أولي لعمل المقرر. البيانات التجريبية اصطناعية."
+
+msgid "Provenance"
+msgstr "المصدر"
+
+msgid "Publication, dataset, page"
+msgstr "منشور، مجموعة بيانات، صفحة"
+
+msgid "Publish"
+msgstr "نشر"
+
+msgid "Publish report"
+msgstr "نشر التقرير"
+
+msgid "Publish surplus"
+msgstr "نشر الفائض"
+
+msgid "Publish the asset as surplus so departments can request it (it will still need approval)."
+msgstr "انشر الأصل كفائض لتتمكن الأقسام من طلبه (سيظل بحاجة إلى موافقة)."
+
+msgid "Published"
+msgstr "منشور"
+
+msgid "Published reports are immutable; create a new report."
+msgstr "التقارير المنشورة غير قابلة للتغيير؛ أنشئ تقريرًا جديدًا."
+
+msgid "Published, safe stock other departments have offered for reuse. Free units already exclude active holds and approved allocations."
+msgstr "مخزون آمن ومنشور عرضته أقسام أخرى لإعادة الاستخدام. الوحدات المتاحة تستثني مسبقًا الحجوزات النشطة والتخصيصات المعتمدة."
+
+msgid "Purchase cost avoided"
+msgstr "تكلفة الشراء المتجنَّبة"
+
+msgid "Purchase date"
+msgstr "تاريخ الشراء"
+
+msgid "Purchase date cannot be in the future."
+msgstr "لا يمكن أن يكون تاريخ الشراء في المستقبل."
+
+msgid "Purchase date looks wrong (before 1970)."
+msgstr "يبدو تاريخ الشراء خاطئًا (قبل 1970)."
+
+msgid "Purpose"
+msgstr "الغرض"
+
+msgid "QR label"
+msgstr "ملصق QR"
+
+msgid "QR labels"
+msgstr "ملصقات QR"
+
+msgid "QR verified"
+msgstr "تم التحقق بـ QR"
+
+msgid "Qty"
+msgstr "الكمية"
+
+msgid "Quantity"
+msgstr "الكمية"
+
+msgid "Quantity completed"
+msgstr "الكمية المنجزة"
+
+msgid "Quantity counted"
+msgstr "الكمية المعدودة"
+
+msgid "Quantity released"
+msgstr "الكمية المُفرج عنها"
+
+msgid "Quantity to reserve"
+msgstr "الكمية المراد حجزها"
+
+msgid "Quantity, ownership & location"
+msgstr "الكمية والملكية والموقع"
+
+msgid "Quick sign-in"
+msgstr "تسجيل دخول سريع"
+
+msgid "Quote / catalogue / PO number"
+msgstr "رقم عرض السعر / الكتالوج / أمر الشراء"
+
+msgid "Quote, catalogue or PO reference for the price."
+msgstr "مرجع عرض السعر أو الكتالوج أو أمر الشراء للسعر."
+
+msgid "Ranked matches"
+msgstr "المطابقات المرتبة"
+
+msgid "Ranked matches, advice and summaries you review before anything changes."
+msgstr "مطابقات مرتبة ونصائح وملخصات تراجعها قبل أن يتغير أي شيء."
+
+msgid "Ranking"
+msgstr "الترتيب"
+
+msgid "Ranking candidates…"
+msgstr "جارٍ ترتيب المرشحين…"
+
+msgid "Re-assess"
+msgstr "إعادة التقييم"
+
+msgid "Re-run ranking"
+msgstr "إعادة الترتيب"
+
+msgid "Reactivate"
+msgstr "إعادة التفعيل"
+
+msgid "Reactivate account"
+msgstr "إعادة تفعيل الحساب"
+
+msgid "Ready for reuse from"
+msgstr "جاهز لإعادة الاستخدام من"
+
+msgid "Reason"
+msgstr "السبب"
+
+msgid "Reason for correction"
+msgstr "سبب التصحيح"
+
+msgid "Receipt can only be confirmed after the releasing custodian records the release."
+msgstr "لا يمكن تأكيد الاستلام إلا بعد أن يسجل أمين العهدة المُسلِّم الإفراج."
+
+msgid "Receipt confirmed. Custody, department and location were updated atomically."
+msgstr "تم تأكيد الاستلام. حُدّثت العهدة والقسم والموقع معًا في عملية واحدة."
+
+msgid "Receipt exception —"
+msgstr "استثناء الاستلام —"
+
+msgid "Receipt number, certificate of recycling, signed handover…"
+msgstr "رقم الإيصال، شهادة إعادة التدوير، محضر تسليم موقّع…"
+
+msgid "Receive"
+msgstr "استلام"
+
+msgid "Received"
+msgstr "مستلَم"
+
+msgid "Received / Completed"
+msgstr "مستلَم / مكتمل"
+
+msgid "Received and reused 10 or more units"
+msgstr "استلم وأعاد استخدام 10 وحدات أو أكثر"
+
+msgid "Received batch"
+msgstr "الدفعة المستلمة"
+
+msgid "Received quantity"
+msgstr "الكمية المستلمة"
+
+msgid "Receiving"
+msgstr "المستلِم"
+
+msgid "Receiving custodian"
+msgstr "أمين العهدة المستلِم"
+
+msgid "Recent notifications"
+msgstr "الإشعارات الأخيرة"
+
+msgid "Recipient"
+msgstr "الجهة المستلِمة"
+
+msgid "Recipient / processor"
+msgstr "الجهة المستلِمة / المعالِجة"
+
+msgid "Recommended options"
+msgstr "الخيارات الموصى بها"
+
+msgid "Record"
+msgstr "تسجيل"
+
+msgid "Record a factor"
+msgstr "تسجيل معامل"
+
+msgid "Record completed work"
+msgstr "تسجيل العمل المنجز"
+
+msgid "Record completion"
+msgstr "تسجيل الإنجاز"
+
+msgid "Record completion evidence"
+msgstr "تسجيل أدلة الإنجاز"
+
+msgid "Record completion evidence (receipt number, certificate, processor reference)."
+msgstr "سجّل أدلة الإنجاز (رقم الإيصال، الشهادة، مرجع الجهة المعالِجة)."
+
+msgid "Record decision"
+msgstr "تسجيل القرار"
+
+msgid "Record inspection"
+msgstr "تسجيل الفحص"
+
+msgid "Record inspection findings"
+msgstr "تسجيل نتائج الفحص"
+
+msgid "Record release"
+msgstr "تسجيل الإفراج"
+
+msgid "Record release evidence (who collected, vehicle, note or reference)."
+msgstr "سجّل أدلة الإفراج (من استلم، المركبة، ملاحظة أو مرجع)."
+
+msgid "Record resolution"
+msgstr "تسجيل الحل"
+
+msgid "Record review"
+msgstr "تسجيل المراجعة"
+
+msgid "Record text is treated as data — instructions inside descriptions are ignored."
+msgstr "يُعامل نص السجلات كبيانات — تُتجاهل أي تعليمات داخل الأوصاف."
+
+msgid "Record the inspection findings."
+msgstr "سجّل نتائج الفحص."
+
+msgid "Record the physical release"
+msgstr "تسجيل الإفراج الفعلي"
+
+msgid "Record the resolution evidence and reason."
+msgstr "سجّل أدلة الحل وسببه."
+
+msgid "Record the verification evidence (tests performed, checks)."
+msgstr "سجّل أدلة التحقق (الاختبارات المنفذة، الفحوص)."
+
+msgid "Record this resolution? It is audited and cannot be undone."
+msgstr "تسجيل هذا الحل؟ يخضع للتدقيق ولا يمكن التراجع عنه."
+
+msgid "Record this verification? A safe result returns the asset to In Use; unsafe keeps it restricted."
+msgstr "تسجيل هذا التحقق؟ النتيجة الآمنة تعيد الأصل إلى «قيد الاستخدام»؛ وغير الآمنة تبقيه مقيّدًا."
+
+msgid "Record verification"
+msgstr "تسجيل التحقق"
+
+msgid "Record work"
+msgstr "تسجيل العمل"
+
+msgid "Recorded as not replacing a purchase — no saving claimed."
+msgstr "سُجّل على أنه لم يحل محل شراء — لا تُدّعى أي وفورات."
+
+msgid "Recording…"
+msgstr "جارٍ التسجيل…"
+
+msgid "Recovered components"
+msgstr "المكوّنات المستخلصة"
+
+msgid "Recycle"
+msgstr "إعادة التدوير"
+
+msgid "Recycled"
+msgstr "أعيد تدويره"
+
+msgid "Ref:"
+msgstr "المرجع:"
+
+msgid "Reference unit price (AED)"
+msgstr "سعر الوحدة المرجعي (درهم)"
+
+msgid "Refurbishment"
+msgstr "تجديد"
+
+msgid "Regenerate draft"
+msgstr "إعادة إنشاء المسودة"
+
+msgid "Register"
+msgstr "تسجيل"
+
+msgid "Register an asset"
+msgstr "تسجيل أصل"
+
+msgid "Register asset"
+msgstr "تسجيل أصل"
+
+msgid "Reject"
+msgstr "رفض"
+
+msgid "Reject all suggestions"
+msgstr "رفض كل الاقتراحات"
+
+msgid "Rejected"
+msgstr "مرفوض"
+
+msgid "Related repair cost (AED)"
+msgstr "تكلفة الإصلاح المرتبطة (درهم)"
+
+msgid "Release"
+msgstr "الإفراج"
+
+msgid "Release (custodian)"
+msgstr "الإفراج (أمين العهدة)"
+
+msgid "Release blocked"
+msgstr "الإفراج محظور"
+
+msgid "Release evidence"
+msgstr "أدلة الإفراج"
+
+msgid "Release recorded. Custody stays with your department until the receiver confirms a matching receipt."
+msgstr "تم تسجيل الإفراج. تبقى العهدة لدى قسمك حتى يؤكد المستلِم استلامًا مطابقًا."
+
+msgid "Released"
+msgstr "مُفرج عنه"
+
+msgid "Released as"
+msgstr "أُفرج عنه بحالة"
+
+msgid "Released quantity"
+msgstr "الكمية المُفرج عنها"
+
+msgid "Released:"
+msgstr "المُفرج عنه:"
+
+msgid "Releasing"
+msgstr "المُسلِّم"
+
+msgid "Remove control characters."
+msgstr "أزل محارف التحكم."
+
+msgid "Remove the markup."
+msgstr "أزل الوسوم البرمجية."
+
+msgid "Repair"
+msgstr "إصلاح"
+
+msgid "Repair / refurbishment"
+msgstr "إصلاح / تجديد"
+
+msgid "Repair approval v"
+msgstr "الموافقة على الإصلاح v"
+
+msgid "Repair cost"
+msgstr "تكلفة الإصلاح"
+
+msgid "Repair estimate"
+msgstr "تقدير الإصلاح"
+
+msgid "Repair or refurbishment needed"
+msgstr "يحتاج إصلاحًا أو تجديدًا"
+
+msgid "Repairs"
+msgstr "الإصلاحات"
+
+msgid "Repairs returned to service"
+msgstr "إصلاحات عادت إلى الخدمة"
+
+msgid "Replacement factor (kg CO2e/unit)"
+msgstr "معامل الاستبدال (كغ CO2e/وحدة)"
+
+msgid "Replacement kg CO2e / unit"
+msgstr "كغ CO2e للاستبدال / وحدة"
+
+msgid "Report"
+msgstr "التقرير"
+
+msgid "Report a defect / request inspection"
+msgstr "الإبلاغ عن عطل / طلب فحص"
+
+msgid "Report a defect from any asset page."
+msgstr "أبلغ عن عطل من أي صفحة أصل."
+
+msgid "Report a defect or request inspection"
+msgstr "الإبلاغ عن عطل أو طلب فحص"
+
+msgid "Report defect"
+msgstr "الإبلاغ عن عطل"
+
+msgid "Report defect ·"
+msgstr "الإبلاغ عن عطل ·"
+
+msgid "Report narrative"
+msgstr "سرد التقرير"
+
+msgid "Report published."
+msgstr "تم نشر التقرير."
+
+msgid "Report the defect to start inspection and an approved repair."
+msgstr "أبلغ عن العطل لبدء الفحص وإصلاح معتمد."
+
+msgid "Reported"
+msgstr "تم الإبلاغ"
+
+msgid "Reported / Awaiting Inspection"
+msgstr "تم الإبلاغ / بانتظار الفحص"
+
+msgid "Reported by"
+msgstr "أبلغ عنه"
+
+msgid "Reports"
+msgstr "التقارير"
+
+msgid "Request"
+msgstr "طلب"
+
+msgid "Request & hold"
+msgstr "الطلب والحجز"
+
+msgid "Request / reservation"
+msgstr "الطلب / الحجز"
+
+msgid "Request cancellation"
+msgstr "طلب إلغاء"
+
+msgid "Request draft — not submitted"
+msgstr "مسودة طلب — غير مُرسلة"
+
+msgid "Request progress"
+msgstr "تقدّم الطلب"
+
+msgid "Request this"
+msgstr "اطلب هذا"
+
+msgid "Request version scored."
+msgstr "تم تقييم نسخة الطلب."
+
+msgid "Requester"
+msgstr "مقدّم الطلب"
+
+msgid "Requesters"
+msgstr "مقدمو الطلبات"
+
+msgid "Requests"
+msgstr "الطلبات"
+
+msgid "Requests & transfers"
+msgstr "الطلبات وعمليات النقل"
+
+msgid "Required"
+msgstr "مطلوب"
+
+msgid "Required (FR-05). Separate with semicolons, e.g. 24-inch; HDMI."
+msgstr "مطلوب (FR-05). افصل بفواصل منقوطة، مثل 24-inch; HDMI."
+
+msgid "Required by"
+msgstr "مطلوب بحلول"
+
+msgid "Required date"
+msgstr "التاريخ المطلوب"
+
+msgid "Required for component recovery."
+msgstr "مطلوب لاستخلاص المكوّنات."
+
+msgid "Required for this route."
+msgstr "مطلوب لهذا المسار."
+
+msgid "Required when correcting condition, quantity or location of a published asset."
+msgstr "مطلوب عند تصحيح حالة أصل منشور أو كميته أو موقعه."
+
+msgid "Required."
+msgstr "مطلوب."
+
+msgid "Reserve & send for approval"
+msgstr "احجز وأرسل للموافقة"
+
+msgid "Reserve more stock for the remaining need"
+msgstr "احجز مخزونًا إضافيًا للاحتياج المتبقي"
+
+msgid "Reserved"
+msgstr "محجوز"
+
+msgid "Resolution"
+msgstr "الحل"
+
+msgid "Resolution evidence & reason"
+msgstr "أدلة الحل وسببه"
+
+msgid "Resolve"
+msgstr "حل"
+
+msgid "Resolve exception"
+msgstr "حل الاستثناء"
+
+msgid "Resource requests"
+msgstr "طلبات الموارد"
+
+msgid "Restricted for safety review — approval will be blocked until verified safe."
+msgstr "مقيّد لمراجعة السلامة — ستُحظر الموافقة حتى يتم التحقق من سلامته."
+
+msgid "Restricted —"
+msgstr "مقيّد —"
+
+msgid "Resubmit as new version"
+msgstr "إعادة الإرسال كنسخة جديدة"
+
+msgid "Result"
+msgstr "النتيجة"
+
+msgid "Resulting condition"
+msgstr "الحالة الناتجة"
+
+msgid "Retire"
+msgstr "إحالة للتقاعد"
+
+msgid "Retired"
+msgstr "محال للتقاعد"
+
+msgid "Retirement cannot be before the purchase date."
+msgstr "لا يمكن أن تسبق الإحالة للتقاعد تاريخ الشراء."
+
+msgid "Retrieval runs with"
+msgstr "يتم الاسترجاع بصلاحيات"
+
+msgid "Return"
+msgstr "إرجاع"
+
+msgid "Return stock to the source"
+msgstr "إعادة المخزون إلى المصدر"
+
+msgid "Returned"
+msgstr "مُعاد"
+
+msgid "Returned 2 or more repaired items to service"
+msgstr "أعاد عنصرين مُصلحين أو أكثر إلى الخدمة"
+
+msgid "Returned for clarification"
+msgstr "أُعيد للتوضيح"
+
+msgid "Returned for correction"
+msgstr "أُعيد للتصحيح"
+
+msgid "Reuse"
+msgstr "إعادة الاستخدام"
+
+msgid "Reuse before you replace"
+msgstr "أعد الاستخدام قبل أن تستبدل"
+
+msgid "Reuse rate"
+msgstr "معدل إعادة الاستخدام"
+
+msgid "Reused"
+msgstr "المعاد استخدامه"
+
+msgid "Review"
+msgstr "مراجعة"
+
+msgid "Review every field — nothing has been submitted. The normal validation and approval workflow applies."
+msgstr "راجع كل حقل — لم يُرسل أي شيء. يُطبَّق التحقق المعتاد وسير عمل الموافقة."
+
+msgid "Review required"
+msgstr "المراجعة مطلوبة"
+
+msgid "Review the current narrative before publishing."
+msgstr "راجع السرد الحالي قبل النشر."
+
+msgid "Reviewed"
+msgstr "تمت المراجعة"
+
+msgid "Reviewed by"
+msgstr "راجعه"
+
+msgid "Reviewed — ready to publish"
+msgstr "تمت المراجعة — جاهز للنشر"
+
+msgid "Reviewers"
+msgstr "المراجعون"
+
+msgid "Revised dates are custodian estimates recorded at verification."
+msgstr "التواريخ المنقّحة تقديرات من أمين العهدة تُسجَّل عند التحقق."
+
+msgid "Revised usable-until date"
+msgstr "تاريخ صلاحية الاستخدام المنقّح"
+
+msgid "Revoke"
+msgstr "سحب"
+
+msgid "Role"
+msgstr "الدور"
+
+msgid "Role granted."
+msgstr "تم منح الدور."
+
+msgid "Role grants"
+msgstr "منح الأدوار"
+
+msgid "Role guidance, the approved policies the assistant may cite, and how AI scores are calculated."
+msgstr "إرشادات الأدوار، والسياسات المعتمدة التي يمكن للمساعد الاستشهاد بها، وكيف تُحسب درجات الذكاء الاصطناعي."
+
+msgid "Role revoked."
+msgstr "تم سحب الدور."
+
+msgid "Roles"
+msgstr "الأدوار"
+
+msgid "Roles are explicit grants with a department scope. System administration never implies approval authority."
+msgstr "الأدوار منح صريحة مع نطاق قسم. إدارة النظام لا تعني أبدًا صلاحية الموافقة."
+
+msgid "Room"
+msgstr "الغرفة"
+
+msgid "Route"
+msgstr "المسار"
+
+msgid "Route (disposal is the final option)"
+msgstr "المسار (التخلص هو الخيار الأخير)"
+
+msgid "Rule-based fallback — not AI-generated"
+msgstr "بديل قاعدي — ليس من إنتاج الذكاء الاصطناعي"
+
+msgid "Safe — no repair needed"
+msgstr "آمن — لا يحتاج إصلاحًا"
+
+msgid "Safety first"
+msgstr "السلامة أولًا"
+
+msgid "Save alert"
+msgstr "حفظ التنبيه"
+
+msgid "Save arrangements"
+msgstr "حفظ الترتيبات"
+
+msgid "Save as Draft"
+msgstr "حفظ كمسودة"
+
+msgid "Save changes"
+msgstr "حفظ التغييرات"
+
+msgid "Save department"
+msgstr "حفظ القسم"
+
+msgid "Save draft & choose stock"
+msgstr "حفظ المسودة واختيار المخزون"
+
+msgid "Save edits"
+msgstr "حفظ التعديلات"
+
+msgid "Save factor"
+msgstr "حفظ المعامل"
+
+msgid "Save profile"
+msgstr "حفظ الملف الشخصي"
+
+msgid "Saving creates a"
+msgstr "الحفظ يُنشئ"
+
+msgid "Saving…"
+msgstr "جارٍ الحفظ…"
+
+msgid "Scan a QR label"
+msgstr "مسح ملصق QR"
+
+msgid "Scan a label"
+msgstr "مسح ملصق"
+
+msgid "Scan the batch's QR label, or type its ID. A wrong label is refused."
+msgstr "امسح ملصق QR للدفعة أو اكتب رقمها. يُرفض الملصق الخاطئ."
+
+msgid "Scan with camera"
+msgstr "المسح بالكاميرا"
+
+msgid "Scanned / typed asset ID"
+msgstr "رقم الأصل الممسوح / المكتوب"
+
+msgid "Scanned code"
+msgstr "الرمز الممسوح"
+
+msgid "Scheduled"
+msgstr "مجدول"
+
+msgid "Scheduled for"
+msgstr "مجدول في"
+
+msgid "Science Laboratories"
+msgstr "المختبرات العلمية"
+
+msgid "Scope"
+msgstr "النطاق"
+
+msgid "Scope department"
+msgstr "قسم النطاق"
+
+msgid "Search"
+msgstr "بحث"
+
+msgid "Search accounts"
+msgstr "البحث في الحسابات"
+
+msgid "Search assets, e.g. “HDMI monitor”"
+msgstr "ابحث عن الأصول، مثل «شاشة HDMI»"
+
+msgid "Search the catalog"
+msgstr "البحث في الكتالوج"
+
+msgid "Select"
+msgstr "اختيار"
+
+msgid "Selected from AI matches:"
+msgstr "مختار من مطابقات الذكاء الاصطناعي:"
+
+msgid "Selecting a match doesn’t reserve anything. Confirm the quantity below; stock is re-checked when you submit."
+msgstr "اختيار مطابقة لا يحجز أي شيء. أكّد الكمية أدناه؛ يُعاد فحص المخزون عند الإرسال."
+
+msgid "Selects the validated type-specific metadata (generalisation, Fig. 19)."
+msgstr "يحدد البيانات الخاصة بالنوع التي يتم التحقق منها (التعميم، الشكل 19)."
+
+msgid "Semantic representation"
+msgstr "التمثيل الدلالي"
+
+msgid "Separate approval, release and receipt — no self-approval."
+msgstr "موافقة وإفراج واستلام منفصلة — دون موافقة ذاتية."
+
+msgid "Separate with semicolons, e.g. 24-inch; HDMI."
+msgstr "افصل بفواصل منقوطة، مثل 24-inch; HDMI."
+
+msgid "Serial number"
+msgstr "الرقم التسلسلي"
+
+msgid "Serial number: 3–60 letters, numbers, dashes, slashes or dots, no spaces (e.g. SN-48213-B)."
+msgstr "الرقم التسلسلي: من 3 إلى 60 حرفًا أو رقمًا أو شرطة أو شرطة مائلة أو نقطة، دون مسافات (مثل SN-48213-B)."
+
+msgid "Service history"
+msgstr "سجل الخدمة"
+
+msgid "Service record"
+msgstr "سجل الخدمة"
+
+msgid "Service records"
+msgstr "سجلات الخدمة"
+
+msgid "Set password"
+msgstr "تعيين كلمة المرور"
+
+msgid "Show as table"
+msgstr "عرض كجدول"
+
+msgid "Show chairs in the Library & Learning department"
+msgstr "اعرض الكراسي في قسم المكتبة والتعلم"
+
+msgid "Show original generated draft"
+msgstr "عرض المسودة الأصلية المُنشأة"
+
+msgid "Sign in"
+msgstr "تسجيل الدخول"
+
+msgid "Sign out"
+msgstr "تسجيل الخروج"
+
+msgid "Sign-in failed. Check your campus ID and password, or contact the system administrator."
+msgstr "فشل تسجيل الدخول. تحقق من رقم الحرم الجامعي وكلمة المرور، أو تواصل مع مسؤول النظام."
+
+msgid "Signing in…"
+msgstr "جارٍ تسجيل الدخول…"
+
+msgid "Skip to content"
+msgstr "تخطَّ إلى المحتوى"
+
+msgid "Snapshot — data only"
+msgstr "اللقطة — بيانات فقط"
+
+msgid "Some fields need attention"
+msgstr "بعض الحقول تحتاج انتباهك"
+
+msgid "Someone else changed this asset after you opened it. Reload and review the current values."
+msgstr "غيّر شخص آخر هذا الأصل بعد أن فتحته. أعد التحميل وراجع القيم الحالية."
+
+msgid "Something went wrong"
+msgstr "حدث خطأ ما"
+
+msgid "Sort"
+msgstr "الترتيب"
+
+msgid "Source"
+msgstr "المصدر"
+
+msgid "Source citation"
+msgstr "مرجع المصدر"
+
+msgid "Sourced"
+msgstr "موثّق المصدر"
+
+msgid "Specifications"
+msgstr "المواصفات"
+
+msgid "Split batches keep a parent link so each unit has one current custody record and is counted once in sustainability metrics."
+msgstr "تحتفظ الدفعات المقسّمة برابط إلى الأصل لكي يكون لكل وحدة سجل عهدة حالي واحد وتُحتسب مرة واحدة في مقاييس الاستدامة."
+
+msgid "Stage"
+msgstr "المرحلة"
+
+msgid "Stage 5 · you are the releasing custodian"
+msgstr "المرحلة 5 · أنت أمين العهدة المُسلِّم"
+
+msgid "Stage 6 · designated receiver"
+msgstr "المرحلة 6 · المستلِم المحدد"
+
+msgid "Stages (decided in order)"
+msgstr "المراحل (يُبت فيها بالترتيب)"
+
+msgid "Stages you may decide now. Earlier stages must be complete, and you never see your own proposals here."
+msgstr "المراحل التي يمكنك البت فيها الآن. يجب إكمال المراحل السابقة، ولا ترى مقترحاتك هنا أبدًا."
+
+msgid "Start inspection"
+msgstr "بدء الفحص"
+
+msgid "Start must not be after end."
+msgstr "يجب ألا تكون البداية بعد النهاية."
+
+msgid "Start the inspection first."
+msgstr "ابدأ الفحص أولًا."
+
+msgid "Started from reviewed advice"
+msgstr "بدأ من نصيحة تمت مراجعتها"
+
+msgid "Status"
+msgstr "الحالة"
+
+msgid "Step 1 of 4: totals are computed now and become immutable for this report."
+msgstr "الخطوة 1 من 4: تُحسب الإجماليات الآن وتصبح غير قابلة للتغيير لهذا التقرير."
+
+msgid "Stick a label on each batch. Any phone camera opens the asset page (after sign-in); at handover the receiver scans it to prove the right item arrived."
+msgstr "ضع ملصقًا على كل دفعة. أي كاميرا هاتف تفتح صفحة الأصل (بعد تسجيل الدخول)؛ وعند التسليم يمسحه المستلِم لإثبات وصول العنصر الصحيح."
+
+msgid "Stock in this version"
+msgstr "المخزون في هذه النسخة"
+
+msgid "Stock lineage"
+msgstr "تسلسل المخزون"
+
+msgid "Stop"
+msgstr "إيقاف"
+
+msgid "Submit for review"
+msgstr "إرسال للمراجعة"
+
+msgid "Submit proposal"
+msgstr "إرسال المقترح"
+
+msgid "Submit the need without reserving stock"
+msgstr "إرسال الاحتياج دون حجز مخزون"
+
+msgid "Submit this disposition proposal? The asset becomes Disposition Pending and goes to approval."
+msgstr "إرسال مقترح التصرف هذا؟ يصبح الأصل «التصرف قيد الانتظار» ويذهب للموافقة."
+
+msgid "Submit this request for review? Choosing stock creates a temporary 48-hour hold — it is not an approval."
+msgstr "إرسال هذا الطلب للمراجعة؟ اختيار المخزون يُنشئ حجزًا مؤقتًا لمدة 48 ساعة — وليس موافقة."
+
+msgid "Submitted"
+msgstr "مُرسل"
+
+msgid "Submitting…"
+msgstr "جارٍ الإرسال…"
+
+msgid "Substituted item"
+msgstr "العنصر البديل"
+
+msgid "Substituted purchase"
+msgstr "الشراء البديل"
+
+msgid "Success"
+msgstr "تم بنجاح"
+
+msgid "Suggest classification"
+msgstr "اقتراح التصنيف"
+
+msgid "Suggestion applied to the form. Review or edit the values — nothing is saved until you press Save."
+msgstr "طُبّق الاقتراح على النموذج. راجع القيم أو عدّلها — لا يُحفظ شيء حتى تضغط «حفظ»."
+
+msgid "Suggestion rejected — manual values kept"
+msgstr "تم رفض الاقتراح — احتُفظ بالقيم اليدوية"
+
+msgid "Suggestion rejected; your manual values are kept."
+msgstr "تم رفض الاقتراح؛ احتُفظ بقيمك اليدوية."
+
+msgid "Suggests category, condition & tags"
+msgstr "يقترح الفئة والحالة والوسوم"
+
+msgid "Suitability"
+msgstr "الملاءمة"
+
+msgid "Suitability is a 0–100 rating of fit, not a probability that the AI is correct."
+msgstr "الملاءمة تقييم من 0 إلى 100، وليست احتمال صحة الذكاء الاصطناعي."
+
+msgid "Superseded"
+msgstr "مُستبدل"
+
+msgid "Supported revised usable-until date after reuse/repair."
+msgstr "تاريخ صلاحية استخدام منقّح مدعوم بعد إعادة الاستخدام/الإصلاح."
+
+msgid "Supporting evidence"
+msgstr "الأدلة الداعمة"
+
+msgid "Surplus catalog"
+msgstr "كتالوج الفائض"
+
+msgid "Sustainability"
+msgstr "الاستدامة"
+
+msgid "Sustainability Officer"
+msgstr "مسؤول الاستدامة"
+
+msgid "Sustainability at a glance"
+msgstr "الاستدامة في لمحة"
+
+msgid "Sustainability dashboard"
+msgstr "لوحة الاستدامة"
+
+msgid "Sustainability update"
+msgstr "تحديث الاستدامة"
+
+msgid "Sustainable-action advice"
+msgstr "نصيحة الإجراء المستدام"
+
+msgid "Synthetic"
+msgstr "اصطناعي"
+
+msgid "Synthetic / illustrative only"
+msgstr "اصطناعي / توضيحي فقط"
+
+msgid "Synthetic demonstration data · COSC 336 prototype"
+msgstr "بيانات عرض اصطناعية · نموذج أولي لمقرر COSC 336"
+
+msgid "System Administrator"
+msgstr "مسؤول النظام"
+
+msgid "System job"
+msgstr "مهمة النظام"
+
+msgid "Table"
+msgstr "جدول"
+
+msgid "Tags"
+msgstr "الوسوم"
+
+msgid "Technical specifications, separated by semicolons."
+msgstr "المواصفات التقنية، مفصولة بفواصل منقوطة."
+
+msgid "Tell the system what your department is waiting for. When a custodian publishes matching surplus, you get a notification — once per item. Alerts never reserve stock; you still submit a request."
+msgstr "أخبر النظام بما ينتظره قسمك. عندما ينشر أمين عهدة فائضًا مطابقًا يصلك إشعار — مرة واحدة لكل عنصر. التنبيهات لا تحجز المخزون أبدًا؛ وما زال عليك إرسال طلب."
+
+msgid "Tell us why (optional)"
+msgstr "أخبرنا بالسبب (اختياري)"
+
+msgid "Template (not AI)"
+msgstr "قالب (ليس ذكاءً اصطناعيًا)"
+
+msgid "Template draft — NOT AI-generated (Gemini unavailable)"
+msgstr "مسودة قالب — ليست من إنتاج الذكاء الاصطناعي (Gemini غير متاح)"
+
+msgid "Tests performed, checks passed…"
+msgstr "الاختبارات المنفذة، الفحوص الناجحة…"
+
+msgid "That alert no longer exists."
+msgstr "هذا التنبيه لم يعد موجودًا."
+
+msgid "That approval no longer exists."
+msgstr "هذه الموافقة لم تعد موجودة."
+
+msgid "That asset ID is already used."
+msgstr "رقم الأصل هذا مستخدم بالفعل."
+
+msgid "That asset is not visible to you."
+msgstr "هذا الأصل غير ظاهر لك."
+
+msgid "That asset no longer exists."
+msgstr "هذا الأصل لم يعد موجودًا."
+
+msgid "That campus ID is already registered."
+msgstr "رقم الحرم الجامعي هذا مسجل بالفعل."
+
+msgid "That department is outside your reporting scope."
+msgstr "هذا القسم خارج نطاق تقاريرك."
+
+msgid "That disposition does not exist."
+msgstr "هذا التصرف غير موجود."
+
+msgid "That input was not valid"
+msgstr "هذا الإدخال غير صالح"
+
+msgid "That report does not exist."
+msgstr "هذا التقرير غير موجود."
+
+msgid "That service record does not exist."
+msgstr "سجل الخدمة هذا غير موجود."
+
+msgid "That suggestion is no longer available."
+msgstr "هذا الاقتراح لم يعد متاحًا."
+
+msgid "That transfer does not exist."
+msgstr "عملية النقل هذه غير موجودة."
+
+msgid "The advice is attached for the approver’s context; it grants no authority."
+msgstr "النصيحة مرفقة لإطلاع المعتمِد؛ ولا تمنح أي صلاحية."
+
+msgid "The approver can approve the need; you can reserve stock later."
+msgstr "يمكن للمعتمِد الموافقة على الاحتياج؛ ويمكنك حجز المخزون لاحقًا."
+
+msgid "The asset moves to"
+msgstr "ينتقل الأصل إلى"
+
+msgid "The asset or quantity differs from the approved version; a new approval is required."
+msgstr "الأصل أو الكمية تختلف عن النسخة المعتمدة؛ يلزم الحصول على موافقة جديدة."
+
+msgid "The asset stays Unavailable. Its custodian may request sustainable-action advice or propose component recovery, recycling or disposal through approval."
+msgstr "يبقى الأصل «غير متاح». يمكن لأمين عهدته طلب نصيحة الإجراء المستدام أو اقتراح استخلاص المكوّنات أو إعادة التدوير أو التخلص عبر الموافقة."
+
+msgid "The assistant cannot perform actions."
+msgstr "لا يمكن للمساعد تنفيذ إجراءات."
+
+msgid "The custodian must hold the Asset Custodian role for this department."
+msgstr "يجب أن يحمل أمين العهدة دور أمين العهدة لهذا القسم."
+
+msgid "The database calculates every number and freezes them in a snapshot. Gemini drafts a short narrative from that snapshot only. A reporting officer edits, reviews and separately publishes it."
+msgstr "تحسب قاعدة البيانات كل رقم وتجمّده في لقطة. يصوغ Gemini سردًا قصيرًا من تلك اللقطة فقط. ثم يعدّله مسؤول التقارير ويراجعه وينشره بشكل منفصل."
+
+msgid "The default approver must hold the Assigned Approver role for this department."
+msgstr "يجب أن يحمل المعتمِد الافتراضي دور المعتمِد المعيَّن لهذا القسم."
+
+msgid "The destination changed after approval; a new approval is required."
+msgstr "تغيّرت الوجهة بعد الموافقة؛ يلزم الحصول على موافقة جديدة."
+
+msgid "The exchange life cycle"
+msgstr "دورة حياة التبادل"
+
+msgid "The file content does not match its type."
+msgstr "محتوى الملف لا يطابق نوعه."
+
+msgid "The file is empty."
+msgstr "الملف فارغ."
+
+msgid "The file is not a valid JPEG, PNG or PDF."
+msgstr "الملف ليس JPEG أو PNG أو PDF صالحًا."
+
+msgid "The final state is set only when you record completion evidence after the real-world action."
+msgstr "لا تُثبَّت الحالة النهائية إلا عند تسجيل أدلة الإنجاز بعد تنفيذ الإجراء فعليًا."
+
+msgid "The form submission key is invalid. Reload the page and try again."
+msgstr "مفتاح إرسال النموذج غير صالح. أعد تحميل الصفحة وحاول مجددًا."
+
+msgid "The handover date cannot be in the past."
+msgstr "لا يمكن أن يكون تاريخ التسليم في الماضي."
+
+msgid "The handover date is far after the date the items are needed."
+msgstr "تاريخ التسليم بعيد جدًا عن تاريخ الحاجة إلى العناصر."
+
+msgid "The last confirmed custody stays with"
+msgstr "تبقى آخر عهدة مؤكدة لدى"
+
+msgid "The narrative changed after you opened it. Reload to see the latest text."
+msgstr "تغيّر السرد بعد أن فتحته. أعد التحميل لرؤية أحدث نص."
+
+msgid "The narrative changed after you opened it. Review the latest text."
+msgstr "تغيّر السرد بعد أن فتحته. راجع أحدث نص."
+
+msgid "The need"
+msgstr "الاحتياج"
+
+msgid "The page or record does not exist, or the link is out of date."
+msgstr "الصفحة أو السجل غير موجود، أو أن الرابط قديم."
+
+msgid "The passwords do not match."
+msgstr "كلمتا المرور غير متطابقتين."
+
+msgid "The period cannot start in the future."
+msgstr "لا يمكن أن تبدأ الفترة في المستقبل."
+
+msgid "The period end must be on or after its start."
+msgstr "يجب أن تكون نهاية الفترة في تاريخ بدايتها أو بعده."
+
+msgid "The period start must be before its end."
+msgstr "يجب أن تكون بداية الفترة قبل نهايتها."
+
+msgid "The photo was sent to Gemini for this call only and is not stored by the app."
+msgstr "أُرسلت الصورة إلى Gemini لهذا الاستدعاء فقط ولا يخزنها التطبيق."
+
+msgid "The receipt did not match, so the transfer is in Exception. The last confirmed custody is preserved until an approver resolves it."
+msgstr "الاستلام غير مطابق، لذا أصبح النقل في حالة استثناء. تُحفظ آخر عهدة مؤكدة حتى يحله معتمِد."
+
+msgid "The receiving custodian must be an active Asset Custodian of your department."
+msgstr "يجب أن يكون أمين العهدة المستلِم أمين عهدة نشطًا في قسمك."
+
+msgid "The receiving custodian must confirm receipt before custody moves."
+msgstr "يجب أن يؤكد أمين العهدة المستلِم الاستلام قبل انتقال العهدة."
+
+msgid "The report changed after you opened it. Reload and review it again."
+msgstr "تغيّر التقرير بعد أن فتحته. أعد التحميل وراجعه مجددًا."
+
+msgid "The request changed after this ranking. Re-run it for current results."
+msgstr "تغيّر الطلب بعد هذا الترتيب. أعد تشغيله للحصول على نتائج حالية."
+
+msgid "The required date cannot be before today."
+msgstr "لا يمكن أن يكون التاريخ المطلوب قبل اليوم."
+
+msgid "The revised usable-until date must be in the future."
+msgstr "يجب أن يكون تاريخ صلاحية الاستخدام المنقّح في المستقبل."
+
+msgid "The selected item is not valid. Reload the page and choose again."
+msgstr "العنصر المختار غير صالح. أعد تحميل الصفحة واختر مجددًا."
+
+msgid "The server could not complete the request. No partial change was saved — business updates are atomic."
+msgstr "تعذّر على الخادم إكمال الطلب. لم يُحفظ أي تغيير جزئي — تحديثات العمل ذرّية."
+
+msgid "The source stock is restricted for a safety review. It can be released only after a custodian verifies it is safe."
+msgstr "المخزون المصدر مقيّد لمراجعة السلامة. لا يمكن الإفراج عنه إلا بعد أن يتحقق أمين العهدة من سلامته."
+
+msgid "The technician who did the work cannot also verify it."
+msgstr "لا يمكن للفني الذي نفّذ العمل أن يتحقق منه أيضًا."
+
+msgid "The transport factor should be smaller than the replacement factor; check the units."
+msgstr "يجب أن يكون معامل النقل أصغر من معامل الاستبدال؛ تحقق من الوحدات."
+
+msgid "The upper bound must be at least the lower bound."
+msgstr "يجب أن يكون الحد الأعلى مساويًا للحد الأدنى على الأقل."
+
+msgid "Then"
+msgstr "ثم"
+
+msgid "There is no narrative to review."
+msgstr "لا يوجد سرد للمراجعة."
+
+msgid "Thinking…"
+msgstr "جارٍ التفكير…"
+
+msgid "This asset already belongs to your department; no transfer is needed."
+msgstr "هذا الأصل يتبع قسمك بالفعل؛ لا حاجة إلى نقل."
+
+msgid "This asset already has an open service record."
+msgstr "لهذا الأصل سجل خدمة مفتوح بالفعل."
+
+msgid "This asset changed after you opened it. Reload and try again."
+msgstr "تغيّر هذا الأصل بعد أن فتحته. أعد التحميل وحاول مجددًا."
+
+msgid "This asset is already published."
+msgstr "هذا الأصل منشور بالفعل."
+
+msgid "This asset is already retired; choose a later route."
+msgstr "هذا الأصل محال للتقاعد بالفعل؛ اختر مسارًا لاحقًا."
+
+msgid "This asset is not published."
+msgstr "هذا الأصل غير منشور."
+
+msgid "This asset is not visible to you."
+msgstr "هذا الأصل غير ظاهر لك."
+
+msgid "This attempt was recorded in the audit trail. If you need access, ask the system administrator for the right role."
+msgstr "سُجّلت هذه المحاولة في سجل التدقيق. إذا كنت تحتاج إلى الوصول فاطلب الدور المناسب من مسؤول النظام."
+
+msgid "This batch has active holds or allocations; location and quantity cannot change until they are resolved. Use the transfer workflow to move stock."
+msgstr "لهذه الدفعة حجوزات أو تخصيصات نشطة؛ لا يمكن تغيير الموقع والكمية حتى تُحسم. استخدم سير عمل النقل لنقل المخزون."
+
+msgid "This decision form is out of date or was altered. Reload the current version."
+msgstr "نموذج القرار هذا قديم أو تم تغييره. أعد تحميل النسخة الحالية."
+
+msgid "This decision refers to a different proposal version. Reload the current version."
+msgstr "يشير هذا القرار إلى نسخة مقترح مختلفة. أعد تحميل النسخة الحالية."
+
+msgid "This department is deactivated."
+msgstr "هذا القسم معطّل."
+
+msgid "This file is larger than 10 MB."
+msgstr "هذا الملف أكبر من 10 ميغابايت."
+
+msgid "This form is out of date or was altered. Reload the page and try again."
+msgstr "هذا النموذج قديم أو تم تغييره. أعد تحميل الصفحة وحاول مجددًا."
+
+msgid "This form was already submitted — showing the original result (no duplicate effect)."
+msgstr "تم إرسال هذا النموذج مسبقًا — نعرض النتيجة الأصلية (دون تأثير مكرر)."
+
+msgid "This form was already used for a different action. Reload the page to get a fresh form."
+msgstr "استُخدم هذا النموذج لإجراء مختلف. أعد تحميل الصفحة للحصول على نموذج جديد."
+
+msgid "This is not the current version"
+msgstr "هذه ليست النسخة الحالية"
+
+msgid "This record changed after you opened it. Reload and try again."
+msgstr "تغيّر هذا السجل بعد أن فتحته. أعد التحميل وحاول مجددًا."
+
+msgid "This report is not published."
+msgstr "هذا التقرير غير منشور."
+
+msgid "This request changed after you opened it. Reload and review it."
+msgstr "تغيّر هذا الطلب بعد أن فتحته. أعد التحميل وراجعه."
+
+msgid "This stage has already been decided."
+msgstr "تم البت في هذه المرحلة بالفعل."
+
+msgid "This stage was"
+msgstr "هذه المرحلة"
+
+msgid "This stock cannot be reserved or released until an authorised custodian records a safe outcome or the disposition is resolved."
+msgstr "لا يمكن حجز هذا المخزون أو الإفراج عنه حتى يسجل أمين عهدة مخوّل نتيجة آمنة أو يُحسم التصرف."
+
+msgid "This stock is restricted for a safety review and cannot be released (NFR-05)."
+msgstr "هذا المخزون مقيّد لمراجعة السلامة ولا يمكن الإفراج عنه (NFR-05)."
+
+msgid "This transfer already has an avoided-purchase decision (no double attribution)."
+msgstr "لعملية النقل هذه قرار شراء متجنَّب بالفعل (دون احتساب مزدوج)."
+
+msgid "This transfer changed after you opened it. Reload and try again."
+msgstr "تغيّرت عملية النقل هذه بعد أن فتحتها. أعد التحميل وحاول مجددًا."
+
+msgid "This transfer is not in Exception."
+msgstr "عملية النقل هذه ليست في حالة استثناء."
+
+msgid "This transfer no longer has a current approval."
+msgstr "لم تعد لعملية النقل هذه موافقة حالية."
+
+msgid "Tick the confirmation that you checked every statement against the snapshot."
+msgstr "ضع علامة على التأكيد بأنك تحققت من كل عبارة مقابل اللقطة."
+
+msgid "Tick when the factor is illustrative demo data, not a verified source."
+msgstr "ضع علامة عندما يكون المعامل بيانات عرض توضيحية وليس مصدرًا موثّقًا."
+
+msgid "Title"
+msgstr "العنوان"
+
+msgid "To"
+msgstr "إلى"
+
+msgid "Today or earlier."
+msgstr "اليوم أو قبله."
+
+msgid "Too short."
+msgstr "قصير جدًا."
+
+msgid "Top"
+msgstr "الأعلى"
+
+msgid "Top option:"
+msgstr "الخيار الأول:"
+
+msgid "Top pick"
+msgstr "الاختيار الأفضل"
+
+msgid "Top recommendation"
+msgstr "التوصية الأولى"
+
+msgid "Track every need from draft to confirmed receipt. Holds and decisions are shown on each request."
+msgstr "تتبع كل احتياج من المسودة حتى الاستلام المؤكد. تظهر الحجوزات والقرارات في كل طلب."
+
+msgid "Transfer"
+msgstr "النقل"
+
+msgid "Transfer Pending"
+msgstr "النقل قيد الانتظار"
+
+msgid "Transfer cost"
+msgstr "تكلفة النقل"
+
+msgid "Transfer filter"
+msgstr "تصفية النقل"
+
+msgid "Transfer history"
+msgstr "سجل النقل"
+
+msgid "Transfers"
+msgstr "عمليات النقل"
+
+msgid "Transfers appear after a request is approved."
+msgstr "تظهر عمليات النقل بعد اعتماد الطلب."
+
+msgid "Transport factor (kg CO2e/transfer)"
+msgstr "معامل النقل (كغ CO2e/عملية نقل)"
+
+msgid "Transport kg CO2e / transfer"
+msgstr "كغ CO2e للنقل / عملية نقل"
+
+msgid "Try fewer filters or a broader word. You can still submit a request — it stays open until suitable stock is published."
+msgstr "جرّب مرشحات أقل أو كلمة أعم. ما زال بإمكانك إرسال طلب — سيبقى مفتوحًا حتى يُنشر مخزون مناسب."
+
+msgid "Type a question."
+msgstr "اكتب سؤالًا."
+
+msgid "Type the same password twice."
+msgstr "اكتب كلمة المرور نفسها مرتين."
+
+msgid "Type-specific metadata"
+msgstr "بيانات خاصة بالنوع"
+
+msgid "Unavailable"
+msgstr "غير متاح"
+
+msgid "Unavailable —"
+msgstr "غير متاح —"
+
+msgid "Under Inspection"
+msgstr "قيد الفحص"
+
+msgid "Under Review"
+msgstr "قيد المراجعة"
+
+msgid "Unique 9-digit university ID starting with 1000, e.g. 100060412."
+msgstr "رقم جامعي فريد من 9 أرقام يبدأ بـ 1000، مثل 100060412."
+
+msgid "Unique asset ID; whole-number quantity ≥ 1."
+msgstr "رقم أصل فريد؛ كمية بعدد صحيح ≥ 1."
+
+msgid "Unique, e.g. A-104."
+msgstr "فريد، مثل A-104."
+
+msgid "Unique: letter prefix, dash, 3–6 digits, e.g. U-1024."
+msgstr "فريد: بادئة حرفية، شرطة، من 3 إلى 6 أرقام، مثل U-1024."
+
+msgid "Unit"
+msgstr "الوحدة"
+
+msgid "Unit price"
+msgstr "سعر الوحدة"
+
+msgid "Units"
+msgstr "الوحدات"
+
+msgid "Units in this batch were already counted as reused."
+msgstr "الوحدات في هذه الدفعة احتُسبت مسبقًا كمعاد استخدامها."
+
+msgid "Units received"
+msgstr "الوحدات المستلمة"
+
+msgid "Units reused"
+msgstr "الوحدات المعاد استخدامها"
+
+msgid "Units reused by category"
+msgstr "الوحدات المعاد استخدامها حسب الفئة"
+
+msgid "Units reused per month"
+msgstr "الوحدات المعاد استخدامها شهريًا"
+
+msgid "Units reused per month, last six months"
+msgstr "الوحدات المعاد استخدامها شهريًا، آخر ستة أشهر"
+
+msgid "Units substituted"
+msgstr "الوحدات البديلة"
+
+msgid "Unknown"
+msgstr "غير معروف"
+
+msgid "Unknown action."
+msgstr "إجراء غير معروف."
+
+msgid "Unknown role."
+msgstr "دور غير معروف."
+
+msgid "Unknown stays empty, never zero."
+msgstr "غير المعروف يبقى فارغًا، وليس صفرًا أبدًا."
+
+msgid "Unknown stays unknown in savings reports."
+msgstr "غير المعروف يبقى غير معروف في تقارير الوفورات."
+
+msgid "Unknown — finance review required"
+msgstr "غير معروف — تلزم مراجعة مالية"
+
+msgid "Unknown — not recorded"
+msgstr "غير معروف — غير مسجل"
+
+msgid "Unpublish"
+msgstr "إلغاء النشر"
+
+msgid "Unread"
+msgstr "غير مقروء"
+
+msgid "Unrepairable"
+msgstr "غير قابل للإصلاح"
+
+msgid "Unrepairable finding"
+msgstr "نتيجة: غير قابل للإصلاح"
+
+msgid "Unrepairable — never disposed automatically"
+msgstr "غير قابل للإصلاح — لا يُتخلص منه تلقائيًا أبدًا"
+
+msgid "Unresolved holds or allocations exist for this asset."
+msgstr "توجد حجوزات أو تخصيصات غير محسومة لهذا الأصل."
+
+msgid "Unresolved holds or allocations exist for this asset; resolve them before authorising disposition."
+msgstr "توجد حجوزات أو تخصيصات غير محسومة لهذا الأصل؛ احسمها قبل اعتماد التصرف."
+
+msgid "Unsupported claims detected — publication blocked"
+msgstr "تم رصد ادعاءات غير مدعومة — النشر محظور"
+
+msgid "Unwanted-asset cohort"
+msgstr "مجموعة الأصول غير المرغوبة"
+
+msgid "Update"
+msgstr "تحديث"
+
+msgid "Upload"
+msgstr "رفع"
+
+msgid "Upload a .jpg, .png or .pdf file."
+msgstr "ارفع ملف .jpg أو .png أو .pdf."
+
+msgid "Uploading…"
+msgstr "جارٍ الرفع…"
+
+msgid "Urgency"
+msgstr "الأولوية"
+
+msgid "Use"
+msgstr "استخدام"
+
+msgid "Use 2–12 capital letters, e.g. ENG."
+msgstr "استخدم من 2 إلى 12 حرفًا لاتينيًا كبيرًا، مثل ENG."
+
+msgid "Use a letter prefix, a dash and 3–6 digits, e.g. U-1024."
+msgstr "استخدم بادئة حرفية ثم شرطة ثم من 3 إلى 6 أرقام، مثل U-1024."
+
+msgid "Use a positive quantity."
+msgstr "استخدم كمية موجبة."
+
+msgid "Use a unique campus ID."
+msgstr "استخدم رقم حرم جامعي فريدًا."
+
+msgid "Use the"
+msgstr "استخدم"
+
+msgid "Use the 9-digit university ID, e.g. 100060412."
+msgstr "استخدم الرقم الجامعي المكوّن من 9 أرقام، مثل 100060412."
+
+msgid "Use your campus ID and password."
+msgstr "استخدم رقم الحرم الجامعي وكلمة المرور."
+
+msgid "Uses an illustrative (unverified) factor. "
+msgstr "يستخدم معاملًا توضيحيًا (غير موثّق). "
+
+msgid "Validated ITAsset/FurnitureAsset attributes."
+msgstr "سمات ITAsset/FurnitureAsset التي تم التحقق منها."
+
+msgid "Value"
+msgstr "القيمة"
+
+msgid "Value from (AED)"
+msgstr "القيمة من (درهم)"
+
+msgid "Value to (AED)"
+msgstr "القيمة إلى (درهم)"
+
+msgid "Verification evidence"
+msgstr "أدلة التحقق"
+
+msgid "Verification note"
+msgstr "ملاحظة التحقق"
+
+msgid "Verified by"
+msgstr "تحقق منه"
+
+msgid "Verified condition"
+msgstr "الحالة بعد التحقق"
+
+msgid "Verify safe return"
+msgstr "التحقق من العودة الآمنة"
+
+msgid "Verify the item (optional)"
+msgstr "التحقق من العنصر (اختياري)"
+
+msgid "Version"
+msgstr "النسخة"
+
+msgid "Version v"
+msgstr "النسخة v"
+
+msgid "Versions"
+msgstr "النسخ"
+
+msgid "View"
+msgstr "عرض"
+
+msgid "View all"
+msgstr "عرض الكل"
+
+msgid "Waiting for an asset custodian of"
+msgstr "بانتظار أمين عهدة من"
+
+msgid "Waiting for you"
+msgstr "بانتظارك"
+
+msgid "Waste diversion"
+msgstr "تحويل النفايات"
+
+msgid "Waste diversion rate"
+msgstr "معدل تحويل النفايات"
+
+msgid "Waste diverted"
+msgstr "النفايات المحوَّلة"
+
+msgid "Waste diverter"
+msgstr "محوِّل النفايات"
+
+msgid "Weak matches"
+msgstr "مطابقات ضعيفة"
+
+msgid "Weight"
+msgstr "الوزن"
+
+msgid "Weight / unit"
+msgstr "الوزن / للوحدة"
+
+msgid "Weight per unit (kg)"
+msgstr "الوزن للوحدة (كغ)"
+
+msgid "What happens next"
+msgstr "ماذا يحدث بعد ذلك"
+
+msgid "What is being approved"
+msgstr "ما الذي تتم الموافقة عليه"
+
+msgid "What is the status of my requests?"
+msgstr "ما حالة طلباتي؟"
+
+msgid "What is wrong?"
+msgstr "ما المشكلة؟"
+
+msgid "What should happen to"
+msgstr "ما الذي يجب أن يحدث لـ"
+
+msgid "What the items will be used for — used for semantic matching."
+msgstr "فيمَ ستُستخدم العناصر — يُستخدم للمطابقة الدلالية."
+
+msgid "When"
+msgstr "متى"
+
+msgid "When held stock was released back (rejection/cancellation/expiry)."
+msgstr "وقت إعادة المخزون المحجوز (رفض/إلغاء/انتهاء)."
+
+msgid "When these units first entered the unwanted/surplus cohort."
+msgstr "وقت دخول هذه الوحدات لأول مرة مجموعة الأصول غير المرغوبة/الفائضة."
+
+msgid "Whole number from 1 to 1,000."
+msgstr "عدد صحيح من 1 إلى 1,000."
+
+msgid "Whole units in this batch (1–10,000)."
+msgstr "وحدات كاملة في هذه الدفعة (1–10,000)."
+
+msgid "Why:"
+msgstr "السبب:"
+
+msgid "Withdraw"
+msgstr "سحب"
+
+msgid "Withdraw request"
+msgstr "سحب الطلب"
+
+msgid "Withdrawn"
+msgstr "مسحوب"
+
+msgid "Work"
+msgstr "العمل"
+
+msgid "Work can be recorded only after the repair proposal is authorised."
+msgstr "لا يمكن تسجيل العمل إلا بعد اعتماد مقترح الإصلاح."
+
+msgid "Work done"
+msgstr "العمل المنجز"
+
+msgid "Work recorded; a custodian must now verify the safe outcome."
+msgstr "تم تسجيل العمل؛ يجب على أمين العهدة الآن التحقق من النتيجة الآمنة."
+
+msgid "Work type (if repair needed)"
+msgstr "نوع العمل (إذا لزم إصلاح)"
+
+msgid "Workflow"
+msgstr "سير العمل"
+
+msgid "Workflow / Approvals"
+msgstr "سير العمل / الموافقات"
+
+msgid "Workflow / Maintenance"
+msgstr "سير العمل / الصيانة"
+
+msgid "Workflow / Transfers"
+msgstr "سير العمل / عمليات النقل"
+
+msgid "Workspace"
+msgstr "مساحة العمل"
+
+msgid "Workspace / Help"
+msgstr "مساحة العمل / المساعدة"
+
+msgid "Write a narrative of at least 20 characters."
+msgstr "اكتب سردًا من 20 حرفًا على الأقل."
+
+msgid "Written manually"
+msgstr "مكتوب يدويًا"
+
+msgid "Wrong item scanned."
+msgstr "تم مسح عنصر خاطئ."
+
+msgid "Yes — matches what was approved"
+msgstr "نعم — يطابق ما تمت الموافقة عليه"
+
+msgid "Yes — record the avoided purchase"
+msgstr "نعم — سجّل الشراء المتجنَّب"
+
+msgid "Yes, verified safe"
+msgstr "نعم، تم التحقق من سلامته"
+
+msgid "You are not a reviewer for this proposal."
+msgstr "لست مراجعًا لهذا المقترح."
+
+msgid "You are not the reviewer for this stage, or the version is no longer current."
+msgstr "لست المراجع لهذه المرحلة، أو أن النسخة لم تعد حالية."
+
+msgid "You are not the reviewer for this stage."
+msgstr "لست المراجع لهذه المرحلة."
+
+msgid "You can only cancel your own or your department's requests."
+msgstr "يمكنك إلغاء طلباتك أو طلبات قسمك فقط."
+
+msgid "You can only edit your own or your department's requests."
+msgstr "يمكنك تعديل طلباتك أو طلبات قسمك فقط."
+
+msgid "You can only reserve for your own or your department's requests."
+msgstr "يمكنك الحجز لطلباتك أو طلبات قسمك فقط."
+
+msgid "You can only submit your own or your department's requests."
+msgstr "يمكنك إرسال طلباتك أو طلبات قسمك فقط."
+
+msgid "You can only withdraw your own or your department's requests."
+msgstr "يمكنك سحب طلباتك أو طلبات قسمك فقط."
+
+msgid "You cannot deactivate your own account."
+msgstr "لا يمكنك تعطيل حسابك."
+
+msgid "You cannot decide your own proposal."
+msgstr "لا يمكنك البت في مقترحك."
+
+msgid "You cannot edit this request."
+msgstr "لا يمكنك تعديل هذا الطلب."
+
+msgid "You cannot open this attachment."
+msgstr "لا يمكنك فتح هذا المرفق."
+
+msgid "You cannot report a defect for this asset."
+msgstr "لا يمكنك الإبلاغ عن عطل لهذا الأصل."
+
+msgid "You cannot view matches for this request."
+msgstr "لا يمكنك عرض مطابقات هذا الطلب."
+
+msgid "You cannot view reports."
+msgstr "لا يمكنك عرض التقارير."
+
+msgid "You cannot view this disposition."
+msgstr "لا يمكنك عرض هذا التصرف."
+
+msgid "You cannot view this request."
+msgstr "لا يمكنك عرض هذا الطلب."
+
+msgid "You cannot view this service record."
+msgstr "لا يمكنك عرض سجل الخدمة هذا."
+
+msgid "You cannot view this transfer."
+msgstr "لا يمكنك عرض عملية النقل هذه."
+
+msgid "You can’t approve your own request."
+msgstr "لا يمكنك الموافقة على طلبك."
+
+msgid "You chose a different action from the top recommendation — record a reason for the override (AI-04)."
+msgstr "اخترت إجراءً مختلفًا عن التوصية الأولى — سجّل سببًا لهذا التجاوز (AI-04)."
+
+msgid "You do not have access to operational reports."
+msgstr "ليس لديك وصول إلى التقارير التشغيلية."
+
+msgid "You do not have access to sustainability reporting."
+msgstr "ليس لديك وصول إلى تقارير الاستدامة."
+
+msgid "You have"
+msgstr "لديك"
+
+msgid "You have signed out."
+msgstr "تم تسجيل خروجك."
+
+msgid "You proposed this. Another authorised reviewer must decide every stage (no self-approval)."
+msgstr "أنت من اقترح هذا. يجب أن يبت مراجع مخوّل آخر في كل مرحلة (دون موافقة ذاتية)."
+
+msgid "You proposed this; another authorised reviewer must decide it."
+msgstr "أنت من اقترح هذا؛ يجب أن يبت فيه مراجع مخوّل آخر."
+
+msgid "You're all caught up"
+msgstr "لا يوجد ما يحتاج متابعتك"
+
+msgid "Your account is not active. Contact the system administrator."
+msgstr "حسابك غير نشط. تواصل مع مسؤول النظام."
+
+msgid "Your alerts"
+msgstr "تنبيهاتك"
+
+msgid "Your decision"
+msgstr "قرارك"
+
+msgid "Your decisions"
+msgstr "قراراتك"
+
+msgid "Your department has no assigned approver other than you. Ask the system administrator to assign one."
+msgstr "لا يوجد لقسمك معتمِد معيَّن غيرك. اطلب من مسؤول النظام تعيين واحد."
+
+msgid "Your department,"
+msgstr "قسمك،"
+
+msgid "Your feedback is stored with this AI result for evaluation."
+msgstr "تُحفظ ملاحظاتك مع نتيجة الذكاء الاصطناعي هذه للتقييم."
+
+msgid "Your next actions"
+msgstr "إجراءاتك التالية"
+
+msgid "Your proposals awaiting others"
+msgstr "مقترحاتك بانتظار الآخرين"
+
+msgid "Your question"
+msgstr "سؤالك"
+
+msgid "Your recent decisions"
+msgstr "قراراتك الأخيرة"
+
+msgid "Your role cannot submit requests."
+msgstr "لا يمكن لدورك إرسال طلبات."
+
+msgid "ago"
+msgstr "مضت"
+
+msgid "ago ·"
+msgstr "مضت ·"
+
+msgid "ago. Publishing is a separate, deliberate step."
+msgstr "مضت. النشر خطوة منفصلة ومقصودة."
+
+msgid "all suggestions"
+msgstr "كل الاقتراحات"
+
+msgid "and"
+msgstr "و"
+
+msgid "and are not visible to other departments until you publish them."
+msgstr "ولا تظهر للأقسام الأخرى حتى تنشرها."
+
+msgid "and leaves the catalog."
+msgstr "ويغادر الكتالوج."
+
+msgid "answer referenced records outside the permitted context"
+msgstr "استندت الإجابة إلى سجلات خارج السياق المسموح"
+
+msgid "approved, DENIED…"
+msgstr "approved، DENIED…"
+
+msgid "asset batch"
+msgstr "دفعة أصول"
+
+msgid "assets"
+msgstr "أصول"
+
+msgid "at"
+msgstr "في"
+
+msgid "at most 10"
+msgstr "10 كحد أقصى"
+
+msgid "avoided"
+msgstr "مُتجنَّب"
+
+msgid "awaiting receipt · never auto-expires"
+msgstr "بانتظار الاستلام · لا تنتهي صلاحيته تلقائيًا"
+
+msgid "badge"
+msgstr "شارة"
+
+msgid "by"
+msgstr "بواسطة"
+
+msgid "campus-wide"
+msgstr "على مستوى الحرم"
+
+msgid "catalog search"
+msgstr "بحث الكتالوج"
+
+msgid "category"
+msgstr "الفئة"
+
+msgid "category outside the allowed list"
+msgstr "فئة خارج القائمة المسموحة"
+
+msgid "cohort units"
+msgstr "وحدات المجموعة"
+
+msgid "completed reuse transfers"
+msgstr "عمليات نقل إعادة استخدام مكتملة"
+
+msgid "completion evidence."
+msgstr "أدلة الإنجاز."
+
+msgid "condition. Any shortfall stays allocated on a follow-up transfer."
+msgstr "حالة. أي نقص يبقى مخصّصًا في عملية نقل لاحقة."
+
+msgid "confirmed by procurement"
+msgstr "مؤكد من المشتريات"
+
+msgid "confirmed reviews"
+msgstr "مراجعات مؤكدة"
+
+msgid "cost unknown"
+msgstr "التكلفة غير معروفة"
+
+msgid "counted once"
+msgstr "يُحتسب مرة واحدة"
+
+msgid "created in period"
+msgstr "أُنشئ في الفترة"
+
+msgid "custody changes ·"
+msgstr "تغيّرات العهدة ·"
+
+msgid "cutoff"
+msgstr "تاريخ الإقفال"
+
+msgid "decide in order: source custodian release/safety check, finance cost review (only when a cost exists), then the assigned approver. Nobody can approve their own proposal."
+msgstr "يُبت بالترتيب: فحص الإفراج/السلامة من أمين العهدة المصدر، ثم المراجعة المالية للتكلفة (فقط عند وجود تكلفة)، ثم المعتمِد المعيَّن. لا يمكن لأحد الموافقة على مقترحه."
+
+msgid "describe a need, optionally review AI matches, pick stock and submit. Submission creates a 48-hour hold — not an approval."
+msgstr "صف احتياجًا، وراجع مطابقات الذكاء الاصطناعي اختياريًا، واختر المخزون وأرسل. الإرسال يُنشئ حجزًا لمدة 48 ساعة — وليس موافقة."
+
+msgid "dimension mismatch"
+msgstr "عدم تطابق الأبعاد"
+
+msgid "discarded (disposed)"
+msgstr "مستبعد (تم التخلص منه)"
+
+msgid "distinct units"
+msgstr "وحدات مميزة"
+
+msgid "diverted"
+msgstr "محوَّل"
+
+msgid "diverted units"
+msgstr "وحدات محوَّلة"
+
+msgid "draft"
+msgstr "مسودة"
+
+msgid "e.g. 16GB DDR4 RAM module; 2"
+msgstr "مثل 16GB DDR4 RAM module; 2"
+
+msgid "e.g. 2.14 or Lab B"
+msgstr "مثل 2.14 أو Lab B"
+
+msgid "e.g. 24-inch monitor, framework item IT-MON-24"
+msgstr "مثل شاشة 24 بوصة، بند الإطار IT-MON-24"
+
+msgid "e.g. Any projectors in Engineering?"
+msgstr "مثل: هل توجد أجهزة عرض في الهندسة؟"
+
+msgid "e.g. “HDMI monitors for the lab”."
+msgstr "مثل «شاشات HDMI للمختبر»."
+
+msgid "eligible"
+msgstr "مؤهل"
+
+msgid "entered with a cited source"
+msgstr "أُدخل مع مصدر موثّق"
+
+msgid "estimate"
+msgstr "تقدير"
+
+msgid "event"
+msgstr "حدث"
+
+msgid "expires"
+msgstr "ينتهي"
+
+msgid "factors had no evidence; they’re excluded, not scored as zero, and lower coverage."
+msgstr "عوامل بلا أدلة؛ تُستبعد ولا تُحتسب صفرًا، وتخفض التغطية."
+
+msgid "for"
+msgstr "لـ"
+
+msgid "for version"
+msgstr "للنسخة"
+
+msgid "free"
+msgstr "متاح"
+
+msgid "free now ·"
+msgstr "متاح الآن ·"
+
+msgid "free units listed"
+msgstr "وحدات متاحة مدرجة"
+
+msgid "free units now"
+msgstr "وحدات متاحة الآن"
+
+msgid "free ·"
+msgstr "متاح ·"
+
+msgid "from"
+msgstr "من"
+
+msgid "from now unless approved."
+msgstr "من الآن ما لم تتم الموافقة."
+
+msgid "help & policies"
+msgstr "المساعدة والسياسات"
+
+msgid "immutable"
+msgstr "غير قابل للتغيير"
+
+msgid "indicators"
+msgstr "المؤشرات"
+
+msgid "inspections closed without repair"
+msgstr "فحوص أُغلقت دون إصلاح"
+
+msgid "invalid choice"
+msgstr "اختيار غير صالح"
+
+msgid "invalid condition"
+msgstr "حالة غير صالحة"
+
+msgid "is a 0–100 fit rating from the weights below — not the probability that AI is right."
+msgstr "تقييم ملاءمة من 0 إلى 100 وفق الأوزان أدناه — وليس احتمال صحة الذكاء الاصطناعي."
+
+msgid "is already under review."
+msgstr "قيد المراجعة بالفعل."
+
+msgid "item"
+msgstr "عنصر"
+
+msgid "jobs with unknown cost"
+msgstr "أعمال بتكلفة غير معروفة"
+
+msgid "kg"
+msgstr "كغ"
+
+msgid "kg CO2e/unit · transport"
+msgstr "كغ CO2e/وحدة · النقل"
+
+msgid "linked impact record"
+msgstr "سجل أثر مرتبط"
+
+msgid "match your filters ·"
+msgstr "تطابق مرشحاتك ·"
+
+msgid "meta"
+msgstr "بيانات وصفية"
+
+msgid "ms"
+msgstr "مللي ثانية"
+
+msgid "narrative too short"
+msgstr "السرد قصير جدًا"
+
+msgid "new request"
+msgstr "طلب جديد"
+
+msgid "no approved factor"
+msgstr "لا يوجد معامل معتمد"
+
+msgid "no options"
+msgstr "لا خيارات"
+
+msgid "no roles yet"
+msgstr "لا أدوار بعد"
+
+msgid "none"
+msgstr "لا شيء"
+
+msgid "notified"
+msgstr "تم الإشعار"
+
+msgid "of"
+msgstr "من"
+
+msgid "of cohort units"
+msgstr "من وحدات المجموعة"
+
+msgid "on"
+msgstr "في"
+
+msgid "only pre-fills your submission. Stock is re-checked and a human approves."
+msgstr "يملأ إرسالك مسبقًا فقط. يُعاد فحص المخزون ويوافق عليه إنسان."
+
+msgid "only. A material change later needs a new decision."
+msgstr "فقط. أي تغيير جوهري لاحق يحتاج قرارًا جديدًا."
+
+msgid "open"
+msgstr "مفتوح"
+
+msgid "open exceptions"
+msgstr "استثناءات مفتوحة"
+
+msgid "open jobs"
+msgstr "أعمال مفتوحة"
+
+msgid "open requests (you & dept.)"
+msgstr "طلبات مفتوحة (أنت والقسم)"
+
+msgid "open)"
+msgstr "مفتوح)"
+
+msgid "operational"
+msgstr "تشغيلي"
+
+msgid "or better"
+msgstr "أو أفضل"
+
+msgid "pending"
+msgstr "معلّق"
+
+msgid "permissions; restricted records never reach the model."
+msgstr "صلاحيات؛ السجلات المقيّدة لا تصل إلى النموذج أبدًا."
+
+msgid "points"
+msgstr "نقاط"
+
+msgid "provisional"
+msgstr "مؤقت"
+
+msgid "received"
+msgstr "مستلَم"
+
+msgid "received · due"
+msgstr "مستلَم · مستحق"
+
+msgid "register assets (Draft), then publish eligible stock. Unknown purchase dates and values stay “Unknown”."
+msgstr "سجّل الأصول (مسودة)، ثم انشر المخزون المؤهل. تواريخ الشراء والقيم غير المعروفة تبقى «غير معروف»."
+
+msgid "related costs"
+msgstr "التكاليف المرتبطة"
+
+msgid "repair"
+msgstr "إصلاح"
+
+msgid "repeat-transfer units excluded"
+msgstr "وحدات النقل المتكرر مستبعدة"
+
+msgid "request(s),"
+msgstr "طلب/طلبات،"
+
+msgid "requests"
+msgstr "طلبات"
+
+msgid "reused cohort units"
+msgstr "وحدات مجموعة معاد استخدامها"
+
+msgid "saved"
+msgstr "محفوظ"
+
+msgid "scope"
+msgstr "النطاق"
+
+msgid "splits a linked batch."
+msgstr "يقسّم دفعة مرتبطة."
+
+msgid "still needed"
+msgstr "ما زال مطلوبًا"
+
+msgid "supersedes it. Decisions on stale versions are rejected."
+msgstr "يحل محلها. تُرفض القرارات على النسخ القديمة."
+
+msgid "surplus listings you can see"
+msgstr "قوائم فائض يمكنك رؤيتها"
+
+msgid "this stage"
+msgstr "هذه المرحلة"
+
+msgid "transfers with factor"
+msgstr "عمليات نقل لها معامل"
+
+msgid "transfers with unknown cost"
+msgstr "عمليات نقل بتكلفة غير معروفة"
+
+msgid "transfers without factor"
+msgstr "عمليات نقل بلا معامل"
+
+msgid "unit"
+msgstr "وحدة"
+
+msgid "unit(s)"
+msgstr "وحدة/وحدات"
+
+msgid "unit(s) received in"
+msgstr "وحدة/وحدات مستلمة بحالة"
+
+msgid "unit(s) ·"
+msgstr "وحدة/وحدات ·"
+
+msgid "unit(s) →"
+msgstr "وحدة/وحدات ←"
+
+msgid "unit(s), min."
+msgstr "وحدة/وحدات، الحد الأدنى"
+
+msgid "units"
+msgstr "وحدات"
+
+msgid "units received"
+msgstr "وحدات مستلمة"
+
+msgid "units returned to service"
+msgstr "وحدات عادت إلى الخدمة"
+
+msgid "units reused · last 90 days"
+msgstr "وحدات معاد استخدامها · آخر 90 يومًا"
+
+msgid "units with weight"
+msgstr "وحدات لها وزن"
+
+msgid "unknown"
+msgstr "غير معروف"
+
+msgid "unrepairable"
+msgstr "غير قابل للإصلاح"
+
+msgid "unsupported action"
+msgstr "إجراء غير مدعوم"
+
+msgid "until an authorised approver resolves this."
+msgstr "حتى يحل معتمِد مخوّل هذا الأمر."
+
+msgid "urgency"
+msgstr "الأولوية"
+
+msgid "version"
+msgstr "النسخة"
+
+msgid "waiting for your decision or confirmation."
+msgstr "بانتظار قرارك أو تأكيدك."
+
+msgid "with"
+msgstr "مع"
+
+msgid "years old"
+msgstr "سنوات"
+
+msgid "your"
+msgstr "الخاص بك"
+
+msgid "yrs"
+msgstr "سنوات"
+
+msgid "zero vector"
+msgstr "متجه صفري"
+
+msgid "· Circular Campus"
+msgstr "· الحرم الدائري"
+
+msgid "· Room"
+msgstr "· الغرفة"
+
+msgid "· append-only"
+msgstr "· قابل للإضافة فقط"
+
+msgid "· asset is"
+msgstr "· الأصل"
+
+msgid "· by"
+msgstr "· بواسطة"
+
+msgid "· calculation"
+msgstr "· الحساب"
+
+msgid "· confirmed by"
+msgstr "· أكّده"
+
+msgid "· custodian"
+msgstr "· أمين العهدة"
+
+msgid "· cutoff"
+msgstr "· تاريخ الإقفال"
+
+msgid "· edited by a human"
+msgstr "· عدّله إنسان"
+
+msgid "· est. transfer"
+msgstr "· نقل تقديري"
+
+msgid "· immutable snapshot"
+msgstr "· لقطة غير قابلة للتغيير"
+
+msgid "· must state"
+msgstr "· يجب أن يذكر"
+
+msgid "· needs"
+msgstr "· يحتاج"
+
+msgid "· now"
+msgstr "· الآن"
+
+msgid "· requested by"
+msgstr "· طلبه"
+
+msgid "· scope"
+msgstr "· النطاق"
+
+msgid "· snapshot"
+msgstr "· اللقطة"
+
+msgid "· version"
+msgstr "· النسخة"
+
+msgid "— I can find surplus items, check request status, explain policies, and draft a request for you to review. What do you need?"
+msgstr "— يمكنني العثور على العناصر الفائضة، والتحقق من حالة الطلبات، وشرح السياسات، وصياغة طلب لتراجعه. ماذا تحتاج؟"
+
+msgid "— local demonstration only"
+msgstr "— للعرض المحلي فقط"
+
+msgid "“Any projectors available in Engineering?” — answers cite real records you may access."
+msgstr "«هل توجد أجهزة عرض متاحة في الهندسة؟» — تستشهد الإجابات بسجلات حقيقية يمكنك الوصول إليها."
+
+msgid "→ revised"
+msgstr "← منقّح"
+
+msgid "⚠ flagged"
+msgstr "⚠ موسوم"

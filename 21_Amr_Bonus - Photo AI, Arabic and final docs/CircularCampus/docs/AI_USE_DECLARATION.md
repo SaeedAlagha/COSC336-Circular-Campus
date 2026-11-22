@@ -1,0 +1,8 @@
+# AI-use declaration
+
+- **What AI did.** An AI coding assistant (Anthropic Claude, via Claude Code) wrote this implementation from the team's submitted Phase 1–5 documents, the Phase 6 brief and slides, and the instructor's clarification. That covers the source code, templates, styles, tests, launchers and these documents. It also audited the earlier code ZIP and ran the tests and browser checks recorded in TEST_REPORT.md.
+- **What the team owns.** The requirements, the design (DFDs, class and ER models, state machines, scoring weights, sustainability definitions) and the decisions in Phases 1–5 are the team's submitted work. The implementation follows them; deviations are listed in DESIGN_MAPPING.md §9.
+- **Bonus features and translation.** The same assistant built the bonus features (QR labels, alerts, leaderboard, photo classification) and wrote the Arabic translations of the interface. The Arabic was machine-drafted; a native speaker should review it.
+- **Team responsibility.** Each member must review, run and be able to explain the files they commit and present (TEAM_GITHUB_GUIDE.md). AI assistance must be acknowledged in commit messages and wherever the course requires it.
+- **AI inside the product.** The application itself uses Google Gemini, when a key is configured, for classification (from text or a photo), semantic matching, action advice, the assistant and report narratives. All AI output is advisory, validated and labelled. Fallback output is labelled as not AI-generated.
+- **Not claimed.** No live Gemini call, no Windows or macOS launcher run, no load test and no accuracy result beyond the 12-item synthetic sample. See TEST_REPORT.md.
