@@ -1,0 +1,56 @@
+{% extends "base.html" %}{% load campus_ui i18n %}
+{% block title %}{{ r.reference }}{% endblock %}
+{% block content %}
+<div class="page-head"><div><div class="crumbs"><a href="{% url 'reporting:reports' %}">{% translate "AI reports" %}</a> / {{ r.reference }}</div>
+  <div class="row" style="gap:12px"><h1>{{ r.get_report_type_display }}</h1>{% badge r.status r.get_status_display %}</div>
+  <p>{{ r.period_start|date:"d M Y" }} – {{ r.period_end|date:"d M Y" }} · {{ r.snapshot.meta.scope }} {% translate "· snapshot" %} <span class="mono">{{ r.snapshot_hash|slice:":12" }}</span> ({{ r.snapshot_version }}) · {{ links }} {% translate "linked impact record" %}{{ links|pluralize }}</p></div></div>
+
+<section class="card card-pad mb"><ol class="stepper">
+  <li class="done">{% translate "Database totals" %}</li>
+  <li class="{% if r.narrative_text %}done{% else %}current{% endif %}">{% translate "Narrative draft" %}</li>
+  <li class="{% if r.status == 'REVIEWED' or r.status == 'PUBLISHED' %}done{% elif r.narrative_text %}current{% endif %}">{% translate "Human edit & review" %}</li>
+  <li class="{% if r.status == 'PUBLISHED' %}done{% elif r.status == 'REVIEWED' %}current{% endif %}">{% translate "Publish" %}</li></ol></section>
+
+<div class="split-wide">
+  <div class="stack">
+    <section class="ai-card"><div class="ai-head"><span class="ai-ico">{% icon "sparkles" 16 %}</span><div style="flex:1"><h2>{% translate "Narrative" %}</h2><div class="small muted">{% if r.narrative_source == "AI" %}{% translate "Drafted by Gemini from the snapshot only" %}{% elif r.narrative_source == "TEMPLATE" %}{% translate "Template draft — NOT AI-generated (Gemini unavailable)" %}{% elif r.narrative_source == "MANUAL" %}{% translate "Written manually" %}{% else %}{% translate "Not drafted yet" %}{% endif %}{% if edited %} {% translate "· edited by a human" %}{% endif %}</div></div>
+      {% if r.status == "PUBLISHED" %}<span class="badge badge-success">{% translate "Published" %} {{ r.published_at|date:"d M Y" }}</span>{% endif %}</div>
+      <div class="ai-body">
+      {% if author %}
+        {% if not r.narrative_text %}
+          <p class="small muted">{% translate "Generate a draft from the frozen totals. Generating never publishes." %}</p>
+          <form method="post">{% csrf_token %}<input type="hidden" name="action" value="generate"><button class="btn btn-ai" type="submit" data-loading="{% translate "Drafting from snapshot…" %}"><span class="spinner"></span><span class="btn-label">{% icon "sparkles" 16 %} {% translate "Generate narrative" %}</span></button></form>
+          <div class="divider"></div><p class="small muted">{% translate "Or write it yourself:" %}</p>
+        {% endif %}
+        {% if r.validation and not r.validation.ok %}<div class="alert alert-error mb">{% icon "triangle-alert" %}<div><strong class="alert-title">{% translate "Unsupported claims detected — publication blocked" %}</strong><div>{% if r.validation.unsupported_numbers %}{% translate "Figures not in the snapshot:" %} <b>{{ r.validation.unsupported_numbers|join:", " }}</b>. {% endif %}{% if r.validation.unavailable_claimed %}{% translate "Numbers given for unavailable indicators:" %} {{ r.validation.unavailable_claimed|join:", " }}. {% endif %}{% translate "Edit the text to match the snapshot." %}</div></div></div>
+        {% elif r.validation.ok %}<div class="alert alert-success mb">{% icon "circle-check" %}<div>{% translate "Every figure in the text appears in the snapshot. You must still read it and confirm it." %}</div></div>{% endif %}
+        <form method="post" class="grid" style="gap:12px">{% csrf_token %}<input type="hidden" name="version" value="{{ r.version }}">
+          <div class="field"><label for="nt">{% translate "Narrative text (editable)" %}</label><textarea id="nt" name="narrative_text" rows="9">{{ r.narrative_text }}</textarea><div class="help">{% translate "Edits re-run validation and require a fresh review. The original draft is preserved for provenance." %}</div></div>
+          <div class="row"><button class="btn" type="submit" name="action" value="save">{% icon "pencil" 15 %} {% translate "Save edits" %}</button>{% if r.narrative_text %}<button class="btn btn-ghost" type="submit" name="action" value="generate" formnovalidate>{% icon "refresh-cw" 15 %} {% translate "Regenerate draft" %}</button>{% endif %}</div>
+        </form>
+        {% if r.narrative_text and r.status == "DRAFT" %}
+        <form method="post" class="grid mt" style="gap:10px">{% csrf_token %}<input type="hidden" name="version" value="{{ r.version }}"><input type="hidden" name="action" value="review">
+          <label class="check"><input type="checkbox" name="confirmed" required> <span>{% translate "I checked every statement against the snapshot and the data-only tables." %}</span></label>
+          <button class="btn btn-primary" type="submit">{% icon "circle-check" 16 %} {% translate "Mark as reviewed" %}</button></form>
+        {% elif r.status == "REVIEWED" %}
+        <form method="post" class="mt" data-confirm="Publish {{ r.reference }}? Managers and auditors will see it. Published reports are immutable." data-confirm-ok="{% translate "Publish" %}">{% csrf_token %}<input type="hidden" name="version" value="{{ r.version }}"><input type="hidden" name="action" value="publish"><div class="alert alert-info mb">{% icon "info" %}<div>{% translate "Reviewed by" %} {{ r.reviewed_by.full_name }} {{ r.reviewed_at|timesince }} {% translate "ago. Publishing is a separate, deliberate step." %}</div></div><button class="btn btn-primary btn-lg" type="submit">{% icon "send" 16 %} {% translate "Publish report" %}</button></form>
+        {% endif %}
+      {% else %}
+        <p style="white-space:pre-line">{{ r.narrative_text|default:"No narrative." }}</p>
+      {% endif %}
+      {% if r.ai_result %}{% include "partials/ai_provenance.html" with result=r.ai_result %}{% endif %}
+      {% if r.narrative_original and edited %}<details class="mt-s small"><summary class="muted">{% translate "Show original generated draft" %}</summary><p class="muted" style="white-space:pre-line;margin-top:8px">{{ r.narrative_original }}</p></details>{% endif %}
+      </div></section>
+  </div>
+  <aside class="stack">
+    <section class="card"><div class="card-head"><h2>{% icon "lock" %} {% translate "Snapshot — data only" %}</h2><span class="chip">{% translate "immutable" %}</span></div>
+      <div class="table-wrap"><table class="table"><thead><tr><th>{% translate "Indicator" %}</th><th class="num">{% translate "Value" %}</th></tr></thead><tbody>
+        {% for k, i in ind.items %}<tr><td>{{ i.label }}<div class="cell-sub">{{ i.ref }}</div></td><td class="num">{% if i.status == "unavailable" %}<span class="unknown">{% translate "Unavailable" %}</span>{% else %}{{ i.display }}{% if i.status == "provisional" %}<div class="cell-sub">{% translate "provisional" %}</div>{% endif %}{% endif %}</td></tr>{% endfor %}
+        <tr><td>{% translate "Completed transfers" %}</td><td class="num">{{ op.completed_transfers }}</td></tr><tr><td>{% translate "Units received" %}</td><td class="num">{{ op.units_received }}</td></tr>
+        <tr><td>{% translate "Open requests" %}</td><td class="num">{{ op.open_requests }}</td></tr><tr><td>{% translate "Maintenance opened / closed" %}</td><td class="num">{{ op.maintenance_opened }} / {{ op.maintenance_closed }}</td></tr>
+        {% for c in op.high_demand_categories %}<tr><td>{% translate "Demand ·" %} {{ c.category }}</td><td class="num">{{ c.requests }}</td></tr>{% endfor %}
+      </tbody></table></div></section>
+    <section class="card card-pad small"><h3>{% translate "Provenance" %}</h3><dl class="dl mt-s"><dt>{% translate "Calculated by" %}</dt><dd>{{ r.generated_by.full_name }} · {{ r.generated_at|date:"d M Y H:i" }}</dd>{% if r.reviewed_by %}<dt>{% translate "Reviewed" %}</dt><dd>{{ r.reviewed_by.full_name }}</dd>{% endif %}{% if r.published_by %}<dt>{% translate "Published" %}</dt><dd>{{ r.published_by.full_name }}</dd>{% endif %}<dt>{% translate "Calculation" %}</dt><dd>{{ r.snapshot_version }}</dd></dl></section>
+  </aside>
+</div>
+{% endblock %}

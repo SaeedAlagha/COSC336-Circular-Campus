@@ -1,0 +1,15 @@
+{% extends "base.html" %}{% load campus_ui i18n %}
+{% block title %}{% translate "AI reports" %}{% endblock %}
+{% block content %}
+<div class="page-head"><div><div class="crumbs">{% translate "Insight / AI reports" %}</div><h1>{% translate "Generated reports" %}</h1><p>{% translate "The database calculates every number and freezes them in a snapshot. Gemini drafts a short narrative from that snapshot only. A reporting officer edits, reviews and separately publishes it." %}</p></div></div>
+<div class="split">
+  <section class="card"><div class="card-head"><h2>{% icon "file-text" %} {% translate "Reports" %}</h2></div>
+  {% if reports %}<div class="table-wrap"><table class="table"><thead><tr><th>{% translate "Report" %}</th><th>{% translate "Period" %}</th><th>{% translate "Scope" %}</th><th>{% translate "Narrative" %}</th><th>{% translate "Status" %}</th><th></th></tr></thead><tbody>
+  {% for r in reports %}<tr><td><span class="ref">{{ r.reference }}</span><div class="cell-sub">{{ r.get_report_type_display }}</div></td><td class="small">{{ r.period_start|date:"d M" }} – {{ r.period_end|date:"d M Y" }}</td><td>{{ r.scope_department.code|default:"Campus" }}</td><td>{% if r.narrative_source == "AI" %}<span class="chip chip-ai">{% icon "sparkles" 12 %} {% translate "Gemini draft" %}</span>{% elif r.narrative_source == "TEMPLATE" %}<span class="chip chip-warn">{% translate "Template (not AI)" %}</span>{% elif r.narrative_source %}<span class="chip">{% translate "Manual" %}</span>{% else %}<span class="muted small">{% translate "Not drafted" %}</span>{% endif %}</td><td>{% badge r.status r.get_status_display %}</td><td><a class="btn btn-sm" href="{% url 'reporting:report' r.pk %}">{% translate "Open" %}</a></td></tr>{% endfor %}
+  </tbody></table></div>{% else %}{% include "partials/empty.html" with ico="file-text" title="No reports yet" text="Create a snapshot to start." %}{% endif %}</section>
+  {% if author %}<aside class="card"><div class="card-head"><h2>{% icon "plus" %} {% translate "New report" %}</h2></div>
+    <form method="post" class="card-body grid" style="gap:12px">{% csrf_token %}{% for f in form %}{% include "partials/field.html" with field=f %}{% endfor %}
+      <button class="btn btn-primary" type="submit" data-loading="{% translate "Calculating…" %}"><span class="spinner"></span><span class="btn-label">{% icon "gauge" 16 %} {% translate "Calculate snapshot" %}</span></button>
+      <p class="help">{% translate "Step 1 of 4: totals are computed now and become immutable for this report." %}</p></form></aside>{% endif %}
+</div>
+{% endblock %}
