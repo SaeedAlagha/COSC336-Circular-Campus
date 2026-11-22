@@ -1,0 +1,38 @@
+{% extends "base.html" %}{% load campus_ui i18n %}
+{% block title %}{% translate "Help & policies" %}{% endblock %}
+{% block content %}
+<div class="page-head"><div><div class="crumbs">{% translate "Workspace / Help" %}</div><h1>{% translate "How Circular Campus works" %}</h1><p>{% translate "Role guidance, the approved policies the assistant may cite, and how AI scores are calculated." %}</p></div></div>
+<div class="split-wide">
+  <div class="stack">
+    <section class="card"><div class="card-head"><h2>{% icon "git-branch" %} {% translate "The exchange life cycle" %}</h2></div>
+      <div class="card-body">
+        <ol class="stepper" aria-label="{% translate "Exchange steps" %}"><li class="done">{% translate "Register" %}</li><li class="done">{% translate "Publish" %}</li><li class="done">{% translate "Request & hold" %}</li><li class="current">{% translate "Approve" %}</li><li>{% translate "Release" %}</li><li>{% translate "Receive" %}</li></ol>
+        <div class="divider"></div>
+        <ul class="reasons">
+          <li>{% icon "check" 15 %}<span><b>{% translate "Custodians" %}</b> {% translate "register assets (Draft), then publish eligible stock. Unknown purchase dates and values stay “Unknown”." %}</span></li>
+          <li>{% icon "check" 15 %}<span><b>{% translate "Requesters" %}</b> {% translate "describe a need, optionally review AI matches, pick stock and submit. Submission creates a 48-hour hold — not an approval." %}</span></li>
+          <li>{% icon "check" 15 %}<span><b>{% translate "Reviewers" %}</b> {% translate "decide in order: source custodian release/safety check, finance cost review (only when a cost exists), then the assigned approver. Nobody can approve their own proposal." %}</span></li>
+          <li>{% icon "check" 15 %}<span><b>{% translate "Handover" %}</b>{% translate ": the releasing custodian records release; only the designated receiving custodian’s matching receipt moves custody, department and location. Mismatches go to Exception." %}</span></li>
+          <li>{% icon "check" 15 %}<span><b>{% translate "Maintenance" %}</b>{% translate ": a defect restricts stock; work needs an approved repair; a custodian (not the technician) verifies safe return." %}</span></li>
+          <li>{% icon "check" 15 %}<span><b>{% translate "Disposition" %}</b>{% translate ": donation, recycling, retirement and disposal need a proposal, approval" %} <em>{% translate "and" %}</em> {% translate "completion evidence." %}</span></li>
+        </ul>
+      </div>
+    </section>
+    <section class="card"><div class="card-head"><h2>{% icon "scale" %} {% translate "Approved policy statements" %}</h2></div>
+      <div class="table-wrap"><table class="table"><thead><tr><th>{% translate "ID" %}</th><th>{% translate "Policy" %}</th></tr></thead><tbody>
+        {% for k, v in policies.items %}<tr><td><span class="ref">{{ k }}</span></td><td>{{ v }}</td></tr>{% endfor %}
+      </tbody></table></div>
+    </section>
+  </div>
+  <div class="stack">
+    <section class="card ai-card"><div class="ai-head"><span class="ai-ico">{% icon "sparkles" 16 %}</span><h2>{% translate "How match scores work" %}</h2></div>
+      <div class="ai-body">
+        <p class="small muted">{% translate "Hard filters (visibility, safety, condition, mandatory specs, date, quantity) run first. The 0–100 suitability score is a weighted mean of the available factors; missing factors are excluded and lower the evidence coverage. It is a fit rating — not the probability that the AI is right." %}</p>
+        <div class="comp-grid">{% for k, label, w in weights %}<div class="comp"><span>{{ label }}</span><span class="num" style="text-align:right">{{ w }}%</span></div><div class="meter ai"><span style="width:{{ w|widthpct }}%"></span></div>{% endfor %}</div>
+        <p class="small muted mt-s">{% translate "Coverage below 70% → “insufficient evidence”; all scores below 70 → “weak matches”." %}</p>
+      </div>
+    </section>
+    <section class="card card-pad"><h3>{% translate "AI boundaries" %}</h3><p class="small muted mt-s">{% translate "AI suggests; people decide. AI never approves, releases, confirms receipt, changes custody, sets permissions, calculates financial totals or publishes reports. When Gemini is unavailable, labelled rule-based fallbacks keep every workflow usable." %}</p></section>
+  </div>
+</div>
+{% endblock %}

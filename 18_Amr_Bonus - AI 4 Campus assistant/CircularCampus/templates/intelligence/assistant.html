@@ -1,0 +1,41 @@
+{% extends "base.html" %}{% load campus_ui i18n %}
+{% block title %}{% translate "Assistant" %}{% endblock %}
+{% block content %}
+<div class="page-head"><div><div class="crumbs">{% translate "Insight / Assistant" %}</div><h1>{% translate "Campus assistant" %}</h1><p>{% translate "Ask about available assets, your requests or campus policy. Answers use only records you are allowed to see and cite them. The assistant never approves, releases or changes anything." %}</p></div>
+  <div class="head-actions">{% if turns %}<a class="btn btn-ghost" href="?clear=1">{% icon "refresh-cw" 15 %} {% translate "New conversation" %}</a>{% endif %}</div></div>
+<div class="split">
+  <section class="card" aria-label="{% translate "Conversation" %}">
+    <div class="chat" aria-live="polite">
+      {% if not turns %}
+      <div class="bot-row fade-in"><span class="ai-ico">{% icon "sparkles" 17 %}</span><div class="bubble bot">{% translate "Hi" %} {{ request.user.first_name }} {% translate "— I can find surplus items, check request status, explain policies, and draft a request for you to review. What do you need?" %}</div></div>
+      <div class="suggestions" style="padding-left:44px">{% for s in suggestions %}<button type="button" data-suggest="{{ s }}">{% translate s %}</button>{% endfor %}</div>
+      {% endif %}
+      {% for t in turns %}
+      <div class="bubble me">{{ t.q }}</div>
+      <div class="bot-row" {% if forloop.last %}id="latest"{% endif %}><span class="ai-ico">{% icon "sparkles" 17 %}</span>
+        <div class="bubble bot {% if t.refused %}refused{% endif %}">
+          {% if t.refused %}<div class="row" style="gap:6px;margin-bottom:6px"><span class="badge badge-warning">{% translate "Action refused" %}</span></div>{% endif %}
+          {% if t.insufficient %}<div class="row" style="gap:6px;margin-bottom:6px"><span class="badge badge-neutral">{% translate "Insufficient evidence" %}</span></div>{% endif %}
+          <div>{{ t.a|linebreaksbr }}</div>
+          {% if t.cited %}<div class="cites">{% for c in t.cited %}{% if c.url %}<a class="chip" href="{{ c.url }}">{% icon "external-link" 12 %} {{ c.id }}</a>{% else %}<span class="chip">{{ c.id }}</span>{% endif %}{% endfor %}</div>{% endif %}
+          {% if t.draft %}<div class="draft-card"><div class="row between"><b>{% icon "clipboard-list" 15 %} {% translate "Request draft — not submitted" %}</b><span class="chip chip-ai">{% translate "Review required" %}</span></div>
+            <dl class="dl mt-s" style="grid-template-columns:110px 1fr"><dt>{% translate "Need" %}</dt><dd>{{ t.draft.title|default:"—" }}</dd><dt>{% translate "Quantity" %}</dt><dd>{{ t.draft.quantity }}</dd><dt>{% translate "Category" %}</dt><dd>{{ t.draft.category|default:"Choose in form" }}</dd>{% if t.draft.required_date %}<dt>{% translate "Required by" %}</dt><dd>{{ t.draft.required_date }}</dd>{% endif %}</dl>
+            {% if t.can_draft %}<a class="btn btn-sm btn-primary mt-s" href="{{ t.draft_url }}">{% translate "Open in request form to review & confirm" %} {% icon "arrow-right" 14 %}</a>{% else %}<p class="help mt-s">{% translate "Your role cannot submit requests." %}</p>{% endif %}</div>{% endif %}
+          <div class="provenance">{% if t.fallback %}<span class="fallback-tag">{% icon "triangle-alert" 12 %} {{ t.source }}</span>{% else %}<span class="live-tag">{% icon "sparkles" 12 %} {{ t.source }}</span>{% endif %}<span>{% translate "Confidence: unavailable" %}</span>{% if t.fallback_reason %}<span>{{ t.fallback_reason }}</span>{% endif %}</div>
+        </div></div>
+      {% endfor %}
+    </div>
+    <form method="post" class="composer">{% csrf_token %}<label class="sr-only" for="question">{% translate "Your question" %}</label><input id="question" name="question" type="text" maxlength="500" placeholder="{% translate "e.g. Any projectors in Engineering?" %}" autocomplete="off" required>
+      <button class="btn btn-ai" type="submit" data-loading="{% translate "Thinking…" %}"><span class="spinner"></span><span class="btn-label">{% icon "send" 16 %} {% translate "Ask" %}</span></button></form>
+  </section>
+  <aside class="stack">
+    <section class="card card-pad small"><h3>{% icon "shield" 16 %} {% translate "Guardrails" %}</h3><ul class="reasons mt-s">
+      <li>{% icon "check" 14 %}<span>{% translate "Retrieval runs with" %} <b>{% translate "your" %}</b> {% translate "permissions; restricted records never reach the model." %}</span></li>
+      <li>{% icon "check" 14 %}<span>{% translate "Record text is treated as data — instructions inside descriptions are ignored." %}</span></li>
+      <li>{% icon "check" 14 %}<span>{% translate "Answers citing records outside your context are discarded and replaced with “I don’t know”." %}</span></li>
+      <li>{% icon "check" 14 %}<span>{% translate "Approve / release / receive / dispose requests are refused before any AI call." %}</span></li>
+      <li>{% icon "check" 14 %}<span>{% translate "Drafts open the normal form; only you can submit." %}</span></li></ul></section>
+    <section class="card card-pad small"><h3>{% translate "Can’t find it?" %}</h3><p class="muted mt-s">{% translate "Use the" %} <a href="{% url 'catalog:list' %}">{% translate "catalog search" %}</a>{% translate ", start a" %} <a href="{% url 'exchange:new' %}">{% translate "new request" %}</a>{% translate ", or read" %} <a href="{% url 'core:help' %}">{% translate "help & policies" %}</a>.</p></section>
+  </aside>
+</div>
+{% endblock %}
