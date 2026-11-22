@@ -1,0 +1,14 @@
+{% extends "base.html" %}{% load campus_ui i18n %}
+{% block title %}{% translate "Notifications" %}{% endblock %}
+{% block content %}
+<div class="page-head"><div><div class="crumbs">{% translate "Notifications" %}</div><h1>{% translate "Notifications" %}</h1><p>{% translate "In-app notices for requests, decisions, holds, transfers, maintenance and dispositions. Opening a link re-checks your permission." %}</p></div>
+  <form method="post" class="head-actions">{% csrf_token %}<input type="hidden" name="action" value="read_all"><button class="btn" type="submit">{% icon "check" 15 %} {% translate "Mark all as read" %}</button></form></div>
+<nav class="segmented mb"><a href="?show=all" class="{% if show == 'all' %}active{% endif %}">{% translate "All" %}</a><a href="?show=unread" class="{% if show == 'unread' %}active{% endif %}">{% translate "Unread" %} {% if unread_count %}({{ unread_count }}){% endif %}</a></nav>
+<section class="card">{% for n in page %}
+  <div class="notice-row {% if not n.read_at %}unread{% endif %}"><span class="unread-dot" aria-label="{% if n.read_at %}Read{% else %}Unread{% endif %}"></span>
+    <div style="min-width:0"><div class="cell-title">{{ n.title }}</div>{% if n.body %}<div class="small" style="color:var(--text-2)">{{ n.body }}</div>{% endif %}<div class="cell-sub">{{ n.created_at|date:"d M Y, H:i" }} · {{ n.event_code|lower|capfirst }}</div></div>
+    <form method="post" class="row" style="flex-wrap:nowrap">{% csrf_token %}<input type="hidden" name="id" value="{{ n.pk }}">{% if n.link %}<button class="btn btn-sm" type="submit" name="action" value="open">{% translate "Open" %} {% icon "arrow-right" 14 %}</button>{% endif %}{% if not n.read_at %}<button class="btn btn-sm btn-ghost" type="submit" name="action" value="read" aria-label="{% translate "Mark as read" %}">{% icon "check" 15 %}</button>{% endif %}</form></div>
+{% empty %}{% include "partials/empty.html" with ico="bell" title="No notifications" %}{% endfor %}
+{% if page.has_other_pages %}<div class="pager"><span>{% translate "Page" %} {{ page.number }} / {{ page.paginator.num_pages }}</span><div class="row">{% if page.has_previous %}<a class="btn btn-sm" href="?show={{ show }}&page={{ page.previous_page_number }}">{% translate "Previous" %}</a>{% endif %}{% if page.has_next %}<a class="btn btn-sm" href="?show={{ show }}&page={{ page.next_page_number }}">{% translate "Next" %}</a>{% endif %}</div></div>{% endif %}
+</section>
+{% endblock %}

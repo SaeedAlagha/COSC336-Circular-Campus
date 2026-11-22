@@ -1,0 +1,89 @@
+{% extends "base.html" %}{% load campus_ui humanize i18n %}
+{% block title %}{% translate "Dashboard" %}{% endblock %}
+{% block content %}
+<section class="hero fade-in">
+  <div class="eyebrow" style="color:#9df0d6">{{ primary_role }} · {{ request.user.department.name }}</div>
+  <h1 style="margin-top:6px">{% translate "Good to see you," %} {{ request.user.first_name }}.</h1>
+  <p>{% if kpis.my_actions %}{% translate "You have" %} <strong style="color:#fff">{{ kpis.my_actions }} {% translate "item" %}{{ kpis.my_actions|pluralize }}</strong> {% translate "waiting for your decision or confirmation." %}{% else %}{% translate "Nothing is waiting on you right now — browse the catalog or check your requests." %}{% endif %}</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><b>{{ kpis.free_units|intcomma }}</b><span>{% translate "free units listed" %}</span></div>
+    <div class="hero-stat"><b>{{ kpis.listings }}</b><span>{% translate "surplus listings you can see" %}</span></div>
+    <div class="hero-stat"><b>{{ kpis.open_requests }}</b><span>{% translate "open requests (you & dept.)" %}</span></div>
+    {% if snapshot %}<div class="hero-stat"><b>{{ snapshot.indicators.items_reused.display }}</b><span>{% translate "units reused · last 90 days" %}</span></div>{% endif %}
+  </div>
+</section>
+
+<div class="split-wide mt">
+  <div class="stack">
+    <section class="card" aria-labelledby="todo-h">
+      <div class="card-head"><h2 id="todo-h">{% icon "list-checks" %} {% translate "Your next actions" %}</h2><span class="chip">{{ actions|length }} {% translate "open" %}</span></div>
+      {% for a in actions %}
+      <div class="action-item">
+        <span class="action-ico tone-{{ a.tone }}">{% icon a.icon 18 %}</span>
+        <div style="min-width:0"><div class="cell-title truncate">{{ a.title }}</div><div class="cell-sub truncate">{{ a.meta }}</div></div>
+        <a class="btn btn-sm" href="{{ a.url }}">{{ a.cta }} {% icon "arrow-right" 15 %}</a>
+      </div>
+      {% empty %}
+      {% include "partials/empty.html" with ico="circle-check" title="You're all caught up" text="Approvals, releases, receipts and service checks assigned to you will appear here." %}
+      {% endfor %}
+    </section>
+
+    {% if snapshot %}
+    <section class="card" aria-labelledby="impact-h">
+      <div class="card-head"><h2 id="impact-h">{% icon "leaf" %} {% translate "Sustainability at a glance" %}</h2><a class="btn btn-sm btn-ghost" href="{% url 'reporting:sustainability' %}">{% translate "Formulas & evidence" %} {% icon "arrow-right" 15 %}</a></div>
+      <div class="card-body">
+        <div class="grid kpi-mini">
+          {% with i=snapshot.indicators.items_reused %}<div><div class="kpi-label">{{ i.label }}</div><div class="kpi-value {% if i.status == 'unavailable' %}na{% endif %}">{{ i.display }}</div><div class="kpi-sub">{{ i.unit }}</div></div>{% endwith %}
+          {% with i=snapshot.indicators.waste_diversion %}<div><div class="kpi-label">{{ i.label }}</div><div class="kpi-value {% if i.status == 'unavailable' %}na{% endif %}">{{ i.display }}</div><div class="kpi-sub">{% translate "of cohort units" %}</div></div>{% endwith %}
+          {% with i=snapshot.indicators.avoided_value %}<div><div class="kpi-label">{{ i.label }}</div><div class="kpi-value {% if i.status == 'unavailable' %}na{% endif %}">{{ i.display }}</div><div class="kpi-sub">{% translate "confirmed by procurement" %}</div></div>{% endwith %}
+          {% with i=snapshot.indicators.carbon %}<div><div class="kpi-label">{{ i.label }}</div><div class="kpi-value {% if i.status == 'unavailable' %}na{% endif %}">{{ i.display }}</div><div class="kpi-sub">{% if i.status == 'unavailable' %}{% translate "no approved factor" %}{% else %}{% translate "estimate" %}{% endif %}</div></div>{% endwith %}
+        </div>
+        <div class="divider"></div>
+        <div class="chart" aria-label="{% translate "Units reused per month, last six months" %}">
+          <div class="row between"><h3>{% translate "Units reused per month" %}</h3><span class="muted small">{% translate "Counted once per unit (SUS-09)" %}</span></div>
+          <div class="cols" role="list">
+            {% for m in months %}<div class="col" role="listitem" tabindex="0" data-tip="{{ m.full }} · units received through completed reuse transfers" data-tip-value="{{ m.value }} units">
+              {% if m.value %}<span class="col-val" style="bottom:{{ m.pct|widthpct }}%">{{ m.value }}</span>{% endif %}<span class="col-bar" style="height:{{ m.pct|widthpct }}%"></span><span class="sr-only">{{ m.full }}: {{ m.value }} {% translate "units" %}</span></div>{% endfor %}
+          </div>
+          <div class="col-labels" aria-hidden="true">{% for m in months %}<span>{{ m.label }}</span>{% endfor %}</div>
+          <details class="table-view"><summary>{% translate "Show as table" %}</summary><table class="table mt-s"><thead><tr><th>{% translate "Month" %}</th><th class="num">{% translate "Units reused" %}</th></tr></thead><tbody>{% for m in months %}<tr><td>{{ m.full }}</td><td class="num">{{ m.value }}</td></tr>{% endfor %}</tbody></table></details>
+        </div>
+      </div>
+    </section>
+    {% endif %}
+  </div>
+
+  <div class="stack">
+    <section class="card">
+      <div class="card-head"><h2>{% icon "package" %} {% translate "Fresh on the exchange" %}</h2><a class="btn btn-sm btn-ghost" href="{% url 'catalog:list' %}">{% translate "Catalog" %}</a></div>
+      <ul class="list-plain card-body">
+        {% for a in new_listings %}
+        <li class="row" style="flex-wrap:nowrap"><span class="action-ico tone-brand">{% icon "box" 17 %}</span><div style="min-width:0;flex:1"><a class="cell-title truncate" style="display:block" href="{% url 'catalog:asset' a.pk %}">{{ a.name }}</a><div class="cell-sub">{{ a.asset_tag }} · {{ a.owner_department.name }} · {{ a.condition_label }}</div></div>{% badge a.status a.status_label %}</li>
+        {% empty %}<li class="muted">{% translate "No published listings yet." %}</li>{% endfor %}
+      </ul>
+    </section>
+
+    {% if my_requests %}
+    <section class="card">
+      <div class="card-head"><h2>{% icon "clipboard-list" %} {% translate "My requests" %}</h2><a class="btn btn-sm btn-ghost" href="{% url 'exchange:list' %}">{% translate "All" %}</a></div>
+      <ul class="list-plain card-body">
+        {% for r in my_requests %}<li class="row between" style="flex-wrap:nowrap"><div style="min-width:0"><a class="cell-title truncate" style="display:block" href="{% url 'exchange:request' r.pk %}">{{ r.title }}</a><div class="cell-sub">{{ r.reference }} · {{ r.received_quantity }}/{{ r.quantity }} {% translate "received · due" %} {{ r.required_date|date:"d M" }}</div></div>{% badge r.status r.status_label %}</li>{% endfor %}
+      </ul>
+      {% if expiring %}<div class="card-foot"><div class="alert alert-warning" style="padding:10px 12px">{% icon "hourglass" %}<div>{% for h in expiring %}{% translate "Hold" %} {{ h.reference }} {% translate "on" %} {{ h.asset.asset_tag }} {% translate "expires" %} {{ h.expires_at|timeuntil }} {% translate "from now unless approved." %}{% endfor %}</div></div></div>{% endif %}
+    </section>
+    {% endif %}
+
+    <section class="card">
+      <div class="card-head"><h2>{% icon "bell" %} {% translate "Recent notifications" %}</h2><a class="btn btn-sm btn-ghost" href="{% url 'reporting:notifications' %}">{% translate "View all" %}</a></div>
+      <ul class="list-plain card-body">
+        {% for n in recent %}<li class="row" style="flex-wrap:nowrap;align-items:flex-start"><span class="unread-dot" style="margin-top:7px;{% if n.read_at %}background:transparent;border:1px solid var(--border-strong){% endif %}"></span><div style="min-width:0"><div class="cell-title" style="font-size:.88rem">{{ n.title }}</div><div class="cell-sub">{{ n.created_at|timesince }} {% translate "ago" %}</div></div></li>
+        {% empty %}<li class="muted">{% translate "No notifications yet." %}</li>{% endfor %}
+      </ul>
+    </section>
+
+    {% if 'intelligence:assistant'|installed %}<a class="card card-pad ai-card" href="{% url 'intelligence:assistant' %}" style="display:block;text-decoration:none">
+      <div class="row" style="flex-wrap:nowrap"><span class="ai-head" style="padding:0"><span class="ai-ico">{% icon "sparkles" 17 %}</span></span><div><div class="cell-title">{% translate "Ask the campus assistant" %}</div><div class="cell-sub">{% translate "“Any projectors available in Engineering?” — answers cite real records you may access." %}</div></div></div>
+    </a>{% endif %}
+  </div>
+</div>
+{% endblock %}
