@@ -1,0 +1,12 @@
+{% extends "base.html" %}{% load campus_ui static i18n %}
+{% block title %}{% translate "Scan a label" %}{% endblock %}
+{% block content %}
+<div class="page-head"><div><div class="crumbs">{% translate "Exchange / Scan" %}</div><h1>{% translate "Scan a QR label" %}</h1><p>{% translate "Point your camera at an asset's label to open its page — history, status and the actions your role allows." %}</p></div></div>
+<section class="card" style="max-width:560px"><div class="card-body">
+  <form method="post" class="stack">{% csrf_token %}
+    {% include "partials/scanner.html" with target="#scan-code" mode="go" %}
+    <div class="field"><label for="scan-code">{% translate "Asset ID" %}</label><input id="scan-code" name="code" type="text" maxlength="300" placeholder="e.g. A-101" autocomplete="off" required></div>
+    <div class="form-actions"><button class="btn btn-primary" type="submit">{% icon "arrow-right" 16 %} {% translate "Open asset" %}</button></div>
+  </form></div></section>
+{% endblock %}
+{% block scripts %}<script src="{% static 'vendor/jsqr/jsQR.js' %}" defer></script><script src="{% static 'js/scan.js' %}" defer></script>{% endblock %}

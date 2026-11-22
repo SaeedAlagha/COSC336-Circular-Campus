@@ -1,0 +1,11 @@
+{% extends "base.html" %}{% load campus_ui i18n %}
+{% block title %}{% translate "QR labels" %}{% endblock %}
+{% block content %}
+<div class="page-head"><div><div class="crumbs">{% translate "Exchange / QR labels" %}</div><h1>{% translate "QR labels" %}</h1><p>{% translate "Stick a label on each batch. Any phone camera opens the asset page (after sign-in); at handover the receiver scans it to prove the right item arrived." %}</p></div>
+  <div class="head-actions"><button class="btn btn-primary" type="button" data-print>{% icon "printer" 16 %} {% translate "Print" %}</button></div></div>
+{% if labels %}<div class="labels">{% for l in labels %}
+  <div class="qr-label">{{ l.svg }}<div><div class="qr-tag">{{ l.asset.asset_tag }}</div><div class="name">{{ l.asset.name|truncatechars:40 }}</div><div class="meta">{{ l.asset.owner_department.code }} · {{ l.asset.building }} {{ l.asset.room }}<br>{% translate "Circular Campus · scan to open" %}</div></div></div>
+{% endfor %}</div>
+<p class="help mt no-print">{% translate "Labels encode a link to this server (" %}{{ labels.0.url|truncatechars:60 }}{% translate "). If you later change the address the app runs on, reprint them; the printed ID always works when typed into the scanner." %}</p>
+{% else %}<div class="card">{% include "partials/empty.html" with ico="qr-code" title="No batches to label" %}</div>{% endif %}
+{% endblock %}
