@@ -1,0 +1,5 @@
+{% load campus_ui i18n %}<div class="scanner" data-scanner data-target="{{ target }}" data-mode="{{ mode|default:'fill' }}" {% if expect %}data-expect="{{ expect }}"{% endif %}>
+  <div class="scanner-view"><video playsinline muted aria-label="{% translate "Camera preview" %}"></video><canvas hidden></canvas><span class="scanner-frame" aria-hidden="true"></span></div>
+  <div class="row"><button class="btn" type="button" data-scan-start>{% icon "camera" 16 %} {% translate "Scan with camera" %}</button><button class="btn btn-ghost btn-sm scanner-stop" type="button" data-scan-stop>{% translate "Stop" %}</button></div>
+  <p class="help" data-scan-status role="status" aria-live="polite">{% if hint %}{% translate hint %}{% else %}{% translate "Or type the code printed under the label." %}{% endif %}</p>
+</div>

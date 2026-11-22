@@ -1,0 +1,73 @@
+{% extends "base.html" %}{% load campus_ui i18n %}
+{% block title %}{% if mine %}{% translate "My assets" %}{% else %}{% translate "Catalog" %}{% endif %}{% endblock %}
+{% block content %}
+<div class="page-head">
+  <div><div class="crumbs">{% translate "Exchange /" %} {% if mine %}{% translate "My assets" %}{% else %}{% translate "Catalog" %}{% endif %}</div>
+    <h1>{% if mine %}{% translate "Department asset register" %}{% else %}{% translate "Surplus catalog" %}{% endif %}</h1>
+    <p>{% if mine %}{% translate "Every batch your custodian role covers, in every life-cycle state." %}{% else %}{% translate "Published, safe stock other departments have offered for reuse. Free units already exclude active holds and approved allocations." %}{% endif %}</p></div>
+  <div class="head-actions">
+    {% if mine and can_register %}<a class="btn" href="{% url 'catalog:labels' %}">{% icon "printer" 17 %} {% translate "Print QR labels" %}</a>{% endif %}
+    {% if can_register %}<a class="btn btn-primary" href="{% url 'catalog:new' %}">{% icon "plus" 17 %} {% translate "Register asset" %}</a>{% endif %}
+    {% if 'exchange:new'|installed %}<a class="btn" href="{% url 'exchange:new' %}">{% icon "clipboard-list" 17 %} {% translate "New request" %}</a>{% endif %}
+  </div>
+</div>
+
+<form class="card filters" method="get" role="search" aria-label="{% translate "Filter assets" %}">
+  <div class="filter-grid">
+    <div class="field search-cell"><label for="id_q">{% translate "Search" %}</label><div style="position:relative">{{ form.q }}</div></div>
+    {% include "partials/field.html" with field=form.category %}
+    {% include "partials/field.html" with field=form.condition %}
+    {% include "partials/field.html" with field=form.department %}
+    <div class="field"><span class="btn-label">{% translate " " %}</span><button class="btn btn-primary" type="submit">{% icon "search" 16 %} {% translate "Apply" %}</button></div>
+  </div>
+  <details class="more" {% if form.errors or request.GET.location or request.GET.min_free or request.GET.status or request.GET.min_age or request.GET.max_age or request.GET.min_value or request.GET.max_value %}open{% endif %}>
+    <summary>{% icon "sliders-horizontal" 15 %} {% translate "More filters — location, quantity, age, value, status" %}</summary>
+    <div class="filter-grid mt-s" style="grid-template-columns:repeat(4,minmax(0,1fr))">
+      {% include "partials/field.html" with field=form.location %}
+      {% include "partials/field.html" with field=form.min_free %}
+      {% include "partials/field.html" with field=form.status %}
+      {% include "partials/field.html" with field=form.sort %}
+      {% include "partials/field.html" with field=form.min_age %}
+      {% include "partials/field.html" with field=form.max_age %}
+      {% include "partials/field.html" with field=form.min_value %}
+      {% include "partials/field.html" with field=form.max_value %}
+    </div>
+    <p class="help mt-s">{% translate "Assets with an unknown purchase date or value never match an age or value range — they are not treated as zero. Value filters apply only to records whose financial fields you may see." %}</p>
+  </details>
+</form>
+
+<div class="row between mt mb">
+  <div class="muted small"><strong style="color:var(--text)">{{ total }}</strong> {% translate "asset batch" %}{{ total|pluralize:"es" }}{% if filters_active %} {% translate "match your filters ·" %} <a href="?">{% translate "Clear filters" %}</a>{% endif %}</div>
+  <div class="legend" aria-label="{% translate "Availability legend" %}"><span><i style="background:var(--brand-500)"></i>{% translate "Free" %}</span><span><i style="background:var(--series-1)"></i>{% translate "Held (pending)" %}</span><span><i style="background:var(--series-2)"></i>{% translate "Allocated" %}</span></div>
+</div>
+
+{% if page.object_list %}
+<div class="cards">
+  {% for row in page.object_list %}{% with a=row.asset %}
+  <article class="card asset-card fade-in">
+    <div class="asset-visual">
+      {% badge a.status a.status_label %}<span class="ref">{{ a.asset_tag }}</span>
+      {% if a.category.root.name == "Furniture" %}{% icon "layers" 40 %}{% elif a.category.root.name == "Laboratory Equipment" %}{% icon "scale" 40 %}{% elif a.category.root.name == "Audio-Visual" %}{% icon "eye" 40 %}{% elif a.category.root.name == "Books & Media" %}{% icon "file-text" 40 %}{% else %}{% icon "box" 40 %}{% endif %}
+    </div>
+    <div class="asset-body">
+      <a class="asset-title" href="{% url 'catalog:asset' a.pk %}">{{ a.name }}</a>
+      <div class="asset-meta"><span>{% icon "tag" 13 %}{{ a.category }}</span><span>{% icon "building-2" 13 %}{{ a.owner_department.name }}</span><span>{% icon "map-pin" 13 %}{{ a.building }} · {{ a.room }}</span></div>
+      <div class="row" style="gap:6px"><span class="chip">{% translate "Condition:" %} {{ a.condition_label }}</span><span class="chip">{% translate "Age:" %} {% if row.age is not None %}{{ row.age }} {% translate "yrs" %}{% else %}{% translate "unknown" %}{% endif %}</span></div>
+      <div class="avail">
+        <div style="flex:1">
+          <div class="stock-bar" role="img" aria-label="{{ row.free }} free, {{ row.bal.pending }} held, {{ row.bal.allocated }} allocated of {{ a.quantity }}">
+            {% if row.free %}<span class="stock-free" style="flex:{{ row.free }}"></span>{% endif %}{% if row.bal.pending %}<span class="stock-pending" style="flex:{{ row.bal.pending }}"></span>{% endif %}{% if row.bal.allocated %}<span class="stock-allocated" style="flex:{{ row.bal.allocated }}"></span>{% endif %}{% if not row.free and not row.bal.committed %}<span style="flex:1;background:var(--surface-sunk)"></span>{% endif %}
+          </div>
+          <div class="small muted" style="margin-top:6px"><b style="color:var(--text);font-size:1rem">{{ row.free }}</b> {% translate "of" %} {{ a.quantity }} {% translate "free" %}</div>
+        </div>
+        <a class="btn btn-sm" href="{% url 'catalog:asset' a.pk %}" aria-label="View {{ a.name }}">{% translate "View" %} {% icon "chevron-right" 15 %}</a>
+      </div>
+    </div>
+  </article>
+  {% endwith %}{% endfor %}
+</div>
+{% if page.has_other_pages %}<div class="pager card mt"><span>{% translate "Page" %} {{ page.number }} {% translate "of" %} {{ page.paginator.num_pages }}</span><div class="row">{% if page.has_previous %}<a class="btn btn-sm" href="?{{ querystring }}&page={{ page.previous_page_number }}">{% icon "arrow-left" 15 %} {% translate "Previous" %}</a>{% endif %}{% if page.has_next %}<a class="btn btn-sm" href="?{{ querystring }}&page={{ page.next_page_number }}">{% translate "Next" %} {% icon "arrow-right" 15 %}</a>{% endif %}</div></div>{% endif %}
+{% else %}
+<div class="card">{% url 'exchange:new' as newreq %}{% include "partials/empty.html" with ico="search" title="No assets match" text="Try fewer filters or a broader word. You can still submit a request — it stays open until suitable stock is published." link=newreq link_text="Create a request" %}</div>
+{% endif %}
+{% endblock %}
