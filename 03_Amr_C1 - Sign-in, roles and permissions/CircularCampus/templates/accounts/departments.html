@@ -1,0 +1,12 @@
+{% extends "base.html" %}{% load campus_ui i18n %}
+{% block title %}{% translate "Departments" %}{% endblock %}
+{% block content %}
+<div class="page-head"><div><div class="crumbs">{% translate "Administration / Departments" %}</div><h1>{% translate "Departments" %}</h1><p>{% translate "Deactivate instead of delete: assets, requests and history that reference a department are kept." %}</p></div></div>
+<div class="split">
+  <section class="card"><div class="table-wrap"><table class="table"><thead><tr><th>{% translate "Department" %}</th><th>{% translate "Location" %}</th><th>{% translate "Default approver" %}</th><th>{% translate "Status" %}</th><th></th></tr></thead><tbody>
+  {% for d in departments %}<tr><td><div class="cell-title">{{ d.name }}</div><div class="cell-sub">{{ d.code }}</div></td><td class="small">{{ d.campus }} · {{ d.building|default:"—" }}</td><td class="small">{{ d.default_approver.full_name|default:"—" }}</td><td>{% if d.active %}{% badge "AVAILABLE" "Active" %}{% else %}{% badge "CANCELLED" "Inactive" %}{% endif %}</td>
+    <td><form method="post" {% if d.active %}data-confirm="Deactivate {{ d.name }}? Its members can no longer sign in; records are kept." data-confirm-ok="{% translate "Deactivate" %}"{% endif %}>{% csrf_token %}<input type="hidden" name="dept" value="{{ d.pk }}"><input type="hidden" name="action" value="{% if d.active %}deactivate{% else %}activate{% endif %}"><button class="btn btn-sm {% if d.active %}btn-danger{% endif %}" type="submit">{% if d.active %}{% translate "Deactivate" %}{% else %}{% translate "Reactivate" %}{% endif %}</button></form></td></tr>{% endfor %}
+  </tbody></table></div></section>
+  <aside class="card"><div class="card-head"><h2>{% icon "plus" %} {% translate "Add department" %}</h2></div><form method="post" class="card-body grid" style="gap:12px" novalidate>{% csrf_token %}<input type="hidden" name="action" value="create">{% include "partials/form_errors.html" %}{% for f in form %}{% include "partials/field.html" with field=f %}{% endfor %}<button class="btn btn-primary" type="submit">{% translate "Save department" %}</button></form></aside>
+</div>
+{% endblock %}

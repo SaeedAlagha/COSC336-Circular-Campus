@@ -1,0 +1,15 @@
+{% extends "base.html" %}{% load campus_ui i18n %}
+{% block title %}{% translate "Accounts" %}{% endblock %}
+{% block content %}
+<div class="page-head"><div><div class="crumbs">{% translate "Administration / Accounts" %}</div><h1>{% translate "Accounts & roles" %}</h1><p>{% translate "Roles are explicit grants with a department scope. System administration never implies approval authority." %}</p></div></div>
+<div class="split">
+  <section class="card"><div class="card-head"><h2>{% icon "users" %} {% translate "Accounts" %}</h2><form method="get" class="row"><label class="sr-only" for="uq">{% translate "Search accounts" %}</label><input id="uq" type="search" name="q" value="{{ q }}" placeholder="{% translate "Name or campus ID" %}" style="width:220px"></form></div>
+    <div class="table-wrap"><table class="table"><thead><tr><th>{% translate "Account" %}</th><th>{% translate "Department" %}</th><th>{% translate "Roles" %}</th><th>{% translate "Status" %}</th><th></th></tr></thead><tbody>
+    {% for u in users %}<tr><td><div class="row" style="flex-wrap:nowrap"><span class="avatar" style="width:30px;height:30px;font-size:.72rem">{{ u.initials }}</span><div><div class="cell-title">{{ u.full_name }}</div><div class="cell-sub">{{ u.campus_id }}</div></div></div></td><td>{{ u.department.code }}</td>
+      <td>{% for g in u.role_grants.all %}{% if g.active %}<span class="tag">{{ g.role.name }} · {% if g.scope_department %}{{ g.scope_department.code }}{% else %}{% translate "Campus" %}{% endif %}</span>{% endif %}{% empty %}<span class="muted small">{% translate "No roles" %}</span>{% endfor %}</td>
+      <td>{% if u.is_active %}{% badge "AVAILABLE" "Active" %}{% else %}{% badge "CANCELLED" "Deactivated" %}{% endif %}</td><td><a class="btn btn-sm" href="{% url 'accounts:user' u.pk %}">{% translate "Manage" %}</a></td></tr>{% endfor %}
+    </tbody></table></div></section>
+  <aside class="card"><div class="card-head"><h2>{% icon "plus" %} {% translate "Create account" %}</h2></div>
+    <form method="post" class="card-body grid" style="gap:12px" novalidate>{% csrf_token %}{% include "partials/form_errors.html" %}{% for f in form %}{% include "partials/field.html" with field=f %}{% endfor %}<button class="btn btn-primary" type="submit">{% translate "Create account" %}</button><p class="help">{% translate "Passwords are stored only as salted hashes." %}</p></form></aside>
+</div>
+{% endblock %}
