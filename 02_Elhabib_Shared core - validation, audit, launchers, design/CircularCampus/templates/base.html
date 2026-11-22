@@ -1,0 +1,72 @@
+{% load static campus_ui i18n %}<!doctype html>
+{% get_current_language as LANG %}<html lang="{{ LANG }}" dir="{% if LANGUAGE_BIDI %}rtl{% else %}ltr{% endif %}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{% translate "Circular Campus" %}{% endblock %} {% translate "· Circular Campus" %}</title>
+  <meta name="description" content="Circular Campus — resource exchange and asset life-cycle management">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230f766e'/%3E%3Cpath d='M10 16a6 6 0 0 1 10.4-4M22 16a6 6 0 0 1-10.4 4' stroke='%23b6f07c' stroke-width='2.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="preload" href="{% static 'fonts/inter-latin-wght-normal.woff2' %}" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="{% static 'css/app.css' %}">
+</head>
+<body>
+{% include "partials/icons.svg.html" %}
+<a class="skip-link" href="#main">{% translate "Skip to content" %}</a>
+{% block shell %}
+<div class="app">
+  <aside class="sidebar" id="sidebar" aria-label="{% translate "Main navigation" %}">
+    <a class="brand" href="{% url 'core:dashboard' %}">
+      <span class="brand-mark">{% icon "recycle" 22 %}</span>
+      <span><span class="brand-name">{% translate "Circular Campus" %}</span><br><span class="brand-sub">{% translate "Exchange · Life cycle" %}</span></span>
+    </a>
+    {% for label, items in nav_groups %}
+    <nav class="nav-group" aria-label="{{ label }}">
+      <div class="nav-label">{% translate label %}</div>
+      {% for key, text, ico, urlname in items %}
+      <a class="nav-link" href="{% url urlname %}" {% if nav == key %}aria-current="page"{% endif %}>{% icon ico 18 %}<span>{% translate text %}</span></a>
+      {% endfor %}
+    </nav>
+    {% endfor %}
+    <div class="sidebar-foot">
+      <div class="ai-status">
+        <span class="dot {% if ai_live %}live{% endif %}" aria-hidden="true"></span>
+        <div><strong>{% if ai_live %}{% translate "Gemini configured" %}{% else %}{% translate "AI fallback mode" %}{% endif %}</strong>
+        {% if ai_live %}{% translate "Live AI calls with validated output; rules take over on failure." %}{% else %}{% translate "No API key — features use clearly labelled rule-based fallbacks." %}{% endif %}</div>
+      </div>
+    </div>
+  </aside>
+  <div class="scrim" aria-hidden="true"></div>
+  <div class="main">
+    <header class="topbar">
+      <button class="icon-btn menu-btn" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="{% translate "Open navigation" %}">{% icon "menu" 20 %}</button>
+{% url 'catalog:list' as catalog_url %}{% if catalog_url %}      <form class="global-search" action="{{ catalog_url }}" method="get" role="search">
+        {% icon "search" 17 %}<label class="sr-only" for="gq">{% translate "Search the catalog" %}</label>
+        <input id="gq" type="search" name="q" placeholder="{% translate "Search assets, e.g. “HDMI monitor”" %}" value="{{ request.GET.q|default:'' }}">
+      </form>{% else %}<div class="global-search"></div>{% endif %}
+      <div class="topbar-right">
+        {% url 'set_language' as lang_url %}{% if lang_url %}<form method="post" action="{{ lang_url }}" class="lang-switch">{% csrf_token %}<input type="hidden" name="next" value="{{ request.get_full_path }}">{% if LANGUAGE_BIDI %}<button class="icon-btn lang-btn" type="submit" name="language" value="en-gb" title="Switch to English" lang="en">{% icon "languages" 17 %}<span>EN</span></button>{% else %}<button class="icon-btn lang-btn" type="submit" name="language" value="ar" title="التبديل إلى العربية" lang="ar">{% icon "languages" 17 %}<span>ع</span></button>{% endif %}</form>{% endif %}
+        {% url 'catalog:scan' as scan_url %}{% if scan_url %}<a class="icon-btn" href="{{ scan_url }}" aria-label="{% translate "Scan a QR label" %}" title="{% translate "Scan a QR label" %}">{% icon "scan-line" 19 %}</a>{% endif %}
+        {% url 'intelligence:assistant' as assistant_url %}{% if assistant_url %}<a class="icon-btn" href="{{ assistant_url }}" aria-label="{% translate "Open the assistant" %}" title="{% translate "Assistant" %}">{% icon "sparkles" 19 %}</a>{% endif %}
+        {% url 'reporting:notifications' as notes_url %}{% if notes_url %}<a class="icon-btn" href="{{ notes_url }}" aria-label="Notifications, {{ unread_count }} unread" title="{% translate "Notifications" %}">{% icon "bell" 19 %}{% if unread_count %}<span class="bell-count">{{ unread_count }}</span>{% endif %}</a>{% endif %}
+        <div class="user-chip">
+          <span class="avatar" aria-hidden="true">{{ request.user.initials }}</span>
+          <span class="user-meta"><strong>{{ request.user.full_name }}</strong><span>{% translate primary_role %} · {{ request.user.department.name }}</span></span>
+        </div>
+        <form method="post" action="{% url 'accounts:logout' %}">{% csrf_token %}<button class="icon-btn" type="submit" aria-label="{% translate "Sign out" %}" title="{% translate "Sign out" %}">{% icon "log-out" 18 %}</button></form>
+      </div>
+    </header>
+    <main class="content" id="main" tabindex="-1">
+      {% include "partials/messages.html" %}
+      {% block content %}{% endblock %}
+    </main>
+  </div>
+</div>
+{% endblock %}
+<dialog class="confirm" id="confirm-dialog" aria-labelledby="confirm-title">
+  <div class="dialog-body"><h2 id="confirm-title">{% translate "Please confirm" %}</h2><p id="confirm-text" class="muted"></p></div>
+  <div class="dialog-foot"><button class="btn" type="button" id="confirm-cancel">{% translate "Cancel" %}</button><button class="btn btn-primary" type="button" id="confirm-ok">{% translate "Confirm" %}</button></div>
+</dialog>
+<script src="{% static 'js/app.js' %}" defer></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

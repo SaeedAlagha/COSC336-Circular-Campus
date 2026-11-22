@@ -1,0 +1,4 @@
+{% extends "base.html" %}{% load campus_ui i18n %}
+{% block title %}{% translate "Invalid input" %}{% endblock %}
+{% block shell %}<div class="auth-form" style="min-height:100vh"><div class="card card-pad" style="max-width:520px;text-align:center"><div class="empty"><div class="empty-icon">{% icon "triangle-alert" 26 %}</div><span class="ref">400</span><h1 style="font-size:1.4rem">{% translate "That input was not valid" %}</h1><p>{{ message|default:"Some of the submitted values were missing, out of range or in the wrong format. Nothing was changed." }}</p>
+<div class="row" style="justify-content:center"><a class="btn btn-primary" href="/">{% translate "Go to dashboard" %}</a><a class="btn" href="/catalog/">{% translate "Open catalog" %}</a></div></div></div></div>{% endblock %}
