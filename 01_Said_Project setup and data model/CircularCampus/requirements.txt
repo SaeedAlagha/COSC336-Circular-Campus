@@ -1,4 +1,0 @@
-# Python 3.12 or 3.13. Pinned for reproducible installs (Windows and macOS wheels available).
-Django==5.2.19
-python-dotenv==1.2.4
-whitenoise==6.12.0
