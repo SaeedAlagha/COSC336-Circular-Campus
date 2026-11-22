@@ -1,0 +1,5 @@
+{% extends "base.html" %}{% load campus_ui i18n %}
+{% block title %}{% translate "Something went wrong" %}{% endblock %}
+{% block shell %}<div class="auth-form" style="min-height:100vh"><div class="card card-pad" style="max-width:520px;text-align:center"><div class="empty"><div class="empty-icon">{% icon "triangle-alert" 26 %}</div><span class="ref">500</span><h1 style="font-size:1.4rem">{% translate "Something went wrong" %}</h1><p>{% translate "The server could not complete the request. No partial change was saved — business updates are atomic." %}</p>
+<div class="row" style="justify-content:center"><a class="btn btn-primary" href="/">{% translate "Go to dashboard" %}</a><a class="btn" href="/catalog/">{% translate "Open catalog" %}</a></div>
+{% if "500" == "403" %}<p class="small muted mt">{% translate "This attempt was recorded in the audit trail. If you need access, ask the system administrator for the right role." %}</p>{% endif %}</div></div></div>{% endblock %}

@@ -1,0 +1,5 @@
+{% extends "base.html" %}{% load campus_ui i18n %}
+{% block title %}{% translate "Access denied" %}{% endblock %}
+{% block shell %}<div class="auth-form" style="min-height:100vh"><div class="card card-pad" style="max-width:520px;text-align:center"><div class="empty"><div class="empty-icon">{% icon "lock" 26 %}</div><span class="ref">403</span><h1 style="font-size:1.4rem">{% translate "Access denied" %}</h1><p>{{ message }}</p>
+<div class="row" style="justify-content:center"><a class="btn btn-primary" href="/">{% translate "Go to dashboard" %}</a><a class="btn" href="/catalog/">{% translate "Open catalog" %}</a></div>
+{% if "403" == "403" %}<p class="small muted mt">{% translate "This attempt was recorded in the audit trail. If you need access, ask the system administrator for the right role." %}</p>{% endif %}</div></div></div>{% endblock %}

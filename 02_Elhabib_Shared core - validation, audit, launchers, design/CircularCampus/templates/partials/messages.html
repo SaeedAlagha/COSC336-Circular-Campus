@@ -1,0 +1,3 @@
+{% load campus_ui i18n %}{% if messages %}<div class="messages" role="status" aria-live="polite">{% for m in messages %}
+<div class="alert alert-{{ m.tags|default:'info' }} fade-in">{% if m.tags == 'success' %}{% icon "circle-check" %}{% elif m.tags == 'error' %}{% icon "circle-x" %}{% elif m.tags == 'warning' %}{% icon "triangle-alert" %}{% else %}{% icon "info" %}{% endif %}<div>{% translate m.message %}</div><button class="toast-close" type="button" aria-label="{% translate "Dismiss" %}">{% icon "x" 16 %}</button></div>
+{% endfor %}</div>{% endif %}

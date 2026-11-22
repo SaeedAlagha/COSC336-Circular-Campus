@@ -1,0 +1,10 @@
+{% load i18n %}<div class="field{% if field.errors %} has-error{% endif %}{% if full %} full{% endif %}">
+  {% if field.field.widget.input_type == "checkbox" %}
+  <div class="check">{{ field }}<div><label for="{{ field.id_for_label }}">{% translate field.label %}</label>{% if field.help_text %}<div class="help" id="{{ field.auto_id }}_helptext">{% translate field.help_text %}</div>{% endif %}</div></div>
+  {% else %}
+  <label for="{{ field.id_for_label }}">{% translate field.label %}{% if field.field.required %}<span class="req" aria-hidden="true">*</span>{% endif %}</label>
+  {{ field }}
+  {% if field.help_text %}<div class="help" id="{{ field.auto_id }}_helptext">{% translate field.help_text %}</div>{% endif %}
+  {% endif %}
+  {% for e in field.errors %}<div class="error-text" role="alert">⚠ {% translate e %}</div>{% endfor %}
+</div>
