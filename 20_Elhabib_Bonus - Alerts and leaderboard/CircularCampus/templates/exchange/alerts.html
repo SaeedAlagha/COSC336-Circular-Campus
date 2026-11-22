@@ -1,0 +1,34 @@
+{% extends "base.html" %}{% load campus_ui i18n %}
+{% block title %}{% translate "My alerts" %}{% endblock %}
+{% block content %}
+<div class="page-head">
+  <div><div class="crumbs">{% translate "Exchange / My alerts" %}</div><h1>{% translate "Availability alerts" %}</h1><p>{% translate "Tell the system what your department is waiting for. When a custodian publishes matching surplus, you get a notification — once per item. Alerts never reserve stock; you still submit a request." %}</p></div>
+  <div class="head-actions"><a class="btn" href="{% url 'catalog:list' %}">{% icon "package" 17 %} {% translate "Browse catalog" %}</a></div>
+</div>
+<div class="grid grid-2" style="align-items:start">
+<section class="card"><div class="card-head"><h2>{% icon "plus" %} {% translate "New alert" %}</h2><span class="muted small">{% translate "at most 10" %}</span></div>
+  <form method="post" class="card-body form-grid" novalidate>{% csrf_token %}
+    <div class="full">{% include "partials/form_errors.html" with form=form %}</div>
+    <div class="full">{% include "partials/field.html" with field=form.name %}</div>
+    <div class="full">{% include "partials/field.html" with field=form.keywords %}</div>
+    {% include "partials/field.html" with field=form.category %}
+    {% include "partials/field.html" with field=form.min_condition %}
+    {% include "partials/field.html" with field=form.min_quantity %}
+    <div class="form-actions full"><button class="btn btn-primary" type="submit">{% icon "bookmark" 16 %} {% translate "Save alert" %}</button></div>
+  </form></section>
+
+<section class="card"><div class="card-head"><h2>{% icon "bell" %} {% translate "Your alerts" %}</h2><span class="muted small">{{ searches|length }} {% translate "saved" %}</span></div>
+  {% if searches %}<div class="card-body stack">
+  {% for s in searches %}<div class="alert-item">
+    <div class="row between"><b>{{ s.name }}</b>
+      <form method="post" data-confirm="Delete the alert “{{ s.name }}”?">{% csrf_token %}<input type="hidden" name="action" value="delete"><input type="hidden" name="id" value="{{ s.pk }}"><button class="btn btn-sm btn-ghost" type="submit" aria-label="Delete alert {{ s.name }}">{% icon "trash-2" 15 %}</button></form></div>
+    <div class="chips mt-s">{% if s.keywords %}<span class="chip">“{{ s.keywords }}”</span>{% endif %}{% if s.category %}<span class="chip">{{ s.category }}</span>{% endif %}{% if s.min_condition %}<span class="chip">{{ s.get_min_condition_display }} {% translate "or better" %}</span>{% endif %}<span class="chip">≥ {{ s.min_quantity }} {% translate "free" %}</span></div>
+    <div class="cell-sub mt-s">{% if s.last_matched_at %}{% translate "Last match" %} {{ s.last_matched_at|timesince }} {% translate "ago ·" %} {{ s.hits.count }} {% translate "item" %}{{ s.hits.count|pluralize }} {% translate "notified" %}{% else %}{% translate "No matches yet — watching new listings" %}{% endif %}</div>
+    {% if s.hits.all %}<ul class="plain mt-s">{% for h in s.hits.all|slice:":3" %}<li><a href="{% url 'catalog:asset' h.asset.pk %}">{{ h.asset.asset_tag }} · {{ h.asset.name }}</a></li>{% endfor %}</ul>{% endif %}
+  </div>{% endfor %}</div>
+  {% else %}{% include "partials/empty.html" with ico="bookmark" title="No alerts yet" text="Create one on the left, or press “Notify me” on a catalog search." %}{% endif %}
+</section>
+</div>
+{% if existing %}<section class="card mt"><div class="card-head"><h2>{% icon "circle-check" %} {% translate "Already available for “" %}{{ existing_for.name }}”</h2></div>
+  <div class="table-wrap"><table class="table"><tbody>{% for a in existing %}<tr><td><a class="cell-title" href="{% url 'catalog:asset' a.pk %}">{{ a.name }}</a><div class="cell-sub">{{ a.asset_tag }} · {{ a.owner_department.name }} · {{ a.get_condition_display }}</div></td><td class="num"><a class="btn btn-sm" href="{% url 'exchange:new' %}?asset={{ a.pk }}">{% translate "Request" %}</a></td></tr>{% endfor %}</tbody></table></div></section>{% endif %}
+{% endblock %}

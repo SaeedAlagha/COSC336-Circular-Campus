@@ -1,0 +1,33 @@
+{% extends "base.html" %}{% load campus_ui i18n %}
+{% block title %}{% translate "Leaderboard" %}{% endblock %}
+{% block content %}
+<div class="page-head"><div><div class="crumbs">{% translate "Insight / Leaderboard" %}</div><h1>{% translate "Circular champions" %}</h1><p>{% translate "Departments ranked by verified circular actions. Every point comes from a completed, evidence-linked workflow record — the same records as the sustainability dashboard — and is counted once." %}</p></div>
+  <form class="head-actions seg" method="get" aria-label="{% translate "Period" %}">{% for key, label in periods %}<button class="btn {% if key == period %}btn-primary{% endif %}" type="submit" name="period" value="{{ key }}" {% if key == period %}aria-pressed="true"{% endif %}>{% translate label %}</button>{% endfor %}</form></div>
+
+{% if podium %}
+<div class="podium mb">{% for r in podium %}
+  <div class="card podium-card place-{{ r.rank }}"><div class="podium-medal" aria-hidden="true">{{ r.rank }}</div>
+    <div class="podium-name">{{ r.department.name }}</div><div class="kpi-value">{{ r.points }}</div><div class="kpi-sub">{% translate "points" %}</div>
+    <div class="badge-row">{% for b in r.badges %}<span class="earned" title="{% translate b.name %} — {% translate b.rule %}">{% icon b.icon 15 %}</span>{% endfor %}</div></div>
+{% endfor %}</div>
+{% else %}
+<div class="card mb">{% include "partials/empty.html" with ico="trophy" title="No circular actions yet in this period" text="Points appear when transfers are received, items are repaired, or dispositions are completed with evidence." %}</div>
+{% endif %}
+
+{% if mine %}<div class="alert alert-info mb">{% icon "info" 16 %}<span>{% translate "Your department," %} <b>{{ mine.department.name }}</b>{% translate ", is ranked" %} <b>#{{ mine.rank }}</b> {% translate "with" %} <b>{{ mine.points }}</b> {% translate "points" %}{% if mine.badges %} {% translate "and" %} {{ mine.badges|length }} {% translate "badge" %}{{ mine.badges|length|pluralize }}{% endif %}.</span></div>{% endif %}
+
+<section class="card"><div class="card-head"><h2>{% icon "trophy" %} {% translate "Ranking" %}</h2><span class="muted small">{% for key, label in periods %}{% if key == period %}{% translate label %}{% endif %}{% endfor %}</span></div>
+<div class="table-wrap"><table class="table">
+  <thead><tr><th class="num">#</th><th>{% translate "Department" %}</th><th class="num">{% translate "Given" %}</th><th class="num">{% translate "Reused" %}</th><th class="num">{% translate "Diverted" %}</th><th class="num">{% translate "Repairs" %}</th>{% if show_money %}<th class="num">{% translate "Avoided (AED)" %}</th>{% endif %}<th>{% translate "Points" %}</th><th>{% translate "Badges" %}</th></tr></thead>
+  <tbody>{% for r in rows %}<tr {% if mine and r.department.pk == mine.department.pk %}class="row-mine"{% endif %}>
+    <td class="num"><b>{{ r.rank }}</b></td><td><b>{{ r.department.name }}</b><div class="cell-sub">{{ r.department.code }}</div></td>
+    <td class="num">{{ r.given }}</td><td class="num">{{ r.received }}</td><td class="num">{{ r.diverted }}</td><td class="num">{{ r.repairs }}</td>
+    {% if show_money %}<td class="num">{{ r.avoided_aed|floatformat:0 }}</td>{% endif %}
+    <td style="min-width:150px"><div class="hbar" style="grid-template-columns:1fr auto"><div class="hbar-track"><div class="hbar-fill" style="width:{{ r.pct|widthpct }}%"></div></div><span class="num"><b>{{ r.points }}</b></span></div></td>
+    <td><div class="badge-row">{% for b in r.badges %}<span class="earned" title="{% translate b.name %} — {% translate b.rule %}">{% icon b.icon 15 %}<span class="sr-only">{% translate b.name %}</span></span>{% empty %}<span class="muted small">—</span>{% endfor %}</div></td></tr>
+  {% endfor %}</tbody></table></div>
+<div class="card-body"><p class="help"><b>{% translate "Formula." %}</b> {% translate formula %}{% if not show_money %} {% translate "Avoided-purchase values are included in points but shown only to reporting roles." %}{% endif %}</p></div></section>
+
+<section class="card mt"><div class="card-head"><h2>{% icon "award" %} {% translate "Badges" %}</h2></div>
+<div class="card-body badge-legend">{% for b in badges %}<div class="row"><span class="earned">{% icon b.icon 16 %}</span><div><b>{% translate b.name %}</b><div class="cell-sub">{% translate b.rule %}</div></div></div>{% endfor %}</div></section>
+{% endblock %}
